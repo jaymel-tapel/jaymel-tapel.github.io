@@ -1,0 +1,38 @@
+.backToTop {
+    position: fixed;
+    right: 30px;
+    bottom: 0px;
+    text-align: center;
+    line-height: 40px;
+    color: #fff;
+    border-radius: 4px 4px 0 0;
+    // white-space: nowrap;
+
+    // width: 40px;
+    height: 40px;
+    padding: 0 15px;
+    background: rgba(100, 100, 100, 0.75);
+    opacity: 0.75;
+    z-index: 9999999;
+    transition: all 0.25s ease;
+    transform: translateY(100%);
+    
+    .fa {
+        margin-left: 5px;
+    }
+
+    &:hover {
+        color: #fff;
+        opacity: 1;
+        text-decoration: none;
+    }
+}
+
+@import 'modules/hero.scss';
+@import 'modules/events.scss';
+@import 'modules/other-services.scss';
+@import 'modules/featured-photos.scss';
+@import 'modules/reviews.scss';
+@import 'modules/footer.scss';
+
+

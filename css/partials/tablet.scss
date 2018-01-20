@@ -1,0 +1,30 @@
+@media screen and (max-width: 1200px) {
+
+    body {
+        font-size: 14PX;
+    }
+
+    .navbar {
+        a:link, a:visited {
+            letter-spacing: 0px;
+        }
+    }
+
+    .events-section {
+        .card {
+            margin: 0 auto;
+        }
+        .card .event-actions .btn  {
+            padding: 7px 14px;
+            margin-left: 0;
+            margin-bottom: 5px;
+        }
+    }
+
+    .pre-footer {
+        padding: 100px 0 200px;
+    }
+
+
+    
+}

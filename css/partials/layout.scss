@@ -1,0 +1,128 @@
+
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding-top: 30px;
+    padding-bottom: 60px;
+    z-index: 999999;
+    background: linear-gradient(rgba(50,50,50, 0.75), rgba(0, 0, 0, 0));
+    transition: 0.5s ease;
+
+    .container {
+        position: relative;
+    }
+
+    .row {
+        width: 100%;
+        margin: 0px;
+    }
+
+    .col-lg-6, .col-lg-4  {
+        padding: 0;
+        position: relative;
+    }
+
+    a:link, a:visited {
+        color: #fff;
+        padding-top: 10px;
+        letter-spacing: -0.5px;
+        text-shadow: 0px 3px 7px rgba(0, 0, 0, 0.35);
+        transition: all 0.25s ease;
+    }
+
+    a:hover, a:active {
+        text-decoration: none;
+        color: $accentColor;        
+    }
+
+    .nav-logo {
+        padding: 0;
+    
+        img {
+            width: 110%;
+        }
+    }
+    
+    .nav-left {
+        padding: 0;
+        a {
+            float: left;
+        }
+    }
+
+    .nav-right{
+        padding: 0;
+        a {
+            float: right;
+        }
+    }
+
+    & a[href="/about-us"] {
+        transform: translateX(-20px);
+    }
+
+    & a[href="/contact-us"] {
+        background: $primaryColor;
+        padding: 8px 16px;
+        border-radius: 20px;
+        text-shadow: none;
+
+        &:hover {
+            color: #fff;
+            background: $accentColor;            
+        }
+    }
+
+    .nav-toggle {
+        display: none;
+        position: absolute;
+        right: 15px;
+        top: -5px;
+        font-size: 2.5em;
+
+        .fa-close {
+            display: none;
+        }
+    }
+}
+
+.dropdown-services {
+    background: rgba(0, 0, 0, 0.5);            
+    overflow: auto;
+    position: absolute;
+    left: -10px;
+    top: 50px;
+    border-radius: 10px;
+    overflow: visible;
+    display: none;
+
+    ul {
+        list-style-type: none;
+        padding: 8px 0;
+        position: relative;
+        
+        &:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 24px;
+            width: 0; 
+            height: 0; 
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            transform: translateY(-100%);
+            
+            border-bottom: 8px solid rgba(0, 0, 0, 0.5);
+        }
+
+        li a{
+            display: block;
+            width: 100%;
+            padding: 8px 16px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+        }
+    }
+}

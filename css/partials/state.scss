@@ -1,0 +1,32 @@
+.is-navbar-hidden {
+    transform: translateY(-100%);
+}
+
+.is-back-visible {
+    transform: translateY(0);    
+}
+
+.is-dropdown-visible {
+    display: block;   
+}
+
+.navbar.is-collapsed {
+
+    background: rgba(0,0,0,0.65);
+   
+    .nav-toggle {
+        .fa-navicon {
+            display: none;
+        }
+        .fa-close {
+            display: block;
+        }
+    }
+    .nav-right, .nav-left {
+        height: auto;
+        transform: translateY(0px);
+    }
+} 
+
+
+

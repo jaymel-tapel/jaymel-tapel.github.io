@@ -1,0 +1,120 @@
+.featured-photos-section {
+    padding: 75px 0 50px;
+
+    .item {
+        overflow: hidden;
+        padding: 10px;
+        transition: all 0.5s ease;
+        
+        img {
+            position: absolute;
+            left: -1000%;
+            right: -1000%;
+            top: -1000%;
+            bottom: -1000%;
+            min-height: 100%;
+            min-width: 100%;
+            margin: auto;
+            transition: all 0.5s ease;
+        }
+
+        &.col-md-4 img {
+            width: auto;
+            height: 100%;
+
+        }
+
+        &.col-md-8 img {
+            width: 100%;
+            height: auto;
+
+        }
+
+        figure {
+            height: 300px;
+            width: 100%;
+            margin-bottom: 0;
+        }
+
+        a {
+            display: block;
+            position: relative;  
+            overflow: hidden;
+            background: #000;
+
+            &:after {
+                content: "";
+                position: absolute;
+                top: -1px;
+                bottom: -1px;
+                right: -1px;
+                left: -1px;
+                border: 1px solid rgba(150, 150, 150, 0.4);
+                z-index: 9999;
+                transition: all 0.5s ease;
+            }
+            
+            figcaption {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                z-index: 999;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                color: #FFF;
+                padding: 40px 30px 20px;
+                padding-right: 130px;                
+                transition: all 0.5s ease;                             
+                transform: translateY(100%);
+                background: linear-gradient(rgba(0, 0, 0, 0),rgba(0,0,0, 0.5), rgba(50,50,50, 1));
+                opacity: 0;
+
+                &:after {
+                    content: "View Image";
+                    position: absolute;
+                    bottom: 20px;
+                    right: 30px;
+                    color: $accentColor;
+                }
+            }
+    
+            &:hover {
+
+                &:after {
+                    top: 10px;
+                    bottom: 10px;
+                    right: 10px;
+                    left: 10px;
+                }
+
+                figcaption {
+                    transform: translateY(0);     
+                    opacity: 1;                                                   
+                }
+
+                img {
+                    transform: scale(1.1);
+                }
+            }
+        }
+
+    }
+
+    & > p {
+        margin-top: 40px;
+        text-align: center;
+        font-size: 1.25em;
+        font-weight: bold;
+
+        a:link, a:visited {
+            transition: all 0.25s ease;
+        }
+
+        a:hover, a:active {
+            color: $accentColor;
+            text-decoration: none;
+        }
+    }
+}

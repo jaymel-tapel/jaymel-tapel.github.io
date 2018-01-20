@@ -1,0 +1,149 @@
+@media screen and (max-width: 991px) {
+
+
+    .navbar {
+
+        padding-top: 15px;
+        padding-bottom: 20px;
+        overflow-y: hidden;
+        // background:  rgba(0, 0, 0, 0.65);
+
+        a:link, a:visited{
+            float: none;
+            display: block;
+            text-align: center;
+            border-top: 1px solid rgba(0, 0, 0, 0.15);
+            padding: 10px 0;
+        }
+        & a[href="/about-us"] {
+            transform: translateX(0);
+        }
+
+        a[href="/contact-us"] {
+            border-top: none;
+        }
+
+        .nav-logo a {
+            border-top: none;
+            display: inline-block;
+            
+
+            img {
+                // float: left;
+                width: auto;
+            margin-bottom: 15px; 
+                
+            }
+        }
+
+        .nav-right, .nav-left {
+            transform: translateY(30px);
+            height: 0;
+            overflow: hidden;
+        }
+
+        #navToggle {
+            display: block;
+            border: none;
+            z-index: 999;
+        }
+    }
+
+    .section-header {
+        // text-align: left;
+    }
+
+    .hero-section {
+        .slick-arrow {
+            display: none!important;
+        }
+        .slick-dots {
+            bottom: 3%!important;
+        }
+        .slide-body {
+
+            h2 {
+                font-size: 3em;
+            }
+            
+            width: 100%;
+            padding: 0 30px;
+        }
+
+        .btn-scroll {
+            bottom:22%;
+        }
+    }
+
+    .events-section {
+        .col-lg-4 {
+            margin-bottom: 30px;
+        }
+    }
+
+    .other-services-section {
+        .container > p {
+            width: 100%;
+            padding: 0 30px;
+        }
+    }
+
+    .featured-photos-section {
+
+        .item figure {
+            height: 220px;
+            position: relative;
+            box-sizing: border-box;
+        }
+    }
+}
+
+@media screen and (max-width: 767px) {
+
+    .events-section .card .card-body {
+        padding: 15px;
+    }
+    
+
+    .featured-photos-section {
+        padding: 50px 30px 30px;
+
+        .item.col-md-4 figure, .item.col-md-8 figure {
+            height: auto;
+
+            img {
+                position: static;
+                width: 100%;
+                height: auto;
+            }
+
+        }
+    }
+
+    .reviews-section {
+        .review-slider .slick-arrow {
+            display: none!important;
+        }
+        .review-slide .review-body {
+            width: 100%;
+            padding: 15px;
+        }
+    } 
+
+    .pre-footer {
+        padding: 50px 0 200px;
+
+        .subscribe-wrapper {
+            width: 100%;
+            padding: 30px;
+
+            .form-group {
+                width: 100%;
+            }
+
+            button.btn, input {
+                font-size: 1em;
+            }
+        }
+    }
+}
