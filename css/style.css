@@ -97,7 +97,7 @@ h2 {
       display: none; }
 
 .dropdown-services {
-  background: none;
+  background: rgba(30, 30, 30, 0.75);
   overflow: auto;
   position: absolute;
   left: -10px;
@@ -353,18 +353,21 @@ h2 {
       text-decoration: none; }
 
 .other-services-section {
-  background: url("../img/sand.png"), #000;
+  background: url("../img/sand.png");
   background-repeat: repeat;
   background-position: center;
   background-attachment: fixed;
-  color: #fff; }
+  background-color: #000;
+  color: #fff;
+  position: static; }
   .other-services-section .container {
     z-index: 9;
     padding: 40px 0 30px;
     background: url("../img/starfish.png");
     background-repeat: no-repeat;
     background-position: 80% 20%;
-    background-attachment: fixed; }
+    background-attachment: fixed;
+    position: static; }
   .other-services-section h2 {
     text-align: center;
     font-size: 2.5em;
@@ -764,6 +767,7 @@ h2 {
         color: #fff; }
 
   .dropdown-services {
+    background: none;
     display: block;
     max-height: 0;
     padding: 0;
@@ -773,6 +777,8 @@ h2 {
     .dropdown-services ul {
       margin-bottom: 0;
       padding-bottom: 0; }
+      .dropdown-services ul a:link, .dropdown-services ul a:visited {
+        border: none; }
     .dropdown-services ul:before {
       display: none; }
 
@@ -784,9 +790,9 @@ h2 {
   .hero-section .slick-dots {
     bottom: 3% !important; }
   .hero-section .slide-body {
-    top: 45%;
+    top: 50%;
     width: 100%;
-    padding: 0 20px; }
+    padding: 0 30px; }
     .hero-section .slide-body .slide-title {
       font-size: 3em; }
     .hero-section .slide-body .slide-caption {
@@ -875,6 +881,11 @@ h2 {
     font-size: 1.7em;
     text-shadow: none; }
 
+  .hero-section .slide-body {
+    top: 44%;
+    width: 100%;
+    padding: 0 20px; }
+
   .other-services-section .container {
     overflow-x: hidden;
     padding-top: 30px;
@@ -907,7 +918,7 @@ h2 {
   display: block; }
 
 .navbar.is-collapsed {
-  background: #1e1e1e; }
+  background: rgba(0, 0, 0, 0.75); }
   .navbar.is-collapsed .nav-toggle .fa-navicon {
     display: none; }
   .navbar.is-collapsed .nav-toggle .fa-close {

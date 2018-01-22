@@ -69,6 +69,7 @@
     }
 
     .dropdown-services {
+        background: none;
         display: block;
         max-height: 0;
         padding: 0;
@@ -78,8 +79,13 @@
         ul {
             margin-bottom: 0;
             padding-bottom: 0;
+            a:link, a:visited {
+                border: none;
+            }
         }
         ul:before { display: none; }
+
+
     }
     
 
@@ -95,7 +101,7 @@
             bottom: 3%!important;
         }
         .slide-body {
-            top: 45%;
+            top: 50%;
             .slide-title {
                 font-size: 3em;
             }
@@ -105,7 +111,7 @@
             }
             
             width: 100%;
-            padding: 0 20px;
+            padding: 0 30px;
         }
 
         .btn-scroll {
@@ -259,6 +265,17 @@
     }
 }
 
+
+.hero-section {
+
+    .slide-body {
+        top: 44%;
+        width: 100%;
+        padding: 0 20px;
+    }
+
+
+}
 
     .other-services-section {
 
