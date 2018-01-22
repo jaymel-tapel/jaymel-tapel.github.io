@@ -260,7 +260,8 @@ h2 {
 
 .events-section {
   z-index: 99999;
-  padding: 75px 0 50px; }
+  padding: 75px 0 50px;
+  background-color: #fff; }
   .events-section .card {
     height: 100%;
     transition: all 0.25s ease;
@@ -353,21 +354,39 @@ h2 {
       text-decoration: none; }
 
 .other-services-section {
-  background: url("../img/sand.png");
-  background-repeat: repeat;
-  background-position: center;
-  background-attachment: fixed;
-  background-color: #000;
   color: #fff;
-  position: static; }
+  position: static;
+  overflow: hidden; }
+  .other-services-section:before {
+    content: "";
+    display: block;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -10;
+    background: url("../img/sand.png");
+    background-repeat: repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-color: #000; }
   .other-services-section .container {
     z-index: 9;
-    padding: 40px 0 30px;
-    background: url("../img/starfish.png");
-    background-repeat: no-repeat;
-    background-position: 80% 20%;
-    background-attachment: fixed;
-    position: static; }
+    padding: 40px 0 30px; }
+    .other-services-section .container:before {
+      content: "";
+      display: block;
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -5;
+      background: url("../img/starfish.png");
+      background-repeat: no-repeat;
+      background-position: 80% 20%;
+      background-attachment: fixed; }
   .other-services-section h2 {
     text-align: center;
     font-size: 2.5em;
@@ -430,7 +449,8 @@ h2 {
       text-shadow: 0 15px 5px rgba(0, 0, 0, 0.5); }
 
 .featured-photos-section {
-  padding: 75px 0 50px; }
+  padding: 75px 0 50px;
+  background-color: #fff; }
   .featured-photos-section .item {
     overflow: hidden;
     padding: 10px;
@@ -816,9 +836,10 @@ h2 {
   .other-services-section .container {
     padding-top: 40px;
     padding-bottom: 30px;
-    overflow-x: hidden;
-    background-size: auto;
-    background-position: 80% 20%; }
+    overflow-x: hidden; }
+    .other-services-section .container:before {
+      background-size: auto;
+      background-position: 80% 20%; }
     .other-services-section .container .row {
       padding: 0 30px; }
   .other-services-section .icon-wrapper {
@@ -887,10 +908,10 @@ h2 {
     padding: 0 20px; }
 
   .other-services-section .container {
-    overflow-x: hidden;
-    padding-top: 30px;
-    background-size: 40%;
-    background-position: 80% 20%; }
+    padding-top: 30px; }
+    .other-services-section .container:before {
+      background-size: 40%;
+      background-position: 80% 20%; }
   .other-services-section .icon-wrapper {
     width: 100px;
     height: 100px; }

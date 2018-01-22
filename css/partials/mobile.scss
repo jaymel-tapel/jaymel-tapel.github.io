@@ -145,8 +145,11 @@
             padding-top: 40px;
             padding-bottom: 30px;
             overflow-x: hidden;
-            background-size: auto;
-            background-position: 80% 20%;
+
+            &:before {
+                background-size: auto;
+                background-position: 80% 20%;
+            }
 
             .row {
                 padding: 0 30px;
@@ -280,10 +283,11 @@
     .other-services-section {
 
         .container {
-            overflow-x: hidden;
             padding-top: 30px;
-            background-size: 40%;
-            background-position: 80% 20%;
+            &:before {
+                background-size: 40%;
+                background-position: 80% 20%;
+            }
         }
 
         .icon-wrapper {
