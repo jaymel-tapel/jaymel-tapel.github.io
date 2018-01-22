@@ -33,6 +33,7 @@ $window.on('scroll', function () {
   }
 
   if( $window .scrollTop() + $window .height() > $preFooter.offset().top ) {
+    $("#footer-sky").css('display', 'block');    
     $scrollPercent = ($window.scrollTop() + $window .height() - $preFooter.offset().top) / ($preFooter.height() + $window.height());
     $starsFront.css({
       transform: 'translate(-50%,-' + $scrollPercent*100/2 + '%) rotate(-' + 15*$scrollPercent + 'deg)',
@@ -42,6 +43,8 @@ $window.on('scroll', function () {
       transform: 'translate(-50%,-' + $scrollPercent*100/5 + '%) rotate(-' + 5*$scrollPercent + 'deg)',
       opacity: $scrollPercent
     });
+  } else {
+    $("#footer-sky").css('display', 'none');
   }
 });
 
