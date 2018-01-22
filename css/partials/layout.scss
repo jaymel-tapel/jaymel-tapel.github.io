@@ -22,7 +22,10 @@
 
     .col-lg-6, .col-lg-4  {
         padding: 0;
-        position: relative;
+    }
+
+    .col-lg-2 {
+        position: static;
     }
 
     a:link, a:visited {
@@ -60,15 +63,20 @@
         }
     }
 
-    & a[href="/about-us"] {
-        transform: translateX(-20px);
+    & a[href="/gallery"] {
+        transform: translateX(15px);
     }
 
     & a[href="/contact-us"] {
+        float: right;
         background: $primaryColor;
         padding: 8px 16px;
         border-radius: 20px;
         text-shadow: none;
+
+        .fa {
+            display: none;
+        }
 
         &:hover {
             color: #fff;
@@ -79,8 +87,8 @@
     .nav-toggle {
         display: none;
         position: absolute;
-        right: 15px;
-        top: -5px;
+        left: 15px;
+        top: 0px;
         font-size: 2.5em;
 
         .fa-close {
@@ -90,13 +98,14 @@
 }
 
 .dropdown-services {
-    background: rgba(0, 0, 0, 0.5);            
+    background: none;            
     overflow: auto;
     position: absolute;
     left: -10px;
     top: 50px;
     border-radius: 10px;
     overflow: visible;
+    transition: all 0.5s ease;
     display: none;
 
     ul {

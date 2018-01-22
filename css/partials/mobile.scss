@@ -1,6 +1,5 @@
 @media screen and (max-width: 991px) {
 
-
     .navbar {
 
         padding-top: 15px;
@@ -15,24 +14,35 @@
             border-top: 1px solid rgba(0, 0, 0, 0.15);
             padding: 10px 0;
         }
+        
         & a[href="/about-us"] {
             transform: translateX(0);
         }
 
         a[href="/contact-us"] {
             border-top: none;
+            background: none;
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            top: 0;
+            right: 0;
+
+            .hidden-md { display: none; }
+            .fa { display: block; font-size: 2em; }
+
+            &:hover {
+                background: none;
+            }
         }
 
         .nav-logo a {
             border-top: none;
-            display: inline-block;
-            
 
             img {
                 // float: left;
                 width: auto;
-            margin-bottom: 15px; 
-                
+                margin-bottom: 15px; 
             }
         }
 
@@ -42,15 +52,39 @@
             overflow: hidden;
         }
 
-        #navToggle {
+        & a[href="/gallery"] {
+            transform: translateX(0px);
+        }
+    
+
+        a#navToggle {
             display: block;
             border: none;
             z-index: 999;
+
+            &:active, &:visited {
+                color: #fff;
+            }
         }
     }
 
+    .dropdown-services {
+        display: block;
+        max-height: 0;
+        padding: 0;
+        box-sizing: border-box;
+        position: unset;
+        overflow-y: hidden;
+        ul {
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        ul:before { display: none; }
+    }
+    
+
     .section-header {
-        // text-align: left;
+        margin-bottom: 15px;
     }
 
     .hero-section {
@@ -61,13 +95,17 @@
             bottom: 3%!important;
         }
         .slide-body {
-
-            h2 {
+            top: 45%;
+            .slide-title {
                 font-size: 3em;
+            }
+
+            .slide-caption {
+                margin-top: 15px;
             }
             
             width: 100%;
-            padding: 0 30px;
+            padding: 0 20px;
         }
 
         .btn-scroll {
@@ -76,6 +114,14 @@
     }
 
     .events-section {
+        padding-bottom: 15px;
+        padding-top: 40px;
+        h2 {
+            padding: 0 15px;
+        }
+        & > p {
+            margin-top: 0px;
+        }
         .col-lg-4 {
             margin-bottom: 30px;
         }
@@ -84,21 +130,55 @@
     .other-services-section {
         .container > p {
             width: 100%;
-            padding: 0 30px;
+            padding: 0 15px;
+
+        }
+
+        .container {
+            
+            padding-top: 40px;
+            padding-bottom: 30px;
+            overflow-x: hidden;
+            background-size: auto;
+            background-position: 80% 20%;
+
+            .row {
+                padding: 0 30px;
+            }
+        }
+
+        .icon-wrapper {
+            margin-top: 15px;
+
+            .fa {
+                font-size: 3em;
+            }
         }
     }
 
     .featured-photos-section {
+        padding-top: 40px;
+        padding-bottom: 30px;
 
         .item figure {
             height: 220px;
             position: relative;
             box-sizing: border-box;
         }
+
+        p {
+            margin-top: 15px;
+        }
     }
 }
 
 @media screen and (max-width: 767px) {
+
+    .section-header span {
+        display: block;
+    }
+
+    
 
     .events-section .card .card-body {
         padding: 15px;
@@ -106,7 +186,10 @@
     
 
     .featured-photos-section {
-        padding: 50px 30px 30px;
+
+        .item {
+            padding-bottom: 0;
+        }
 
         .item.col-md-4 figure, .item.col-md-8 figure {
             height: auto;
@@ -145,5 +228,73 @@
                 font-size: 1em;
             }
         }
+    }
+
+    .main-footer {
+        padding-left: 30px;
+
+        .footer-contact {
+            margin-top: 30px;
+        }
+    }
+}
+
+@media screen and (max-width: 480px) {
+
+    
+.navbar {
+
+    .nav-logo a img {
+        width: 150px;
+    }
+
+    a[href="/contact-us"] {
+        right: 0;
+    }
+
+    a.nav-toggle {
+        left: 5px;
+        font-size: 1.7em;
+        text-shadow: none;
+    }
+}
+
+
+    .other-services-section {
+
+        .container {
+            overflow-x: hidden;
+            padding-top: 30px;
+            background-size: 40%;
+            background-position: 80% 20%;
+        }
+
+        .icon-wrapper {
+            width: 100px;
+            height: 100px;
+        }
+    }
+
+    .pre-footer {
+        .subscribe-wrapper {
+            padding: 15px;
+
+            .form-group {
+                width: 100%;
+            }
+
+            button.btn, input {
+                font-size: 1em;
+            }
+        }
+    }
+
+    .main-footer {
+        padding-left: 15px;
+    }
+
+    .copyright {
+        padding: 15px;
+        font-size: 0.875em;
     }
 }

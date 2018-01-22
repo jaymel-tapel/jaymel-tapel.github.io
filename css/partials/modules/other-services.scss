@@ -1,14 +1,18 @@
 .other-services-section {
-    background: url('../img/starfish.png'), url('../img/sand.png'), #000;
-    background-repeat: no-repeat, repeat;
-    background-position: 90% 25%, center;
+    background:  url('../img/sand.png'), #000;
+    background-repeat:  repeat;
+    background-position: center;
     background-attachment: fixed;
-    padding: 40px 0 30px;
     color: #fff;
     position: relative;
 
     .container {
         z-index: 9;
+        padding: 40px 0 30px;        
+        background: url('../img/starfish.png');
+        background-repeat: no-repeat;
+        background-position: 80% 20%;
+        background-attachment: fixed;
         position: relative;
     }
 
