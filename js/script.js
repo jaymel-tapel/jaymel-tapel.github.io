@@ -22,7 +22,7 @@ $window.on('load', function () {
   });
 });
 
-$window.on('scroll', jQuery.debounce(15, function(e) {
+$window.on('scroll', jQuery.debounce(10, function(e) {
   if ( $window .scrollTop() > 150) {
     $navbar.addClass('is-navbar-hidden');
     $('#backToTop').addClass('is-back-visible');
