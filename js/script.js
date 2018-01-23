@@ -35,12 +35,12 @@ $window.on('scroll', function () {
     
   }
 
-  if( $window .scrollTop() + $window .height() > $otherServices.offset().top ) {
+  if( ($window .scrollTop() + $window.height() > $otherServices.offset().top) && ($window.scrollTop() < $otherServices.offset().top + $otherServices.height())) {
     $otherServicesScrollPercent = ($window.scrollTop() + $window .height() - $otherServices.offset().top) / ($otherServices.height() + $window.height());
-    $bgSand.css('transform', 'translateY(' + ($otherServicesScrollPercent/2)*100  + '%');
+    $bgSand.css('transform', 'translateY(-' + ($otherServicesScrollPercent/2)*100  + '%');
   }
 
-  if( $window .scrollTop() + $window .height() > $preFooter.offset().top ) {
+  if( ($window .scrollTop() + $window .height() > $preFooter.offset().top) && ($window.scrollTop() < $preFooter.offset().top + $preFooter.height())) {
     $footerScrollPercent = ($window.scrollTop() + $window .height() - $preFooter.offset().top) / ($preFooter.height() + $window.height());
     $starsFront.css({
       transform: 'translate(-50%,-' + $footerScrollPercent*100/2 + '%) rotate(-' + 15*$footerScrollPercent + 'deg)',
