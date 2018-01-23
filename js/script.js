@@ -22,7 +22,7 @@ $window.on('load', function () {
   });
 });
 
-$window.on('scroll', $.debounce(10, function(e) {
+$window.on('scroll', $.debounce(3, function(e) {
   if ( $window .scrollTop() > 150) {
     $navbar.addClass('is-navbar-hidden');
     $('#backToTop').addClass('is-back-visible');
