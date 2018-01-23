@@ -22,7 +22,7 @@ $window.on('load', function () {
   });
 });
 
-$window.on('scroll', jQuery.debounce(10, function(e) {
+$window.on('scroll', $.debounce(10, function(e) {
   if ( $window .scrollTop() > 150) {
     $navbar.addClass('is-navbar-hidden');
     $('#backToTop').addClass('is-back-visible');
@@ -31,8 +31,6 @@ $window.on('scroll', jQuery.debounce(10, function(e) {
     $('#backToTop').removeClass('is-back-visible');
     $('#dropdown-services').removeClass('is-dropdown-visible');
     $('.navbar').removeClass('is-collapsed');
-    
-    
   }
 
   if( ($window .scrollTop() + $window.height() > $otherServices.offset().top) && ($window.scrollTop() < $otherServices.offset().top + $otherServices.height())) {
