@@ -356,36 +356,34 @@ h2 {
 
 .other-services-section {
   color: #fff;
-  position: static;
+  transform: translate3d(0, 0, 0);
   overflow: hidden; }
-  .other-services-section:before {
-    content: "";
+  .other-services-section .bg-sand {
     display: block;
-    position: fixed;
+    position: absolute;
     left: 0;
-    top: 0;
+    bottom: 0;
     width: 100%;
-    height: 100%;
+    height: 300%;
     z-index: -10;
     background: url("../img/sand.png");
     background-repeat: repeat;
     background-position: center;
     background-color: #000; }
-  .other-services-section .container {
-    z-index: 9;
-    padding: 40px 0 30px; }
-    .other-services-section .container:before {
+    .other-services-section .bg-sand:before {
       content: "";
       display: block;
-      position: fixed;
+      position: absolute;
       left: 0;
-      top: 0;
       width: 100%;
       height: 100%;
       z-index: -5;
       background: url("../img/starfish.png");
       background-repeat: no-repeat;
-      background-position: 80% 20%; }
+      background-position: 82% 50%; }
+  .other-services-section .container {
+    z-index: 9;
+    padding: 40px 0 30px; }
   .other-services-section h2 {
     text-align: center;
     font-size: 2.5em;
@@ -604,10 +602,10 @@ h2 {
       color: #aaa; }
 
 .footer {
+  transform: translate3d(0, 0, 0);
   overflow: hidden; }
   .footer .footer-sky {
     content: "";
-    display: none;
     position: fixed;
     left: 0;
     top: 0;
@@ -774,13 +772,13 @@ h2 {
         display: none; }
       .navbar a[href="/contact-us"] .fa {
         display: block;
-        font-size: 2em; }
+        font-size: 2.75em; }
       .navbar a[href="/contact-us"]:hover {
         background: none; }
     .navbar .nav-logo a {
       border-top: none; }
       .navbar .nav-logo a img {
-        width: auto;
+        width: 200px;
         margin-bottom: 15px; }
     .navbar .nav-right, .navbar .nav-left {
       transform: translateY(30px);
@@ -788,11 +786,12 @@ h2 {
       overflow: hidden; }
     .navbar a[href="/gallery"] {
       transform: translateX(0px); }
-    .navbar a#navToggle {
+    .navbar a.nav-toggle {
       display: block;
       border: none;
-      z-index: 999; }
-      .navbar a#navToggle:active, .navbar a#navToggle:visited {
+      z-index: 999;
+      text-shadow: none; }
+      .navbar a.nav-toggle:active, .navbar a.nav-toggle:visited {
         color: #fff; }
 
   .dropdown-services {
@@ -839,16 +838,16 @@ h2 {
     .events-section .col-lg-4 {
       margin-bottom: 30px; }
 
-  .other-services-section .container > p {
-    width: 100%;
-    padding: 0 15px; }
+  .other-services-section .bg-sand:before {
+    background-size: 20%;
+    background-position: 95% 50%; }
   .other-services-section .container {
     padding-top: 40px;
     padding-bottom: 30px;
     overflow-x: hidden; }
-    .other-services-section .container:before {
-      background-size: auto;
-      background-position: 80% 20%; }
+    .other-services-section .container > p {
+      width: 100%;
+      padding: 0 15px; }
     .other-services-section .container .row {
       padding: 0 30px; }
   .other-services-section .icon-wrapper {
@@ -871,6 +870,10 @@ h2 {
 
   .events-section .card .card-body {
     padding: 15px; }
+
+  .other-services-section .bg-sand:before {
+    background-size: 25%;
+    background-position: 98% 50%; }
 
   .featured-photos-section .item {
     padding-bottom: 0; }
@@ -905,22 +908,23 @@ h2 {
   .navbar .nav-logo a img {
     width: 150px; }
   .navbar a[href="/contact-us"] {
-    right: 0; }
+    right: -5px; }
+    .navbar a[href="/contact-us"] .fa {
+      font-size: 2em; }
   .navbar a.nav-toggle {
     left: 5px;
-    font-size: 1.7em;
-    text-shadow: none; }
+    font-size: 1.7em; }
 
   .hero-section .slide-body {
     top: 44%;
     width: 100%;
     padding: 0 20px; }
 
+  .other-services-section .bg-sand:before {
+    background-size: 40%;
+    background-position: 90% 50%; }
   .other-services-section .container {
     padding-top: 30px; }
-    .other-services-section .container:before {
-      background-size: 40%;
-      background-position: 80% 20%; }
   .other-services-section .icon-wrapper {
     width: 100px;
     height: 100px; }

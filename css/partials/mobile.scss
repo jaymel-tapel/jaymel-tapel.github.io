@@ -29,7 +29,7 @@
             right: 0;
 
             .hidden-md { display: none; }
-            .fa { display: block; font-size: 2em; }
+            .fa { display: block; font-size: 2.75em; }
 
             &:hover {
                 background: none;
@@ -40,8 +40,7 @@
             border-top: none;
 
             img {
-                // float: left;
-                width: auto;
+                width: 200px;
                 margin-bottom: 15px; 
             }
         }
@@ -57,10 +56,11 @@
         }
     
 
-        a#navToggle {
+        a.nav-toggle {
             display: block;
             border: none;
             z-index: 999;
+            text-shadow: none;
 
             &:active, &:visited {
                 color: #fff;
@@ -134,22 +134,25 @@
     }
 
     .other-services-section {
-        .container > p {
-            width: 100%;
-            padding: 0 15px;
 
+        .bg-sand {
+            &:before {
+                background-size: 20%;
+                background-position: 95% 50%;
+            }
         }
 
         .container {
+
+            & > p {
+                width: 100%;
+                padding: 0 15px;
+            }
             
             padding-top: 40px;
             padding-bottom: 30px;
             overflow-x: hidden;
 
-            &:before {
-                background-size: auto;
-                background-position: 80% 20%;
-            }
 
             .row {
                 padding: 0 30px;
@@ -193,6 +196,15 @@
         padding: 15px;
     }
     
+    .other-services-section {
+
+        .bg-sand {
+            &:before {
+                background-size: 25%;
+                background-position: 98% 50%;
+            }
+        }
+    }
 
     .featured-photos-section {
 
@@ -258,13 +270,16 @@
     }
 
     a[href="/contact-us"] {
-        right: 0;
+        right: -5px;
+
+        .fa {
+            font-size: 2em;            
+        }
     }
 
     a.nav-toggle {
         left: 5px;
         font-size: 1.7em;
-        text-shadow: none;
     }
 }
 
@@ -282,12 +297,14 @@
 
     .other-services-section {
 
-        .container {
-            padding-top: 30px;
+        .bg-sand {
             &:before {
                 background-size: 40%;
-                background-position: 80% 20%;
+                background-position: 90% 50%;
             }
+        }
+        .container {
+            padding-top: 30px;
         }
 
         .icon-wrapper {

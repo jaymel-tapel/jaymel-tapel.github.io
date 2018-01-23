@@ -3,7 +3,10 @@ $navbar = $('#navbar');
 $starsFront = $('#stars-front');
 $starsBack = $('#stars-back');
 $preFooter = $(".pre-footer");
-$scrollPercent = 0;
+$otherServices = $(".other-services-section");
+$bgSand = $("#bg-sand");
+$footerScrollPercent = 0;
+$otherServicesScrollPercent = 0;
 
 $window.on('load', function () {
   $('#hero-slider').slick({
@@ -32,20 +35,22 @@ $window.on('scroll', function () {
     
   }
 
+  if( $window .scrollTop() + $window .height() > $otherServices.offset().top ) {
+    $otherServicesScrollPercent = ($window.scrollTop() + $window .height() - $otherServices.offset().top) / ($otherServices.height() + $window.height());
+    $bgSand.css('transform', 'translateY(' + ($otherServicesScrollPercent/2)*100  + '%');
+  }
+
   if( $window .scrollTop() + $window .height() > $preFooter.offset().top ) {
-    $("#footer-sky").css('display', 'block');    
-    $scrollPercent = ($window.scrollTop() + $window .height() - $preFooter.offset().top) / ($preFooter.height() + $window.height());
+    $footerScrollPercent = ($window.scrollTop() + $window .height() - $preFooter.offset().top) / ($preFooter.height() + $window.height());
     $starsFront.css({
-      transform: 'translate(-50%,-' + $scrollPercent*100/2 + '%) rotate(-' + 15*$scrollPercent + 'deg)',
-      opacity: $scrollPercent
+      transform: 'translate(-50%,-' + $footerScrollPercent*100/2 + '%) rotate(-' + 15*$footerScrollPercent + 'deg)',
+      opacity: $footerScrollPercent
     });
     $starsBack.css({
-      transform: 'translate(-50%,-' + $scrollPercent*100/5 + '%) rotate(-' + 5*$scrollPercent + 'deg)',
-      opacity: $scrollPercent
+      transform: 'translate(-50%,-' + $footerScrollPercent*100/5 + '%) rotate(-' + 5*$footerScrollPercent + 'deg)',
+      opacity: $footerScrollPercent
     });
-  } else {
-    $("#footer-sky").css('display', 'none');
-  }
+  } 
 });
 
 $('#backToTop').on('click', function (e) {

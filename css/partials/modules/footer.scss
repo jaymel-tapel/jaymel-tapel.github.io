@@ -1,10 +1,9 @@
 .footer {
-
+    transform: translate3d(0,0,0);
     overflow: hidden;
             
     .footer-sky {
         content: "";
-        display: none;
         position: fixed;
         left: 0;
         top: 0;
