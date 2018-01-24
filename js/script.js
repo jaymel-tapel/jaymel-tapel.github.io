@@ -45,9 +45,9 @@ $window.on('scroll', function(e) {
     }
   }
 
-  if( ($window.scrollTop() + $window .height() > $preFooter.offset().top) && ($window.scrollTop() < $preFooter.offset().top + $preFooter.height())) {
+  if( ($window.scrollTop() + $window .height() > $preFooter.offset().top)) {
     
-    $bgSky.css('transform', 'translate3d(0,' + ( $window.scrollTop() + $window.height() - $preFooter.offset().top )  + 'px,0)');
+    $bgSky.css('transform', 'translate3d(0,' + ( $window.scrollTop() + $window.height() - $preFooter.offset().top ) + 100  + 'px,0)');
     
     $footerScrollPercent = ($window.scrollTop() + $window .height() - $preFooter.offset().top) / ($preFooter.height() + $window.height());
     $starsFront.css({
