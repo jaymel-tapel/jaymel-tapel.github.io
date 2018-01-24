@@ -780,8 +780,7 @@ h2 {
     .navbar .nav-logo a {
       border-top: none; }
       .navbar .nav-logo a img {
-        width: 200px;
-        margin-bottom: 15px; }
+        width: 200px; }
     .navbar .nav-right, .navbar .nav-left {
       transform: translateY(30px);
       height: 0;

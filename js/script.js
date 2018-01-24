@@ -36,7 +36,7 @@ $window.on('scroll', function(e) {
   if( ($window .scrollTop() + $window.height() > $otherServices.offset().top) && ($window.scrollTop() < $otherServices.offset().top + $otherServices.height())) {
     $otherServicesScrollPercent = ($window.scrollTop() + $window .height() - $otherServices.offset().top) / ($otherServices.height() + $window.height());
     if($window.width() < 992) {
-      $bgSand.css('transform', 'translateY(-' + ($otherServicesScrollPercent/5)*100  + '%');
+      $bgSand.css('transform', 'translateY(-' + ($otherServicesScrollPercent/4)*100  + '%');
     } else {
       $bgSand.css('transform', 'translateY(-' + ($otherServicesScrollPercent/2)*100  + '%');      
     }
