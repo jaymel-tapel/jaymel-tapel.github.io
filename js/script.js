@@ -39,15 +39,15 @@ $window.on('scroll', function(e) {
   if( ($window .scrollTop() + $window.height() > $otherServices.offset().top) && ($window.scrollTop() < $otherServices.offset().top + $otherServices.height())) {
     $otherServicesScrollPercent = ($window.scrollTop() + $window .height() - $otherServices.offset().top) / ($otherServices.height() + $window.height());
     if($window.width() < 992) {
-      $bgSand.css('transform', 'translateY(-' + ($otherServicesScrollPercent/4)*100  + '%');
+      $bgSand.css('transform', 'translate3d(0,-' + ($otherServicesScrollPercent/4)*100  + '%,0');
     } else {
-      $bgSand.css('transform', 'translateY(-' + ($otherServicesScrollPercent/2)*100  + '%');      
+      $bgSand.css('transform', 'translate3d(0,-' + ($otherServicesScrollPercent/2)*100  + '%',0);      
     }
   }
 
   if( ($window.scrollTop() + $window .height() > $preFooter.offset().top) && ($window.scrollTop() < $preFooter.offset().top + $preFooter.height())) {
     
-    $bgSky.css('transform', 'translateY(' + ( $window.scrollTop() + $window.height() - $preFooter.offset().top )  + 'px)');
+    $bgSky.css('transform', 'translate3d(0,' + ( $window.scrollTop() + $window.height() - $preFooter.offset().top )  + 'px,0)');
     
     $footerScrollPercent = ($window.scrollTop() + $window .height() - $preFooter.offset().top) / ($preFooter.height() + $window.height());
     $starsFront.css({
