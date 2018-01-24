@@ -1,3 +1,14 @@
+
+echo.init({
+  offset: 100,
+  throttle: 250,
+  unload: false,
+  callback: function (element, op) {
+    console.log(element, 'has been', op + 'ed')
+  }
+});
+
+
 $window = $(window);
 $navbar = $('#navbar');
 
@@ -84,9 +95,9 @@ $window.on('scroll', function(e) {
 
   windowPosition = $(window).scrollTop()+$(window).height(); 
   
-  elementTransition('fadeInRight', '.events-section .card', 500);           
+  elementTransition('bounceInRight', '.events-section .card', 250);           
   elementTransition('zoomIn', '.other-services-section .col-lg-2', 100);           
-  elementTransition('fadeInUp', '.featured-photos-section .item', 500);          
+  elementTransition('fadeIn', '.featured-photos-section .item', 500);          
   elementTransition('fadeIn', '.subscribe-wrapper', 0);               
   
   if ( $window .scrollTop() > 150) {
