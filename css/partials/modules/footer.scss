@@ -14,7 +14,6 @@
         background: url('../img/sky.jpg');
         background-size: cover;
         background-position: bottom;
-        
     }
 }
 
@@ -47,7 +46,7 @@
         content: "";
         display: block;
         position: absolute;
-        bottom: -50px;
+        bottom: -49px;
         left: 0;
         width: 100%;
         height: 200px;        
@@ -65,18 +64,13 @@
         margin: 0 auto;
     }
 
-
-
     h2 {
         color: #fff;
         font-size: 1.5em;
-        // font-style: normal;
         letter-spacing: 1px;
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2)
     }
-    p {
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-    }
+    p { text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); }
 
     .form-group {
         position: relative;
@@ -121,7 +115,6 @@
         letter-spacing: -0.5px;
         font-style: normal;
         margin-bottom: 1em;
-        
     }
 
     ul {
@@ -167,7 +160,6 @@
             margin-right: 15px;
             transform: translateY(3px);
         }
-
     }
 }
 
@@ -178,6 +170,5 @@
     background: #FFF;
     p {
     margin-bottom: 0;
-        
     }
 }

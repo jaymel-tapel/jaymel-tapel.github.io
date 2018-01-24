@@ -11,6 +11,54 @@ $starsBack = $('#stars-back');
 $preFooter = $(".pre-footer");
 $bgSky = $("#footer-sky");
 
+var windowPosition;
+
+
+
+function elementTransition(effectName, selector, effectDelay) {
+  $selector = $(selector);
+
+  if(typeof $selector.offset() == "undefined")
+  {
+      return true;
+  }
+
+
+  var time = effectDelay;
+  var transitionTimeout;
+  var elementPosition = $selector.first().offset().top;      
+
+  if (windowPosition < elementPosition) {
+      $selector.removeClass('animated').removeClass(effectName).css('opacity', '0');
+      return false;
+  } else {
+    if($selector.last().hasClass('animated')) {
+        return false;                
+    } else {
+      $selector.each(function() {
+          var elementItem = $(this);
+          setTimeout(function() {
+              if(windowPosition > elementPosition) {
+                  elementItem.addClass("animated").addClass(effectName).css('opacity', '1');
+              } else {
+                  return false;                    
+              }
+          },time);
+          time+=effectDelay;                
+      });
+    }
+  }
+}
+
+function fitPhotos() {
+  if ($window.width() < 992) {
+    $(".item figure").css('height', $('.item.col-4').width());
+  } else {
+    $(".item figure").css('height', '');    
+  }
+}
+
+
 $window.on('load', function () {
   $('#hero-slider').slick({
     dots: true,
@@ -23,9 +71,24 @@ $window.on('load', function () {
     dots: true,
     autoplay: true
   });
+
+  fitPhotos();
+
+});
+
+$window.on('resize', function() {
+  fitPhotos(); 
 });
 
 $window.on('scroll', function(e) {
+
+  windowPosition = $(window).scrollTop()+$(window).height(); 
+  
+  elementTransition('fadeInRight', '.events-section .card', 500);           
+  elementTransition('zoomIn', '.other-services-section .col-lg-2', 100);           
+  elementTransition('fadeInUp', '.featured-photos-section .item', 500);          
+  elementTransition('fadeIn', '.subscribe-wrapper', 0);               
+  
   if ( $window .scrollTop() > 150) {
     $navbar.addClass('is-navbar-hidden');
     $('#backToTop').addClass('is-back-visible');
@@ -53,9 +116,7 @@ $window.on('scroll', function(e) {
       opacity: $footerScrollPercent
     });
   } 
-  
 });
-
 
 
 

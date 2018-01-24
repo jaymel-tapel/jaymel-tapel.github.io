@@ -2,8 +2,11 @@ body, html {
   font-family: "Josefin Sans", "Helvetica-Neue", Helvetica, sans-serif;
   font-size: 16px;
   box-shadow: 1px 3px 30px #ddd;
-  overflow: scroll;
   -webkit-overflow-scrolling: touch; }
+
+main {
+  overflow-x: hidden;
+  overflow-y: hidden; }
 
 h2 {
   font-size: 2em; }
@@ -160,7 +163,7 @@ h2 {
   .hero-section #hero-slider {
     margin-bottom: 0; }
   .hero-section .hero-slide {
-    height: 80vh;
+    height: 100vh;
     min-height: 550px;
     position: relative;
     overflow: hidden;
@@ -269,7 +272,7 @@ h2 {
     height: 100%;
     transition: all 0.25s ease;
     box-shadow: 0px 0px 0px 0px #888;
-    max-width: 400px; }
+    opacity: 0; }
     .events-section .card .btn {
       margin-bottom: auto; }
     .events-section .card:before {
@@ -345,14 +348,14 @@ h2 {
     padding-top: 15px;
     margin-top: auto;
     z-index: 99px; }
-  .events-section > p {
+  .events-section .container > p {
     margin-top: 40px;
     text-align: center;
     font-size: 1.25em;
     font-weight: bold; }
-    .events-section > p a:link, .events-section > p a:visited {
+    .events-section .container > p a:link, .events-section .container > p a:visited {
       transition: all 0.25s ease; }
-    .events-section > p a:hover, .events-section > p a:active {
+    .events-section .container > p a:hover, .events-section .container > p a:active {
       color: #76BD0E;
       text-decoration: none; }
 
@@ -466,10 +469,10 @@ h2 {
       min-width: 100%;
       margin: auto;
       transition: all 0.5s ease; }
-    .featured-photos-section .item.col-md-4 img {
+    .featured-photos-section .item.col-4 img {
       width: auto;
       height: 100%; }
-    .featured-photos-section .item.col-md-8 img {
+    .featured-photos-section .item.col-8 img {
       width: 100%;
       height: auto; }
     .featured-photos-section .item figure {
@@ -643,7 +646,7 @@ h2 {
     content: "";
     display: block;
     position: absolute;
-    bottom: -50px;
+    bottom: -49px;
     left: 0;
     width: 100%;
     height: 200px;
@@ -779,6 +782,8 @@ h2 {
         font-size: 2.75em; }
       .navbar a[href="/contact-us"]:hover {
         background: none; }
+    .navbar .nav-logo {
+      padding: 0 30px; }
     .navbar .nav-logo a {
       border-top: none; }
       .navbar .nav-logo a img {
@@ -836,7 +841,7 @@ h2 {
     padding-top: 40px; }
     .events-section h2 {
       padding: 0 15px; }
-    .events-section > p {
+    .events-section .container > p {
       margin-top: 0px; }
     .events-section .col-lg-4 {
       margin-bottom: 30px; }
@@ -861,11 +866,17 @@ h2 {
   .featured-photos-section {
     padding-top: 40px;
     padding-bottom: 30px; }
-    .featured-photos-section .item figure {
-      height: 220px;
-      position: relative;
-      box-sizing: border-box; }
-    .featured-photos-section p {
+    .featured-photos-section .row {
+      padding: 15px; }
+    .featured-photos-section .item {
+      padding: 0; }
+      .featured-photos-section .item figure {
+        position: relative;
+        box-sizing: border-box; }
+      .featured-photos-section .item a:after {
+        display: none; }
+    .featured-photos-section .item
+    p {
       margin-top: 15px; } }
 @media screen and (max-width: 767px) {
   .section-header span {
@@ -877,15 +888,6 @@ h2 {
   .other-services-section .bg-sand:before {
     background-size: 25%;
     background-position: 98% 50%; }
-
-  .featured-photos-section .item {
-    padding-bottom: 0; }
-  .featured-photos-section .item.col-md-4 figure, .featured-photos-section .item.col-md-8 figure {
-    height: auto; }
-    .featured-photos-section .item.col-md-4 figure img, .featured-photos-section .item.col-md-8 figure img {
-      position: static;
-      width: 100%;
-      height: auto; }
 
   .reviews-section .review-slider .slick-arrow {
     display: none !important; }
@@ -933,9 +935,10 @@ h2 {
     height: 100px; }
 
   .pre-footer .subscribe-wrapper {
-    padding: 15px; }
+    padding: 30px; }
     .pre-footer .subscribe-wrapper .form-group {
-      width: 100%; }
+      width: 100%;
+      position: relative; }
     .pre-footer .subscribe-wrapper button.btn, .pre-footer .subscribe-wrapper input {
       font-size: 1em; }
 

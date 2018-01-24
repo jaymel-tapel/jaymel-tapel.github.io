@@ -2,17 +2,15 @@ body, html {
     font-family: $baseFonts;
     font-size: 16px;
     box-shadow: 1px 3px 30px #ddd;
-    overflow: scroll;
     -webkit-overflow-scrolling: touch;
-}   
-
-h1 {
-
 }
 
-h2 {
-    font-size: 2em;
+main {
+    overflow-x: hidden;
+    overflow-y: hidden;
 }
+
+h2 { font-size: 2em; }
 
 .section-header {
     font-weight: 300;
