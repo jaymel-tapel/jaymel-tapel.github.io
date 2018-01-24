@@ -36,19 +36,13 @@ $window.on('scroll', function(e) {
     $('.navbar').removeClass('is-collapsed');
   }
 
-  if( ($window .scrollTop() + $window.height() > $otherServices.offset().top) && ($window.scrollTop() < $otherServices.offset().top + $otherServices.height())) {
-    $otherServicesScrollPercent = ($window.scrollTop() + $window .height() - $otherServices.offset().top) / ($otherServices.height() + $window.height());
-    if($window.width() < 992) {
-      $bgSand.css('transform', 'translate3d(0,-' + ($otherServicesScrollPercent/4)*100  + '%,0');
-    } else {
-      $bgSand.css('transform', 'translate3d(0,-' + ($otherServicesScrollPercent/2)*100  + '%',0);      
-    }
+  if( $window.scrollTop() > $otherServices.offset().top + $otherServices.height()) {
+    $bgSky.css('opacity', '1');    
+  } else {
+    $bgSky.css('opacity', '0');    
   }
 
   if( ($window.scrollTop() + $window .height() > $preFooter.offset().top)) {
-    
-    $bgSky.css('transform', 'translate3d(0,' + ( $window.scrollTop() + $window.height() - $preFooter.offset().top ) + 100  + 'px,0)');
-    
     $footerScrollPercent = ($window.scrollTop() + $window .height() - $preFooter.offset().top) / ($preFooter.height() + $window.height());
     $starsFront.css({
       transform: 'translate(-50%,-' + $footerScrollPercent*100/2 + '%) rotate(-' + 15*$footerScrollPercent + 'deg)',
@@ -59,6 +53,7 @@ $window.on('scroll', function(e) {
       opacity: $footerScrollPercent
     });
   } 
+  
 });
 
 
