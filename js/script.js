@@ -17,8 +17,6 @@ $bgSky = $("#footer-sky");
 
 var windowPosition;
 
-
-
 function elementTransition(effectName, selector, effectDelay) {
   $selector = $(selector);
 
@@ -76,6 +74,7 @@ $window.on('load', function () {
     autoplay: true
   });
 
+  elementTransition('bounceInRight', '.events-section .card', 250);             
   fitPhotos();
 
 });
