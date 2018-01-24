@@ -22,7 +22,7 @@ $window.on('load', function () {
   });
 });
 
-$window.on('scroll', $.debounce(3, function(e) {
+$window.on('scroll', function(e) {
   if ( $window .scrollTop() > 150) {
     $navbar.addClass('is-navbar-hidden');
     $('#backToTop').addClass('is-back-visible');
@@ -36,7 +36,7 @@ $window.on('scroll', $.debounce(3, function(e) {
   if( ($window .scrollTop() + $window.height() > $otherServices.offset().top) && ($window.scrollTop() < $otherServices.offset().top + $otherServices.height())) {
     $otherServicesScrollPercent = ($window.scrollTop() + $window .height() - $otherServices.offset().top) / ($otherServices.height() + $window.height());
     if($window.width() < 992) {
-      $bgSand.css('transform', 'translateY(-' + ($otherServicesScrollPercent/4)*100  + '%');
+      $bgSand.css('transform', 'translateY(-' + ($otherServicesScrollPercent/5)*100  + '%');
     } else {
       $bgSand.css('transform', 'translateY(-' + ($otherServicesScrollPercent/2)*100  + '%');      
     }
@@ -53,7 +53,7 @@ $window.on('scroll', $.debounce(3, function(e) {
       opacity: $footerScrollPercent
     });
   } 
-}));
+});
 
 
 
