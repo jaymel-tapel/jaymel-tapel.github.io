@@ -368,7 +368,7 @@ h2 {
     width: 100%;
     height: 100%;
     z-index: -10;
-    transform: translateZ(0);
+    transform: translate3d(0, 0, 0);
     background: url("../img/sand.png");
     background-repeat: repeat;
     background-position: center;
@@ -611,13 +611,12 @@ h2 {
   .footer .footer-sky {
     opacity: 0;
     position: fixed;
-    transform: translateZ(0);
+    transform: translate3d(0, 0, 0);
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
     z-index: -9;
-    transform: translateZ(0);
     background: url("../img/sky.jpg");
     background-size: cover;
     background-position: bottom; }
