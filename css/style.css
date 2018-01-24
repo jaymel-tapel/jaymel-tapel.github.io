@@ -1,7 +1,9 @@
 body, html {
   font-family: "Josefin Sans", "Helvetica-Neue", Helvetica, sans-serif;
   font-size: 16px;
-  box-shadow: 1px 3px 30px #ddd; }
+  box-shadow: 1px 3px 30px #ddd;
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch; }
 
 h2 {
   font-size: 2em; }
