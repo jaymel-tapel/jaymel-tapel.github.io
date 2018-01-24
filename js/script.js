@@ -1,12 +1,15 @@
 $window = $(window);
 $navbar = $('#navbar');
+
+$otherServices = $(".other-services-section");
+$bgSand = $("#bg-sand");
+$otherServicesScrollPercent = 0;
+
+$footerScrollPercent = 0;
 $starsFront = $('#stars-front');
 $starsBack = $('#stars-back');
 $preFooter = $(".pre-footer");
-$otherServices = $(".other-services-section");
-$bgSand = $("#bg-sand");
-$footerScrollPercent = 0;
-$otherServicesScrollPercent = 0;
+$bgSky = $("#footer-sky");
 
 $window.on('load', function () {
   $('#hero-slider').slick({
@@ -42,7 +45,10 @@ $window.on('scroll', function(e) {
     }
   }
 
-  if( ($window .scrollTop() + $window .height() > $preFooter.offset().top) && ($window.scrollTop() < $preFooter.offset().top + $preFooter.height())) {
+  if( ($window.scrollTop() + $window .height() > $preFooter.offset().top) && ($window.scrollTop() < $preFooter.offset().top + $preFooter.height())) {
+    
+    $bgSky.css('transform', 'translateY(' + ( $window.scrollTop() + $window.height() - $preFooter.offset().top )  + 'px)');
+    
     $footerScrollPercent = ($window.scrollTop() + $window .height() - $preFooter.offset().top) / ($preFooter.height() + $window.height());
     $starsFront.css({
       transform: 'translate(-50%,-' + $footerScrollPercent*100/2 + '%) rotate(-' + 15*$footerScrollPercent + 'deg)',
