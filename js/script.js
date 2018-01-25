@@ -78,7 +78,8 @@ $window.on('load', function () {
 
   windowPosition = $(window).scrollTop()+$(window).height();  
   fitPhotos();
-  alert('hey');
+  
+  $window.stop();
 
 });
 
