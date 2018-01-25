@@ -34,11 +34,6 @@
 
 <body>
 
-  <a href="#" id="backToTop" class="backToTop">
-    Back to Top
-    <i class="fa fa-chevron-up" aria-hidden="true"></i>
-  </a>
-
   <header>
     <nav class="navbar" id="navbar">
 
@@ -396,7 +391,7 @@
         <div class="row">
 
           <div class="item col-8">
-            <a href="#">
+            <a href="#" class="lightbox" data-lightbox-group="featured-photos">
               <figure>
                 <img src="img/placeholder.jpg" alt="" data-echo="img/1.jpg">
                 <figcaption>
@@ -408,7 +403,7 @@
           </div>
 
           <div class="item col-4">
-            <a href="#">
+            <a href="#" class="lightbox" data-lightbox-group="featured-photos">
               <figure>
                 <img src="img/placeholder.jpg" alt="" data-echo="img/2.jpg">
                 <figcaption>
@@ -420,7 +415,7 @@
           </div>
 
           <div class="item col-4">
-            <a href="#">
+            <a href="#" class="lightbox" data-lightbox-group="featured-photos">
               <figure>
                 <img src="img/placeholder.jpg"  alt="" data-echo="img/Coron-Palawan.jpg">
                 <figcaption>
@@ -432,7 +427,7 @@
           </div>
 
           <div class="item col-4">
-            <a href="#">
+            <a href="#" class="lightbox" data-lightbox-group="featured-photos">
               <figure>
                   <img src="img/placeholder.jpg"  alt="" data-echo="img/Coron-Palawan.jpg">
                 <figcaption>
@@ -444,7 +439,7 @@
           </div>
 
           <div class="item col-4">
-            <a href="#">
+            <a href="#" class="lightbox" data-lightbox-group="featured-photos">
               <figure>
                 <img src="img/placeholder.jpg"  alt="" data-echo="img/Coron-Palawan.jpg">
                 <figcaption>
@@ -679,11 +674,36 @@
     </div>
 
     <div class="copyright">
-
             <p>Copyright © 2017, TravelWorldPH. All Rights Reserved.</p>            
-
     </div>
   </footer>
+
+  <a href="#" id="backToTop" class="backToTop">
+    Back to Top
+    <i class="fa fa-chevron-up" aria-hidden="true"></i>
+  </a>
+
+  <div class="lightbox-modal" id="lightbox-modal">
+    <div class="container">
+      <a href="#" id="lightbox-close">&times;</a>
+      <p class="image-index"><span id="lightbox-current-index">1</span> / <span id="lightbox-count">2</span></p>
+      <figure>
+        <img src="img/placeholder.jpg" alt="" id="lightbox-active-image">
+        <a href="#" id="lightbox-next">
+            <i class="fa fa-angle-right" aria-hidden="true"></i>
+          </a>
+          <a href="#" id="lightbox-prev">
+            <i class="fa fa-angle-left" aria-hidden="true"></i>
+          </a>
+      </figure>
+      <p id="lightbox-caption"></p>
+      <div class="lightbox-strip">
+        <ul>
+        </ul>
+      </div>
+
+    </div>
+  </div>
 
   <!-- Jquery -->
   <script src="js/jquery-3.3.1.min.js" ></script>

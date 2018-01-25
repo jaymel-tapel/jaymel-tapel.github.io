@@ -737,6 +737,100 @@ h2 {
   .copyright p {
     margin-bottom: 0; }
 
+.lightbox-modal {
+  display: none;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.85);
+  z-index: 12345678;
+  overflow-y: auto; }
+  .lightbox-modal .container {
+    padding-top: 30px;
+    padding-bottom: 120px;
+    position: relative; }
+  .lightbox-modal .image-index {
+    color: #fff;
+    padding-left: 3px; }
+  .lightbox-modal #lightbox-close {
+    position: absolute;
+    right: 20px;
+    top: 0px;
+    font-size: 3em;
+    color: #fff; }
+    .lightbox-modal #lightbox-close:hover {
+      text-decoration: none; }
+  .lightbox-modal #lightbox-next, .lightbox-modal #lightbox-prev {
+    color: #fff;
+    font-size: 4em;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 0 20px;
+    transition: all 0.5s ease;
+    opacity: 0.75;
+    text-shadow: 0px 3px 7px rgba(0, 0, 0, 0.35); }
+    .lightbox-modal #lightbox-next:hover, .lightbox-modal #lightbox-prev:hover {
+      opacity: 1;
+      background: rgba(0, 0, 0, 0.85); }
+  .lightbox-modal #lightbox-next {
+    right: 0px; }
+  .lightbox-modal #lightbox-prev {
+    left: 0px; }
+  .lightbox-modal figure {
+    position: relative; }
+    .lightbox-modal figure img {
+      height: auto;
+      width: 100%; }
+  .lightbox-modal #lightbox-caption {
+    margin-top: 15px;
+    padding: 3px;
+    color: #ccc; }
+  .lightbox-modal .lightbox-strip {
+    width: 100%;
+    height: 120px;
+    padding: 15px;
+    text-align: center; }
+    .lightbox-modal .lightbox-strip ul {
+      padding-left: 0;
+      list-style-type: none;
+      white-space: nowrap;
+      margin-bottom: 0;
+      overflow-x: auto;
+      margin: 0 -10px 0; }
+      .lightbox-modal .lightbox-strip ul li {
+        display: inline;
+        margin: 3px; }
+    .lightbox-modal .lightbox-strip a:link, .lightbox-modal .lightbox-strip a:visited {
+      position: relative;
+      display: inline-block;
+      width: 100px;
+      height: 100px;
+      overflow: hidden; }
+      .lightbox-modal .lightbox-strip a:link img, .lightbox-modal .lightbox-strip a:visited img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: auto;
+        height: 100%;
+        z-index: -1; }
+    .lightbox-modal .lightbox-strip a.active:after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      background: #76BD0E;
+      opacity: 0.6; }
+
+html.touch #lightbox-next:hover, html.touch #lightbox-prev:hover {
+  opacity: 0.75;
+  background: none; }
+
 @media screen and (max-width: 1200px) {
   body {
     font-size: 14PX; }
