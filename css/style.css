@@ -753,6 +753,10 @@ h2 {
 
   .pre-footer {
     padding: 100px 0 200px; } }
+@media screen and (max-width: 1024px) {
+  .hero-section .slick-arrow:hover, .hero-section .slick-arrow:active {
+    color: #fff;
+    opacity: 1; } }
 @media screen and (max-width: 991px) {
   .navbar {
     padding-top: 15px;
@@ -798,8 +802,8 @@ h2 {
       border: none;
       z-index: 999;
       text-shadow: none; }
-      .navbar a.nav-toggle:active, .navbar a.nav-toggle:visited {
-        color: #fff; }
+    .navbar a:hover, .navbar a:active {
+      color: #fff; }
 
   .dropdown-services {
     background: none;
@@ -947,6 +951,35 @@ h2 {
   .copyright {
     padding: 15px;
     font-size: 0.875em; } }
+html.touch .card:hover, html.touch .card:active {
+  box-shadow: none; }
+  html.touch .card:hover:before, html.touch .card:active:before {
+    top: -1px;
+    bottom: -1px;
+    right: -1px;
+    left: -1px; }
+html.touch .other-services-section a:hover, html.touch .other-services-section a:active {
+  text-decoration: none;
+  transform: translateY(0); }
+  html.touch .other-services-section a:hover .icon-wrapper:after, html.touch .other-services-section a:active .icon-wrapper:after {
+    background: none;
+    transform: translateY(0); }
+  html.touch .other-services-section a:hover .icon-wrapper .fa, html.touch .other-services-section a:hover .icon-label, html.touch .other-services-section a:active .icon-wrapper .fa, html.touch .other-services-section a:active .icon-label {
+    text-shadow: none; }
+html.touch .featured-photos-section {
+  padding: 75px 0 50px;
+  background-color: #fff; }
+  html.touch .featured-photos-section .item:hover:after, html.touch .featured-photos-section .item:active:after {
+    top: -1px;
+    bottom: -1px;
+    right: -1px;
+    left: -1px; }
+  html.touch .featured-photos-section .item:hover figcaption, html.touch .featured-photos-section .item:active figcaption {
+    transform: translateY(100%);
+    opacity: 1; }
+  html.touch .featured-photos-section .item:hover img, html.touch .featured-photos-section .item:active img {
+    transform: scale(1); }
+
 .is-navbar-hidden {
   transform: translateY(-100%); }
 

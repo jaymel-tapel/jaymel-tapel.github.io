@@ -91,11 +91,7 @@ $window.on('scroll', function(e) {
 
   windowPosition = $(window).scrollTop()+$(window).height();
   
-  if($window.width() >= 992) {
-    elementTransition('bounceInRight', '.events-section .card', 250);
-  }
-  
-             
+  elementTransition('fadeIn', '.events-section .card', 250);
   elementTransition('zoomIn', '.other-services-section .col-lg-2', 100);           
   elementTransition('fadeIn', '.featured-photos-section .item', 500);          
   elementTransition('fadeIn', '.subscribe-wrapper', 0);               
