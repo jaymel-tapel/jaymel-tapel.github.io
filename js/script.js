@@ -1,5 +1,7 @@
 
-echo.init();
+echo.init({
+  offset: 300
+});
 
 
 $window = $(window);
@@ -74,8 +76,9 @@ $window.on('load', function () {
     autoplay: true
   });
 
-  elementTransition('bounceInRight', '.events-section .card', 250);             
+  windowPosition = $(window).scrollTop()+$(window).height();  
   fitPhotos();
+  alert('hey');
 
 });
 
@@ -85,9 +88,13 @@ $window.on('resize', function() {
 
 $window.on('scroll', function(e) {
 
-  windowPosition = $(window).scrollTop()+$(window).height(); 
+  windowPosition = $(window).scrollTop()+$(window).height();
   
-  elementTransition('bounceInRight', '.events-section .card', 250);           
+  if($window.width() >= 992) {
+    elementTransition('bounceInRight', '.events-section .card', 250);
+  }
+  
+             
   elementTransition('zoomIn', '.other-services-section .col-lg-2', 100);           
   elementTransition('fadeIn', '.featured-photos-section .item', 500);          
   elementTransition('fadeIn', '.subscribe-wrapper', 0);               
