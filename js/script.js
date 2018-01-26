@@ -308,6 +308,7 @@ gn.init(args).then(function(){
 
     var activeSliderImage =  $("#hero-slider").find('.slick-active img').css('transform', '');    
     var percentOffset;
+    
 
     if(data.do.gamma > 30) {
       percentOffset = 1;
@@ -318,7 +319,6 @@ gn.init(args).then(function(){
     }
 
     var hoverOffset =  (( activeSliderImage.width() - $window.width() ) / 2 ) * (Math.abs(percentOffset));
-    $('.copyright').html(activeSliderImage.width() - $window.width());
     var baseTransform = parseInt(activeSliderImage.css('transform').split(',')[5]);
 
     if(percentOffset < 0) {
@@ -326,6 +326,9 @@ gn.init(args).then(function(){
     } else {
       activeSliderImage.css('transform',  'translate(' + (baseTransform + hoverOffset) + 'px,-50%)');
     }
+
+    $('.copyright').html(activeSliderImage.css('transform') + ' ' + baseTransform + ' ' + hoverOffset);
+    
     
   });
 });
