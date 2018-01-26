@@ -294,15 +294,15 @@ $('.copyright').html('notworking');
 
 var gn = new GyroNorm();
 
-// gn.init({frequency:50}).then(function(){
-//   gn.start(function(data){
+gn.init().then(function(){
+  gn.start(function(data){
 
-//     if(!Modernizr.hasEvent('deviceOrientation')) { 
-//       return false;
-//     }
+    // if(!Modernizr.hasEvent('deviceOrientation')) { 
+    //   return false;
+    // }
 
     
-//     $('.copyright').html(data.do.gamma);
+    $('.copyright').html(data.do.gamma);
 
     
 
@@ -328,6 +328,6 @@ var gn = new GyroNorm();
     //   activeSliderImage.css('left', '+=' + hoverOffset);        
     // }
 
-//   });
-// });
+  });
+});
 
