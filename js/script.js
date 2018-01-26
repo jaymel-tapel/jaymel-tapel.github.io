@@ -319,14 +319,14 @@ gn.init(args).then(function(){
 
     var hoverOffset =  (( activeSliderImage.width() - $window.width() ) / 2 ) * (Math.abs(percentOffset));
     $('.copyright').html(activeSliderImage.width() - $window.width());
-    activeSliderImage.css('transform', '');    
-    var baseTransform = parseInt(activeSliderImage.css('transform').split(',')[5]);
+    // activeSliderImage.css('transform', '');    
+    // var baseTransform = parseInt(activeSliderImage.css('transform').split(',')[5]);
 
-    if(percentOffset < 0) {
-      activeSliderImage.css('transform',  'translate(' + (baseTransform - hoverOffset) + 'px,-50%)');
-    } else {
-      activeSliderImage.css('transform',  'translate(' + (baseTransform + hoverOffset) + 'px,-50%)');
-    }
+    // if(percentOffset < 0) {
+    //   activeSliderImage.css('transform',  'translate(' + (baseTransform - hoverOffset) + 'px,-50%)');
+    // } else {
+    //   activeSliderImage.css('transform',  'translate(' + (baseTransform + hoverOffset) + 'px,-50%)');
+    // }
 
     
     
