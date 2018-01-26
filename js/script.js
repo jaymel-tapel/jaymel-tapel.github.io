@@ -297,26 +297,22 @@ var gn = new GyroNorm();
 gn.init().then(function(){
   gn.start(function(data){
 
-    if(!Modernizr.hasEvent('deviceOrientation')) { 
+    if(!$("html").hasClass('touch')) { 
       return false;
     }
 
-    
-    $('.copyright').html(data.do.gamma);
+    var activeSliderImage =  $("#hero-slider").find('img');    
+    var percentOffset;
 
-    
+    if(data.do.gamma > 30) {
+      percentOffset = 100;
+    } else if (data.do.gamma < -30 ) {
+      percentOffset = -100;
+    } else {
+      percentOffset = (data.do.gamma / 30) * 100;
+    }
 
-
-    // var activeSliderImage =  $("#hero-slider").find('img');    
-    // var percentOffset;
-
-    // if(data.do.gamma > 5) {
-    //   percentOffset = 100;
-    // } else if (data.do.gamma < -5 ) {
-    //   percentOffset = -100;
-    // } else {
-    //   percentOffset = (data.do.gamma / 5) * 100;
-    // }
+    $('.copyright').html(percentOffset);
 
     // var hoverOffset =  (( activeSliderImage.width() - $window.width() ) / 2 ) * (Math.abs(percentOffset));
 
