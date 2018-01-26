@@ -291,14 +291,20 @@ $("#hero-slider").on('mouseleave', function(event) {
 
 var gn = new GyroNorm();
 
-gn.init().then(function(){
+var args = {
+	frequency:30,					// ( How often the object sends the values - milliseconds )
+	decimalCount:2,					// ( How many digits after the decimal point will there be in the return values )
+	logger:null					// ( Function to be called to log messages from gyronorm.js )
+};
+
+gn.init(args).then(function(){
   gn.start(function(data){
 
     if(!$("html").hasClass('touch')) { 
       return false;
     }
 
-    var activeSliderImage =  $("#hero-slider").find('img');    
+    var activeSliderImage =  $("#hero-slider").find('.slick active img');    
     var percentOffset;
 
     if(data.do.gamma > 30) {
