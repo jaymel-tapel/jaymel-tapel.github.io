@@ -293,7 +293,6 @@ var gn = new GyroNorm();
 
 var args = {
 	frequency:30,					// ( How often the object sends the values - milliseconds )
-	decimalCount:2,					// ( How many digits after the decimal point will there be in the return values )
 	logger:null					// ( Function to be called to log messages from gyronorm.js )
 };
 
@@ -304,7 +303,7 @@ gn.init(args).then(function(){
       return false;
     }
 
-    var activeSliderImage =  $("#hero-slider").find('.slick active img');    
+    var activeSliderImage =  $("#hero-slider").find('.slick-active img');    
     var percentOffset;
 
     if(data.do.gamma > 30) {
@@ -318,14 +317,16 @@ gn.init(args).then(function(){
     var hoverOffset =  (( activeSliderImage.width() - $window.width() ) / 2 ) * (Math.abs(percentOffset));
 
     activeSliderImage.css('transform', '');    
-    var baseTransform = parseInt(activeSliderImage.css('transform').split(',')[5])
+    var baseTransform = parseInt(activeSliderImage.css('transform').split(',')[5]);
 
-    $('.copyright').html('baseTransform: ' + baseTransform + ' | hoverOffset:' + hoverOffset);
     if(percentOffset < 0) {
       activeSliderImage.css('transform',  'translate(' + (baseTransform - hoverOffset) + 'px,-50%)');
     } else {
       activeSliderImage.css('transform',  'translate(' + (baseTransform + hoverOffset) + 'px,-50%)');
     }
+
+    $('.copyright').html(activeSliderImage.css('transform'));
+    
     
   });
 });
