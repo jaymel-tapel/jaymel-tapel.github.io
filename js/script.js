@@ -292,7 +292,7 @@ $("#hero-slider").on('mouseleave', function(event) {
 var gn = new GyroNorm();
 
 var args = {
-	frequency:30,					// ( How often the object sends the values - milliseconds )
+	frequency:16,					// ( How often the object sends the values - milliseconds )
 	logger:null					// ( Function to be called to log messages from gyronorm.js )
 };
 
@@ -303,7 +303,7 @@ gn.init(args).then(function(){
       return false;
     }
 
-    var activeSliderImage =  $("#hero-slider").find('.slick-active img');    
+    var activeSliderImage =  $("#hero-slider").find('.slick-active img').css('transform', '');    
     var percentOffset;
 
     if(data.do.gamma > 30) {
@@ -325,7 +325,7 @@ gn.init(args).then(function(){
       activeSliderImage.css('transform',  'translate(' + (baseTransform + hoverOffset) + 'px,-50%)');
     }
 
-    $('.copyright').html(activeSliderImage.css('transform'));
+    $('.copyright').html((baseTransform - hoverOffset));
     
     
   });
