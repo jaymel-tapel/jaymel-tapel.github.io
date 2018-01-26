@@ -292,7 +292,7 @@ $("#hero-slider").on('mouseleave', function(event) {
 var gn = new GyroNorm();
 
 var args = {
-	frequency:16,					// ( How often the object sends the values - milliseconds )
+	frequency:30,					// ( How often the object sends the values - milliseconds )
 	logger:null					// ( Function to be called to log messages from gyronorm.js )
 };
 
@@ -319,7 +319,7 @@ gn.init(args).then(function(){
     }
 
     var hoverOffset =  (( activeSliderImage.width() - $window.width() ) / 2 ) * (Math.abs(percentOffset) /2);
-    var baseTransform = parseInt(activeSliderImage.css('transform').split(',')[5]) * 2;
+    var baseTransform = parseInt(activeSliderImage.css('transform').split(',')[5]) * 1.75;
 
     if(percentOffset < 0) {
       activeSliderImage.css('transform',  'translate(' + (baseTransform - hoverOffset) + 'px,-50%)');
