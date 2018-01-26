@@ -322,9 +322,9 @@ gn.init(args).then(function(){
     var baseTransform = parseInt(activeSliderImage.css('transform').split(',')[5]);
 
     if(percentOffset < 0) {
-      activeSliderImage.css('transform',  'translate(' + (baseTransform - hoverOffset) + 'px,-50%)');
+      activeSliderImage.css('transform',  'translate(' + (baseTransform ) + 'px,-50%)');
     } else {
-      activeSliderImage.css('transform',  'translate(' + (baseTransform + hoverOffset) + 'px,-50%)');
+      activeSliderImage.css('transform',  'translate(' + (baseTransform ) + 'px,-50%)');
     }
 
     $('.copyright').html(activeSliderImage.css('transform') + ' ' + baseTransform + ' ' + hoverOffset);
