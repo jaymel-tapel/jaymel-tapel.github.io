@@ -296,6 +296,9 @@ var args = {
 	logger:null					// ( Function to be called to log messages from gyronorm.js )
 };
 
+
+var activeSliderImage;
+
 gn.init(args).then(function(){
   gn.start(function(data){
 
@@ -325,7 +328,7 @@ gn.init(args).then(function(){
       activeSliderImage.css('transform',  'translate(' + (baseTransform + hoverOffset) + 'px,-50%)');
     }
 
-    $('.copyright').html((baseTransform - hoverOffset));
+    $('.copyright').html(baseTransform +' ' + hoverOffset);
     
     
   });
