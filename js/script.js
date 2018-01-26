@@ -290,7 +290,7 @@ $("#hero-slider").on('mouseleave', function(event) {
 
 
 
-$('.copyright').('notworking');
+$('.copyright').html('notworking');
 
 var gn = new GyroNorm();
 
