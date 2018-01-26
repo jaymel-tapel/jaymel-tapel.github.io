@@ -320,10 +320,10 @@ gn.init().then(function(){
     if(percentOffset < 0) {
       activeSliderImage.css('transform',  'translate(' + baseTransform + (hoverOffset*-1) ) + ',50%)';    
     } else {
-      activeSliderImage.css('transform',  'translate(' + baseTransform + (hoverOffset*-1) ) + ',50%)';    
+      activeSliderImage.css('transform',  'translate(' + baseTransform + (hoverOffset) ) + ',50%)';    
     }
 
-    $('.copyright').html(activeSliderImage.css('transform'));
+    $('.copyright').html(baseTransform + (hoverOffset*-1));
     
 
   });
