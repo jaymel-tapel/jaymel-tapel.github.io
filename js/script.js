@@ -319,7 +319,7 @@ gn.init(args).then(function(){
     }
 
     var hoverOffset =  (( activeSliderImage.width() - $window.width() ) / 2 ) * (Math.abs(percentOffset) /2);
-    var baseTransform = parseInt(activeSliderImage.css('transform').split(',')[5]) * 1.5;
+    var baseTransform = parseInt(activeSliderImage.css('transform').split(',')[5]) * 2;
 
     if(percentOffset < 0) {
       activeSliderImage.css('transform',  'translate(' + (baseTransform - hoverOffset) + 'px,-50%)');
