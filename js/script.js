@@ -306,8 +306,7 @@ gn.init({frequency:50}).then(function(){
 
     var hoverOffset =  (( activeSliderImage.width() - $window.width() ) / 2 ) * (Math.abs(percentOffset));
 
-    alert(hoverOffset);
-    
+    activeSliderImage.css('left', '').css('transition', '');
 
     if(percentOffset < 0) {
       activeSliderImage.css('left', '-=' + hoverOffset);    
