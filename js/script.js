@@ -318,7 +318,7 @@ gn.init(args).then(function(){
     }
 
     var hoverOffset =  (( activeSliderImage.width() - $window.width() ) / 2 ) * (Math.abs(percentOffset));
-
+    $('.copyright').html(activeSliderImage.width() - $window.width());
     activeSliderImage.css('transform', '');    
     var baseTransform = parseInt(activeSliderImage.css('transform').split(',')[5]);
 
@@ -328,7 +328,7 @@ gn.init(args).then(function(){
       activeSliderImage.css('transform',  'translate(' + (baseTransform + hoverOffset) + 'px,-50%)');
     }
 
-    $('.copyright').html(baseTransform +' ' + hoverOffset);
+    
     
     
   });
