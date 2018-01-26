@@ -297,9 +297,9 @@ var gn = new GyroNorm();
 gn.init().then(function(){
   gn.start(function(data){
 
-    // if(!Modernizr.hasEvent('deviceOrientation')) { 
-    //   return false;
-    // }
+    if(!Modernizr.hasEvent('deviceOrientation')) { 
+      return false;
+    }
 
     
     $('.copyright').html(data.do.gamma);
