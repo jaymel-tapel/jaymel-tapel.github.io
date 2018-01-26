@@ -312,17 +312,14 @@ gn.init().then(function(){
       percentOffset = (data.do.gamma / 30);
     }
 
-
-
     var hoverOffset =  (( activeSliderImage.width() - $window.width() ) / 2 ) * (Math.abs(percentOffset));
-    $('.copyright').html(hoverOffset);
 
-    activeSliderImage.css('left', '');
+    activeSliderImage.css('transform', '');
 
     if(percentOffset < 0) {
-      activeSliderImage.css('left', '-=' + hoverOffset);    
+      activeSliderImage.css('transform', 'translate(' + ( parseInt($("#hero-slider").find('img').css('transform').split(',')[5]) +  (hoverOffset*-1) ) + ',50%)');    
     } else {
-      activeSliderImage.css('left', '+=' + hoverOffset);        
+      activeSliderImage.css('transform', 'translate(' + ( parseInt($("#hero-slider").find('img').css('transform').split(',')[5]) +  (hoverOffset) ) + ',50%)');      
     }
 
   });
