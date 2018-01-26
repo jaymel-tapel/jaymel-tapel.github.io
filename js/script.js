@@ -320,10 +320,6 @@ gn.init().then(function(){
     } else {
       activeSliderImage.css('transform',  'translate(' + (baseTransform + hoverOffset) + 'px,-50%)');
     }
-
-    activeSliderImage.css('transform',  'translate(-700px,-50%)');
-    
-    $('.copyright').html(activeSliderImage.css('transform'));
     
   });
 });
