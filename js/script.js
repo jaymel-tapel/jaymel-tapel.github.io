@@ -313,14 +313,18 @@ gn.init().then(function(){
     }
 
     var hoverOffset =  (( activeSliderImage.width() - $window.width() ) / 2 ) * (Math.abs(percentOffset));
+    var baseTransform = parseInt($("#hero-slider").find('img').css('transform').split(',')[5])
 
     activeSliderImage.css('transform', '');
 
     if(percentOffset < 0) {
-      activeSliderImage.css('transform', 'translate(' + ( parseInt($("#hero-slider").find('img').css('transform').split(',')[5]) +  (hoverOffset*-1) ) + ',50%)');    
+      activeSliderImage.css('transform',  'translate(' + baseTransform + (hoverOffset*-1) ) + ',50%)';    
     } else {
-      activeSliderImage.css('transform', 'translate(' + ( parseInt($("#hero-slider").find('img').css('transform').split(',')[5]) +  (hoverOffset) ) + ',50%)');      
+      activeSliderImage.css('transform',  'translate(' + baseTransform + (hoverOffset*-1) ) + ',50%)';    
     }
+
+    $('.copyright').html(activeSliderImage.css('transform'));
+    
 
   });
 });
