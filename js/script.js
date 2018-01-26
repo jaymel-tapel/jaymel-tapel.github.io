@@ -66,7 +66,8 @@ function fitPhotos() {
 $window.on('load', function () {
   $('#hero-slider').slick({
     dots: true,
-    autoplay: true
+    autoplay: true,
+    autoplaySpeed: 3000,
   });
 
   $('#review-slider').slick({
@@ -80,8 +81,9 @@ $window.on('load', function () {
   fitPhotos();
   
   $window.stop();
-
 });
+
+
 
 $window.on('resize', function() {
   fitPhotos(); 
@@ -247,3 +249,42 @@ $(document).on("click", ".lightbox-strip a", function(e) {
   $("#lightbox-active-image").attr('src', nextItem.find('img').attr('src'));
 
 });
+
+$("#hero-slider").on('mousemove', function(event) {
+  var percentOffset =  (( $window.width() / 2 ) - event.pageX) /  ($window.width() / 2 );
+  console.log(percentOffset);
+  
+  var activeSliderImage =  $(this).find('img');
+  var hoverOffset =  ((activeSliderImage.width() - $window.width() ) / 2 ) * (Math.abs(percentOffset));
+  if(activeSliderImage.hasClass('ready')) {
+    activeSliderImage.css('left', '').css('transition', '');
+    if(percentOffset < 0) {
+      $(this).find('img').css('left', '-=' + hoverOffset);    
+    } else {
+      $(this).find('img').css('left', '+=' + hoverOffset);        
+    }
+  }
+});
+
+$("#hero-slider").on('mouseenter', function(event) {
+  var percentOffset =  (( $window.width() / 2 ) - event.pageX) /  ($window.width() / 2 );
+  var activeSliderImage =  $(this).find('img');
+  var hoverOffset =  (( activeSliderImage.width() - $window.width() ) / 2 ) * (Math.abs(percentOffset));
+  activeSliderImage.css('left', '').css('transition', 'all 100ms ease');
+
+  if(percentOffset < 0) {
+    activeSliderImage.css('left', '-=' + hoverOffset);    
+  } else {
+    activeSliderImage.css('left', '+=' + hoverOffset);        
+  }
+
+  setTimeout(function(){
+    activeSliderImage.addClass('ready');
+  }, 100);
+
+});
+
+$("#hero-slider").on('mouseleave', function(event) {
+  $(this).find('img').css('transition', 'all 250ms ease').css('left', '').removeClass('ready');
+});
+
