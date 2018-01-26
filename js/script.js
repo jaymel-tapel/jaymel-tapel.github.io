@@ -312,17 +312,18 @@ gn.init().then(function(){
       percentOffset = (data.do.gamma / 30) * 100;
     }
 
-    $('.copyright').html(percentOffset);
 
-    // var hoverOffset =  (( activeSliderImage.width() - $window.width() ) / 2 ) * (Math.abs(percentOffset));
 
-    // activeSliderImage.css('left', '').css('transition', '');
+    var hoverOffset =  (( activeSliderImage.width() - $window.width() ) / 2 ) * (Math.abs(percentOffset));
+    $('.copyright').html(hoverOffset);
+    
+    activeSliderImage.css('left', '').css('transition', '');
 
-    // if(percentOffset < 0) {
-    //   activeSliderImage.css('left', '-=' + hoverOffset);    
-    // } else {
-    //   activeSliderImage.css('left', '+=' + hoverOffset);        
-    // }
+    if(percentOffset < 0) {
+      activeSliderImage.css('left', '-=' + hoverOffset);    
+    } else {
+      activeSliderImage.css('left', '+=' + hoverOffset);        
+    }
 
   });
 });
