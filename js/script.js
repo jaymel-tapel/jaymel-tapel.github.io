@@ -318,8 +318,8 @@ gn.init(args).then(function(){
       percentOffset = (data.do.gamma / 30);
     }
 
-    var hoverOffset =  (( activeSliderImage.width() - $window.width() ) / 2 ) * (Math.abs(percentOffset));
-    var baseTransform = parseInt(activeSliderImage.css('transform').split(',')[5]) * 2;
+    var hoverOffset =  (( activeSliderImage.width() - $window.width() ) / 2 ) * (Math.abs(percentOffset) /2);
+    var baseTransform = parseInt(activeSliderImage.css('transform').split(',')[5]) * 1.5;
 
     if(percentOffset < 0) {
       activeSliderImage.css('transform',  'translate(' + (baseTransform - hoverOffset) + 'px,-50%)');
