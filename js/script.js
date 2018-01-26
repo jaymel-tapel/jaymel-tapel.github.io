@@ -265,6 +265,7 @@ $("#hero-slider").on('mousemove', function(event) {
   }
 });
 
+
 $("#hero-slider").on('mouseenter', function(event) {
   var percentOffset =  (( $window.width() / 2 ) - event.pageX) /  ($window.width() / 2 );
   var activeSliderImage =  $(this).find('img');
@@ -288,8 +289,8 @@ $("#hero-slider").on('mouseleave', function(event) {
 });
 
 
-alert('hey');
 
+$('.copyright').('notworking');
 
 var gn = new GyroNorm();
 
@@ -301,6 +302,7 @@ gn.init({frequency:50}).then(function(){
     }
 
     
+    $('.copyright').html(data.do.gamma);
 
     
 
