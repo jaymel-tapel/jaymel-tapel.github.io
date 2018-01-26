@@ -288,6 +288,9 @@ $("#hero-slider").on('mouseleave', function(event) {
 });
 
 
+alert('hey');
+
+
 var gn = new GyroNorm();
 
 gn.init({frequency:50}).then(function(){
@@ -297,7 +300,6 @@ gn.init({frequency:50}).then(function(){
       return false;
     }
 
-    alert('hey');
     
 
     
