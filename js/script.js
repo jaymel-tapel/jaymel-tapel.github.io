@@ -1,6 +1,6 @@
 
 echo.init({
-  offset: 300
+  offset: 1000
 });
 
 
@@ -292,6 +292,7 @@ var gn = new GyroNorm();
 gn.init({frequency:50}).then(function(){
   gn.start(function(data){
 
+
     var activeSliderImage =  $("#hero-slider").find('img');    
     var percentOffset;
 
@@ -304,6 +305,8 @@ gn.init({frequency:50}).then(function(){
     }
 
     var hoverOffset =  (( activeSliderImage.width() - $window.width() ) / 2 ) * (Math.abs(percentOffset));
+
+    alert(hoverOffset);
     
 
     if(percentOffset < 0) {
