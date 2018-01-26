@@ -290,8 +290,6 @@ $("#hero-slider").on('mouseleave', function(event) {
 
 
 
-$('.copyright').html('notworking');
-
 var gn = new GyroNorm();
 
 gn.init().then(function(){
@@ -318,14 +316,10 @@ gn.init().then(function(){
     activeSliderImage.css('transform', '');
 
     if(percentOffset < 0) {
-      activeSliderImage.css('transform',  'translate(' + baseTransform + (hoverOffset*-1) ) + ',50%)';    
+      activeSliderImage.css('transform',  'translate(' + (baseTransform + (hoverOffset*-1))) + 'px,50%)';    
     } else {
-      activeSliderImage.css('transform',  'translate(' + baseTransform + (hoverOffset) ) + ',50%)';    
+      activeSliderImage.css('transform',  'translate(' + (baseTransform + hoverOffset)) + 'px,50%)';    
     }
-
-    $('.copyright').html(baseTransform + (hoverOffset*-1));
-    
-
   });
 });
 
