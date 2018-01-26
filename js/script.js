@@ -305,19 +305,19 @@ gn.init().then(function(){
     var percentOffset;
 
     if(data.do.gamma > 30) {
-      percentOffset = 100;
+      percentOffset = 1;
     } else if (data.do.gamma < -30 ) {
-      percentOffset = -100;
+      percentOffset = -1;
     } else {
-      percentOffset = (data.do.gamma / 30) * 100;
+      percentOffset = (data.do.gamma / 30);
     }
 
 
 
     var hoverOffset =  (( activeSliderImage.width() - $window.width() ) / 2 ) * (Math.abs(percentOffset));
     $('.copyright').html(hoverOffset);
-    
-    activeSliderImage.css('left', '').css('transition', '');
+
+    activeSliderImage.css('left', '');
 
     if(percentOffset < 0) {
       activeSliderImage.css('left', '-=' + hoverOffset);    
