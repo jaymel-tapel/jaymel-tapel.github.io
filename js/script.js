@@ -98,7 +98,7 @@ $window.on('scroll', function(e) {
   elementTransition('fadeIn', '.featured-photos-section .item', 500);          
   elementTransition('fadeIn', '.subscribe-wrapper', 0);               
   
-  if ( $window .scrollTop() > 150) {
+  if ( $window .scrollTop() > 100) {
     $navbar.addClass('is-navbar-hidden');
     $('#backToTop').addClass('is-back-visible');
   } else {
