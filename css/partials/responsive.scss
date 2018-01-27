@@ -130,6 +130,7 @@
     }
 
     .hero-section {
+
         .slick-arrow {
             display: none!important;
         }
@@ -214,6 +215,12 @@
 @media screen and (max-width: 767px) {
 
     .section-header span { display: block; }
+
+    .hero-section {
+        .hero-slide {
+            height:92vh;
+        }
+    }
 
     .events-section .card .card-body { padding: 15px; }
     
