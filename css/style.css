@@ -371,10 +371,9 @@ h2 {
     height: 100%;
     z-index: -10;
     transform: translate3d(0, 0, 0);
-    background: url("../img/sand.png");
+    background: url("../img/sand.jpg");
     background-repeat: repeat;
-    background-position: center;
-    background-color: #000; }
+    background-position: center; }
     .other-services-section .bg-sand:before {
       content: "";
       display: block;

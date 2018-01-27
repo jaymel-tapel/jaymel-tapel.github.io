@@ -289,47 +289,4 @@ $("#hero-slider").on('mouseleave', function(event) {
 });
 
 
-var gn = new GyroNorm();
-
-var args = {
-	frequency:30,					// ( How often the object sends the values - milliseconds )
-	logger:null					// ( Function to be called to log messages from gyronorm.js )
-};
-
-
-var activeSliderImage;
-
-gn.init(args).then(function(){
-  gn.start(function(data){
-
-    if(!$("html").hasClass('touch')) { 
-      return false;
-    }
-
-    var activeSliderImage =  $("#hero-slider").find('.slick-active img').css('transform', '');    
-    var percentOffset;
-    
-
-    if(data.do.gamma > 30) {
-      percentOffset = 1;
-    } else if (data.do.gamma < -30 ) {
-      percentOffset = -1;
-    } else {
-      percentOffset = (data.do.gamma / 30);
-    }
-
-    var hoverOffset =  (( activeSliderImage.width() - $window.width() ) / 2 ) * (Math.abs(percentOffset) /2);
-    var baseTransform = parseInt(activeSliderImage.css('transform').split(',')[5]) * 1.75;
-
-    if(percentOffset < 0) {
-      activeSliderImage.css('transform',  'translate(' + (baseTransform - hoverOffset) + 'px,-50%)');
-    } else {
-      activeSliderImage.css('transform',  'translate(' + (baseTransform + hoverOffset) + 'px,-50%)');
-    }
-
-    $('.copyright').html(activeSliderImage.css('transform') + ' ' + baseTransform + ' ' + hoverOffset);
-    
-    
-  });
-});
 
