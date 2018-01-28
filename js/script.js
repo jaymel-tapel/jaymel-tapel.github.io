@@ -76,12 +76,12 @@ var gn = new GyroNorm();
 
 gn.init( args ).then(function(){
   gn.start(function(data){
-    if(data.do.gamma < -25) {
-      heroSpeed = -5;
+    if(data.do.gamma < -5) {
+      heroSpeed = -1;
     } else if (data.do.gamma <  -15 ) {
       heroSpeed = -3;
-    } else if (data.do.gamma < -5 ) {
-      heroSpeed = -1;
+    } else if (data.do.gamma < -25 ) {
+      heroSpeed = -5;
     } else if (data.do.gamma >  5 ) {
       heroSpeed = 1;
     }  else if (data.do.gamma >  15 ) {
