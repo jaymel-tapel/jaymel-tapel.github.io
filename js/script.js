@@ -18,7 +18,6 @@ $preFooter = $(".pre-footer");
 $bgSky = $("#footer-sky");
 
 var slickTimer;
-
 var windowPosition;
 
 function elementTransition(effectName, selector, effectDelay) {
@@ -64,75 +63,71 @@ function fitPhotos() {
   }
 }
 
+
+var heroInterval;
+var heroSpeed = -4;
+var heroOffset = 0;
+
+function heroMove() {
+  heroInterval = setInterval(function() {
+
+    $activeImage = $(".slick-active img").not('.slick-cloned');
+    
+    heroOffset += heroSpeed;
+    $activeImage.css('transform', 'translate(' + (parseInt($activeImage.css('transform').split(',')[4]) + heroSpeed) + 'px,-50%)');
+
+    if(( heroOffset > ( $activeImage.width() - $window.width()) && heroSpeed > 0  )) {
+      $('#hero-slider').slick('slickPrev');
+      clearInterval(heroInterval);      
+    } 
+    else if (( heroOffset <  $window.width()) && heroSpeed < 0 ) {
+      $('#hero-slider').slick('slickNext');
+      clearInterval(heroInterval);    
+    }
+    
+  }, 16);
+}
+
 $('#hero-slider').on('init', function(event, slick){
 
   if(!$('html').hasClass('touch')) {
-    return false;
+    slickTimer = setInterval(function() {
+      $('#hero-slider').slick('slickNext');
+    }, 5000);
+  } else {
+    heroOffset = $(".slick-active img").not('.slick-cloned').width()/2;
   }
 
-  slickTimer = setInterval(function() {
-    $('#hero-slider').slick('slickNext');
-  }, 5000);
+  heroMove();
 
-  var images = $('#hero-slider img');
-  var slides = ($('.hero-slide').not('.slick-cloned'));
-
-
-  $.each(images, function (i, image) { 
-    var hoverOffset =  ($(image).width() - $window.width() ) / 2 ;
-    $(image).css('transform',  'translate(-' +  $window.width()/2 + 'px,-50%)');
-  });
-
-  $.each(slides, function (i, slide) { 
-    if($(slide).hasClass('slick-active')) {
-      $(slide).find('img').css('transition', 'all 5s linear')
-      .css('transform', 'translate(' + ((($window.width()/2) * -1) -(($(slide).find('img').width() - $window.width()) /2 ))  + 'px,-50%)'  );
-    }
-  });
-  
 });
 
 $('#hero-slider').on('beforeChange', function(event, slick, currentSlide, nextSlide){
-  if(!$('html').hasClass('touch')) {
-    return false;
+  if(heroSpeed < 0 ) {
+    $.each($(".hero-slide").not('.slick-active'), function (indexInArray, slide) { 
+      $(slide).find('img').css('transform', 'translate(-' + $window.width()/2 + 'px, -50%)');
+    });
+  } else {
+    $.each($(".hero-slide").not('.slick-active'), function (indexInArray, slide) { 
+      $(slide).find('img').css('transform', 'translate(-' + ($(slide).find('img').width() - $window.width()/2) + 'px, -50%)');
+    });
   }
-  var images = $('#hero-slider img');
-  var slides = ($('.hero-slide').not('.slick-cloned'));
-
-  $.each(images, function (i, image) { 
-    var hoverOffset =  ($(image).width() - $window.width() ) / 2 ;
-    $(image).css('transform',  'translate(-' +  $window.width()/2 + 'px,-50%)');
-  });
 });
 
 $('#hero-slider').on('afterChange', function(event, slick, currentSlide, nextSlide){
-
-  if(!$('html').hasClass('touch')) {
-    return false;
-  }
-  var slides = ($('.hero-slide').not('.slick-cloned'));
-  
-  $.each(slides, function (i, slide) { 
-    if($(slide).hasClass('slick-active')) {
-      $(slide).find('img').css('transition', 'all 5s linear')
-      .css('transform', 'translate(' + ((($window.width()/2) * -1) -(($(slide).find('img').width() - $window.width()) /2 ))  + 'px,-50%)'  );
-    }
-  });
-
-  clearInterval(slickTimer);
-  slickTimer = setInterval(function() {
-    $('#hero-slider').slick('slickNext');
-  }, 5000);
-  
+  heroOffset = $(".slick-active img").not('.slick-cloned').width();
+  heroMove();
 });
 
 
 
 $window.on('load', function () {
+
   $('#hero-slider').slick({
     dots: true,
     autoplay: false
-  });
+  });  
+  
 
   $('#review-slider').slick({
     prevArrow: '<i class="fa fa-angle-left prev" aria-hidden="true"></i>',
