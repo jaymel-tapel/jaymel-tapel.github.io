@@ -65,8 +65,33 @@ function fitPhotos() {
 
 
 var heroInterval;
-var heroSpeed = -4;
+var heroSpeed = 0;
 var heroOffset = 0;
+
+var args = {
+  frequency:16
+}
+
+var gn = new GyroNorm();
+
+gn.init( args ).then(function(){
+  gn.start(function(data){
+    if(data.do.gamma < -30) {
+      heroSpeed = -4;
+    } else if (data.do.gamma <  -20 ) {
+      heroSpeed = -2;
+    } else if (data.do.gamma < -10 ) {
+      heroSpeed = -1;
+    } else if (data.do.gamma >  10 ) {
+      heroSpeed = 1;
+    }  else if (data.do.gamma >  20 ) {
+      heroSpeed = 2;
+    }  else if (data.do.gamma >  30 ) {
+      heroSpeed = 4;
+    }
+  });
+});
+
 
 function heroMove() {
   heroInterval = setInterval(function() {
@@ -89,7 +114,6 @@ function heroMove() {
 }
 
 $('#hero-slider').on('init', function(event, slick){
-
   if(!$('html').hasClass('touch')) {
     slickTimer = setInterval(function() {
       $('#hero-slider').slick('slickNext');
@@ -97,9 +121,7 @@ $('#hero-slider').on('init', function(event, slick){
   } else {
     heroOffset = $(".slick-active img").not('.slick-cloned').width()/2;
   }
-
   heroMove();
-
 });
 
 $('#hero-slider').on('beforeChange', function(event, slick, currentSlide, nextSlide){
@@ -121,29 +143,21 @@ $('#hero-slider').on('afterChange', function(event, slick, currentSlide, nextSli
 
 
 
-$window.on('load', function () {
 
+$window.on('load', function () {
   $('#hero-slider').slick({
     dots: true,
     autoplay: false
   });  
-  
-
   $('#review-slider').slick({
     prevArrow: '<i class="fa fa-angle-left prev" aria-hidden="true"></i>',
     nextArrow: '<i class="fa fa-angle-right next" aria-hidden="true"></i>',
     dots: true,
     autoplay: true
   });
-
   windowPosition = $(window).scrollTop()+$(window).height();  
   fitPhotos();
-  
 });
-
-
-
-
 
 $window.on('resize', function() {
   fitPhotos(); 
