@@ -17,6 +17,8 @@ $starsBack = $('#stars-back');
 $preFooter = $(".pre-footer");
 $bgSky = $("#footer-sky");
 
+$heroSlider = $('#hero-slider');
+
 var slickTimer;
 var windowPosition;
 
@@ -65,7 +67,7 @@ function fitPhotos() {
 
 
 var heroInterval;
-var heroSpeed = 0;
+var heroSpeed = 6;
 var heroOffset = 0;
 
 var args = {
@@ -77,17 +79,17 @@ var gn = new GyroNorm();
 gn.init( args ).then(function(){
   gn.start(function(data){
     if(data.do.gamma < -25) {
-      heroSpeed = -5;
+      heroSpeed = -6;
     } else if (data.do.gamma <  -15 ) {
-      heroSpeed = -3;
+      heroSpeed = -4;
     } else if (data.do.gamma < -5 ) {
-      heroSpeed = -1;
+      heroSpeed = -2;
     } else if (data.do.gamma >  25 ) {
-      heroSpeed = 5;
+      heroSpeed = 6;
     }  else if (data.do.gamma >  15 ) {
-      heroSpeed = 3;
+      heroSpeed = 4;
     }  else if (data.do.gamma >  5 ) {
-      heroSpeed = 1;
+      heroSpeed = 2;
     } else {
       heroSpeed = 0;
     }
@@ -98,27 +100,28 @@ gn.init( args ).then(function(){
 function heroMove() {
   heroInterval = setInterval(function() {
 
-    $activeImage = $(".slick-active img").not('.slick-cloned');
-    
-    heroOffset += heroSpeed;
-    $activeImage.css('transform', 'translate(' + (parseInt($activeImage.css('transform').split(',')[4]) + heroSpeed) + 'px,-50%)');
+    if(!$heroSlider.hasClass('is-paused')) {
+      $activeImage = $(".slick-active img").not('.slick-cloned');
+      
+      heroOffset += heroSpeed;
+      $activeImage.css('transform', 'translate(' + (parseInt($activeImage.css('transform').split(',')[4]) + heroSpeed) + 'px,-50%)');
 
-    if(( heroOffset > ( $activeImage.width() - $window.width()) && heroSpeed > 0  )) {
-      $('#hero-slider').slick('slickPrev');
-      clearInterval(heroInterval);      
-    } 
-    else if (( heroOffset <  $window.width()) && heroSpeed < 0 ) {
-      $('#hero-slider').slick('slickNext');
-      clearInterval(heroInterval);    
+      if(( heroOffset > ( $activeImage.width() - $window.width()) && heroSpeed > 0  )) {
+        $heroSlider.slick('slickPrev');
+        clearInterval(heroInterval);      
+      } 
+      else if (( heroOffset <  $window.width()) && heroSpeed < 0 ) {
+        $heroSlider.slick('slickNext');
+        clearInterval(heroInterval);    
+      }
     }
-    
-  }, 16);
+  }, 20);
 }
 
-$('#hero-slider').on('init', function(event, slick){
+$heroSlider.on('init', function(event, slick){
   if(!$('html').hasClass('touch')) {
     slickTimer = setInterval(function() {
-      $('#hero-slider').slick('slickNext');
+      $heroSlider.slick('slickNext');
     }, 5000);
   } else {
     heroOffset = $(".slick-active img").not('.slick-cloned').width()/2;
@@ -126,7 +129,7 @@ $('#hero-slider').on('init', function(event, slick){
   heroMove();
 });
 
-$('#hero-slider').on('beforeChange', function(event, slick, currentSlide, nextSlide){
+$heroSlider.on('beforeChange', function(event, slick, currentSlide, nextSlide){
   if(heroSpeed < 0 ) {
     $.each($(".hero-slide").not('.slick-active'), function (indexInArray, slide) { 
       $(slide).find('img').css('transform', 'translate(-' + $window.width()/2 + 'px, -50%)');
@@ -138,7 +141,7 @@ $('#hero-slider').on('beforeChange', function(event, slick, currentSlide, nextSl
   }
 });
 
-$('#hero-slider').on('afterChange', function(event, slick, currentSlide, nextSlide){
+$heroSlider.on('afterChange', function(event, slick, currentSlide, nextSlide){
   if(heroSpeed < 0) {
     heroOffset = $(".slick-active img").not('.slick-cloned').width();
   } else {
@@ -146,9 +149,6 @@ $('#hero-slider').on('afterChange', function(event, slick, currentSlide, nextSli
   }
   heroMove();
 });
-
-
-
 
 $window.on('load', function () {
   $('#hero-slider').slick({
@@ -176,7 +176,13 @@ $window.on('scroll', function(e) {
   elementTransition('fadeIn', '.events-section .card', 250);
   elementTransition('zoomIn', '.other-services-section .col-lg-2', 100);           
   elementTransition('fadeIn', '.featured-photos-section .item', 500);          
-  elementTransition('fadeIn', '.subscribe-wrapper', 0);               
+  elementTransition('fadeIn', '.subscribe-wrapper', 0);
+  
+  if($window.scrollTop() > $heroSlider.height()) {
+    $heroSlider.addClass('is-paused');
+  } else {
+    $heroSlider.removeClass('is-paused');
+  }
   
   if ( $window .scrollTop() > 100) {
     $navbar.addClass('is-navbar-hidden');
