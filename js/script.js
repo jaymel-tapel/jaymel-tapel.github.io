@@ -76,18 +76,20 @@ var gn = new GyroNorm();
 
 gn.init( args ).then(function(){
   gn.start(function(data){
-    if(data.do.gamma < -30) {
-      heroSpeed = -4;
-    } else if (data.do.gamma <  -20 ) {
-      heroSpeed = -2;
-    } else if (data.do.gamma < -10 ) {
+    if(data.do.gamma < -25) {
+      heroSpeed = -5;
+    } else if (data.do.gamma <  -15 ) {
+      heroSpeed = -3;
+    } else if (data.do.gamma < -5 ) {
       heroSpeed = -1;
-    } else if (data.do.gamma >  10 ) {
+    } else if (data.do.gamma >  5 ) {
       heroSpeed = 1;
-    }  else if (data.do.gamma >  20 ) {
-      heroSpeed = 2;
-    }  else if (data.do.gamma >  30 ) {
-      heroSpeed = 4;
+    }  else if (data.do.gamma >  15 ) {
+      heroSpeed = 3;
+    }  else if (data.do.gamma >  25 ) {
+      heroSpeed = 5;
+    } else {
+      heroSpeed = 0;
     }
   });
 });
@@ -137,7 +139,11 @@ $('#hero-slider').on('beforeChange', function(event, slick, currentSlide, nextSl
 });
 
 $('#hero-slider').on('afterChange', function(event, slick, currentSlide, nextSlide){
-  heroOffset = $(".slick-active img").not('.slick-cloned').width();
+  if(heroSpeed < 0) {
+    heroOffset = $(".slick-active img").not('.slick-cloned').width();
+  } else {
+    heroOffset = 0;
+  }
   heroMove();
 });
 
