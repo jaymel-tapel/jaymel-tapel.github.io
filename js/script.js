@@ -59,9 +59,9 @@ var gn = new GyroNorm();
 var increment = 0;
 
 
-testInterval = setInterval(function() {
-  $('.btn-scroll').html(increment++);
-}, 1000);
+$window.on('scroll', function() {
+  $('.btn-scroll').html(increment++);  
+});
 
 
 // gn.init( args ).then(function(){
