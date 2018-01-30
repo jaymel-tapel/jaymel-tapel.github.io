@@ -183,7 +183,7 @@ $heroSlider.on('afterChange', function(event, slick, currentSlide, nextSlide){
 });
 
 $window.on("scrollstop",{latency: 100}, function() {
-    $activeImage.trigger("click");
+    $heroSlider.trigger("click");
 });
 
 $heroSlider.on('click', function() {
