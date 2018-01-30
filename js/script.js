@@ -185,6 +185,7 @@ $window
   })
   .on("scrollstop",{latency: 100}, function() {
     heroMove();
+    $heroSlider.trigger("click");
 });
 
 
