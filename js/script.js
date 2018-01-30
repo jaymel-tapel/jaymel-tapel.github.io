@@ -62,17 +62,17 @@ gn.init( args ).then(function(){
   gn.start(function(data){
     if(!isLandscape()) {
       if(data.do.gamma < -25) {
-        heroSpeed = -50;
+        heroSpeed = -100;
       } else if (data.do.gamma <  -15 ) {
-        heroSpeed = -25;
+        heroSpeed = -50;
       } else if (data.do.gamma < -5 ) {
-        heroSpeed = -15;
+        heroSpeed = -25;
       } else if (data.do.gamma >  25 ) {
-        heroSpeed = 50;
+        heroSpeed = 100;
       }  else if (data.do.gamma >  15 ) {
-        heroSpeed = 25;
+        heroSpeed = 50;
       }  else if (data.do.gamma >  5 ) {
-        heroSpeed = 15;
+        heroSpeed = 25;
       } else {
         heroSpeed = 0;
       }
@@ -80,34 +80,34 @@ gn.init( args ).then(function(){
       if(data.do.gamma < 180) {
         // landscape left
         if(data.do.beta < -25) {
-          heroSpeed = -50;
+          heroSpeed = -100;
         } else if (data.do.beta <  -15 ) {
-          heroSpeed = -25;
+          heroSpeed = -50;
         } else if (data.do.beta < -5 ) {
-          heroSpeed = -15;
+          heroSpeed = -25;
         } else if (data.do.beta >  25 ) {
-          heroSpeed = 50;
+          heroSpeed = 100;
         }  else if (data.do.beta >  15 ) {
-          heroSpeed = 25;
+          heroSpeed = 50;
         }  else if (data.do.beta >  5 ) {
-          heroSpeed = 15;
+          heroSpeed = 25;
         } else {
           heroSpeed = 0;
         }
       } else {
         // landscape right
         if(data.do.beta < -25) {
-          heroSpeed = 50;
+          heroSpeed = 100;
         } else if (data.do.beta <  -15 ) {
-          heroSpeed = 25;
+          heroSpeed = 50;
         } else if (data.do.beta < -5 ) {
-          heroSpeed = 15;
+          heroSpeed = 25;
         } else if (data.do.beta >  25 ) {
-          heroSpeed = -50;
+          heroSpeed = -100;
         }  else if (data.do.beta >  15 ) {
-          heroSpeed = -25;
+          heroSpeed = -50;
         }  else if (data.do.beta >  5 ) {
-          heroSpeed = -15;
+          heroSpeed = -25;
         } else {
           heroSpeed = 0;
         }
