@@ -241,7 +241,7 @@ $window.on('scroll', function(e) {
   //     transform: 'translate3d(-50%,-' + $footerScrollPercent*100/5 + '%, 0) rotate(-' + 5*$footerScrollPercent + 'deg)',
   //     opacity: $footerScrollPercent
   //   });
-  } 
+  // } 
 });
 
 
