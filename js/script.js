@@ -185,9 +185,11 @@ $heroSlider.on('afterChange', function(event, slick, currentSlide, nextSlide){
 });
 
 $window.on('scrollstop', function() {
-  $heroSlider.click();
-  $heroSlider.find('.slick-active').click();
-  $activeImage.click();
+  clearInterval(heroInterval);
+});
+
+$window.on('scrollstop', function() {
+  heroMove();
 });
 
 $window.on('load', function () {
