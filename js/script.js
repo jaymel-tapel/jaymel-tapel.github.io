@@ -184,6 +184,14 @@ $heroSlider.on('afterChange', function(event, slick, currentSlide, nextSlide){
   heroMove();
 });
 
+$window
+  .on('scrollstart', {latency: 100}, function() {
+    clearInterval(heroInterval);
+  })
+  .on('scrollstop', {latency: 100}, function() {
+    heroMove();    
+  });
+
 $window.on('load', function () {
   $('#hero-slider').slick({
     dots: true,
