@@ -53,16 +53,10 @@ function isLandscape() {
   return (window.orientation === 90 || window.orientation === -90);
 }
 
+heroSpeed = -50;
+
 var args = { frequency:100 }
 var gn = new GyroNorm();
-
-var increment = 0;
-
-
-heroInterval = setInterval(function() {
-  $('.copyright').html(increment++);
-}, 100);
-
 
 gn.init( args ).then(function(){
   gn.start(function(data){
@@ -86,34 +80,34 @@ gn.init( args ).then(function(){
       if(data.do.gamma < 180) {
         // landscape left
         if(data.do.beta < -25) {
-          heroSpeed = -8;
+          heroSpeed = -50;
         } else if (data.do.beta <  -15 ) {
-          heroSpeed = -4;
+          heroSpeed = -25;
         } else if (data.do.beta < -5 ) {
-          heroSpeed = -2;
+          heroSpeed = -15;
         } else if (data.do.beta >  25 ) {
-          heroSpeed = 8;
+          heroSpeed = 50;
         }  else if (data.do.beta >  15 ) {
-          heroSpeed = 4;
+          heroSpeed = 25;
         }  else if (data.do.beta >  5 ) {
-          heroSpeed = 2;
+          heroSpeed = 15;
         } else {
           heroSpeed = 0;
         }
       } else {
         // landscape right
         if(data.do.beta < -25) {
-          heroSpeed = 8;
+          heroSpeed = 50;
         } else if (data.do.beta <  -15 ) {
-          heroSpeed = 4;
+          heroSpeed = 25;
         } else if (data.do.beta < -5 ) {
-          heroSpeed = 2;
+          heroSpeed = 15;
         } else if (data.do.beta >  25 ) {
-          heroSpeed = -8;
+          heroSpeed = -50;
         }  else if (data.do.beta >  15 ) {
-          heroSpeed = -4;
+          heroSpeed = -25;
         }  else if (data.do.beta >  5 ) {
-          heroSpeed = -2;
+          heroSpeed = -15;
         } else {
           heroSpeed = 0;
         }
@@ -122,8 +116,6 @@ gn.init( args ).then(function(){
     if($window.width() >= 768 ) {
       heroSpeed /= 2;
     }
-
-    
   });
 });
 
