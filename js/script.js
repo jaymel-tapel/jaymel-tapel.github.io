@@ -111,6 +111,7 @@ gn.init( args ).then(function(){
         }
       }
     }
+    heroSpeed *= 4;
     if($window.width() >= 768 ) {
       heroSpeed /= 2;
     }
