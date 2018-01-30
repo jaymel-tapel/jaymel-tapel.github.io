@@ -975,6 +975,9 @@ html.touch #lightbox-next:hover, html.touch #lightbox-prev:hover {
     p {
       margin-top: 15px; } }
 @media screen and (max-width: 767px) {
+  #backToTop {
+    right: 10px; }
+
   .section-header span {
     display: block; }
 
