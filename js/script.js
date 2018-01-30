@@ -140,12 +140,12 @@ function heroMove() {
       $heroSlider.addClass('tilt').slick('slickNext');
     }
 
-  }, 250);
+  }, 1000);
 }
 
 $heroSlider.on('init', function(event, slick){
   $activeImage = $(".hero-slide.slick-active").not('.slick-cloned').find('img');
-  $activeImage.css('transition', 'all 0.25s linear');
+  $activeImage.css('transition', 'all 1s linear');
   if(!$('html').hasClass('touch')) {
     slickTimer = setInterval(function() {
       $heroSlider.slick('slickNext');
