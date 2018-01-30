@@ -144,16 +144,7 @@ function heroMove() {
 }
 
 $heroSlider.on('init', function(event, slick){
-  $activeImage = $(".hero-slide.slick-active").not('.slick-cloned').find('img');
-  $activeImage.css('transition', 'all 0.25s linear');
-  if(!$('html').hasClass('touch')) {
-    slickTimer = setInterval(function() {
-      $heroSlider.slick('slickNext');
-    }, 5000);
-  } else {
-    heroOffset = $activeImage.width()/2;
-    heroMove();
-  }
+ 
 });
 
 $heroSlider.on('beforeChange', function(event, slick, currentSlide, nextSlide){
@@ -189,7 +180,16 @@ $window.on('scrollstop', {latency: 100}, function() {
 });
 
 $window.on('scrollstop', {latency: 250}, function() {
-  heroMove();
+  $activeImage = $(".hero-slide.slick-active").not('.slick-cloned').find('img');
+  $activeImage.css('transition', 'all 0.25s linear');
+  if(!$('html').hasClass('touch')) {
+    slickTimer = setInterval(function() {
+      $heroSlider.slick('slickNext');
+    }, 5000);
+  } else {
+    heroOffset = $activeImage.width()/2;
+    heroMove();
+  }
 });
 
 $window.on('load', function () {
