@@ -409,9 +409,9 @@ $("#hero-slider").on('mouseenter', function(event) {
 
 });
 
-$("#hero-slider").on('mouseleave', function(event) {
-  $(this).find('img').css('transition', 'all 250ms ease').css('left', '').removeClass('ready');
-});
+// $("#hero-slider").on('mouseleave', function(event) {
+//   $(this).find('img').css('transition', 'all 250ms ease').css('left', '').removeClass('ready');
+// });
 
 
 
