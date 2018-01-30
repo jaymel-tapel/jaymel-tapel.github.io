@@ -365,49 +365,49 @@ $(document).on("click", ".lightbox-strip a", function(e) {
 
 });
 
-$("#hero-slider").on('mousemove', function(event) {
+// $("#hero-slider").on('mousemove', function(event) {
 
-  if($('html').hasClass('touch')) {
-    return false;
-  }
+//   if($('html').hasClass('touch')) {
+//     return false;
+//   }
 
-  var percentOffset =  (( $window.width() / 2 ) - event.pageX) /  ($window.width() / 2 );
+//   var percentOffset =  (( $window.width() / 2 ) - event.pageX) /  ($window.width() / 2 );
   
-  var activeSliderImage =  $(this).find('img');
-  var hoverOffset =  ((activeSliderImage.width() - $window.width() ) / 2 ) * (Math.abs(percentOffset));
-  if(activeSliderImage.hasClass('ready')) {
-    activeSliderImage.css('left', '').css('transition', '');
-    if(percentOffset < 0) {
-      $(this).find('img').css('left', '-=' + hoverOffset);    
-    } else {
-      $(this).find('img').css('left', '+=' + hoverOffset);        
-    }
-  }
-});
+//   var activeSliderImage =  $(this).find('img');
+//   var hoverOffset =  ((activeSliderImage.width() - $window.width() ) / 2 ) * (Math.abs(percentOffset));
+//   if(activeSliderImage.hasClass('ready')) {
+//     activeSliderImage.css('left', '').css('transition', '');
+//     if(percentOffset < 0) {
+//       $(this).find('img').css('left', '-=' + hoverOffset);    
+//     } else {
+//       $(this).find('img').css('left', '+=' + hoverOffset);        
+//     }
+//   }
+// });
 
 
-$("#hero-slider").on('mouseenter', function(event) {
+// $("#hero-slider").on('mouseenter', function(event) {
 
-  if($('html').hasClass('touch')) {
-    return false;
-  }
+//   if($('html').hasClass('touch')) {
+//     return false;
+//   }
 
-  var percentOffset =  (( $window.width() / 2 ) - event.pageX) /  ($window.width() / 2 );
-  var activeSliderImage =  $(this).find('img');
-  var hoverOffset =  (( activeSliderImage.width() - $window.width() ) / 2 ) * (Math.abs(percentOffset));
-  activeSliderImage.css('left', '').css('transition', 'all 100ms ease');
+//   var percentOffset =  (( $window.width() / 2 ) - event.pageX) /  ($window.width() / 2 );
+//   var activeSliderImage =  $(this).find('img');
+//   var hoverOffset =  (( activeSliderImage.width() - $window.width() ) / 2 ) * (Math.abs(percentOffset));
+//   activeSliderImage.css('left', '').css('transition', 'all 100ms ease');
 
-  if(percentOffset < 0) {
-    activeSliderImage.css('left', '-=' + hoverOffset);    
-  } else {
-    activeSliderImage.css('left', '+=' + hoverOffset);        
-  }
+//   if(percentOffset < 0) {
+//     activeSliderImage.css('left', '-=' + hoverOffset);    
+//   } else {
+//     activeSliderImage.css('left', '+=' + hoverOffset);        
+//   }
 
-  setTimeout(function(){
-    activeSliderImage.addClass('ready');
-  }, 100);
+//   setTimeout(function(){
+//     activeSliderImage.addClass('ready');
+//   }, 100);
 
-});
+// });
 
 // $("#hero-slider").on('mouseleave', function(event) {
 //   $(this).find('img').css('transition', 'all 250ms ease').css('left', '').removeClass('ready');
