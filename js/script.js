@@ -148,8 +148,6 @@ function heroMove() {
 
     heroOffset += heroSpeed;
 
-    $('.btn-scroll').html(heroOffset);
-
     $activeImage.css('transform', 'translate(' + (parseInt($activeImage.css('transform').split(',')[4]) + heroSpeed) + 'px,-50%)');
 
     if(( heroOffset + 20 + $window.width()/2 >  $activeImage.width() && heroSpeed > 0  )) {
