@@ -117,9 +117,13 @@ gn.init( args ).then(function(){
   });
 });
 
+var increment = 0;
+
 // Tilt Viewing for Mobile
 function heroMove() {
   heroInterval = setInterval(function() {
+
+    $('.btn-scroll').html(increment++);
 
     heroOffset += heroSpeed;
 
