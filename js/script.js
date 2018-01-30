@@ -70,7 +70,7 @@ function isLandscape() {
 }
 
 var heroInterval;
-var heroSpeed = 0;
+var heroSpeed = -4;
 var heroOffset = 0;
 
 var args = {
@@ -179,6 +179,14 @@ $heroSlider.on('init', function(event, slick){
     heroOffset = $activeImage.width()/2;
     heroMove();
   }
+});
+
+$window
+  .on("scrollstart",{latency: 100}, function() {
+    clearInterval(heroInterval);
+  })
+  .on("scrollstop",{latency: 100}, function() {
+    heroMove();
 });
 
 
