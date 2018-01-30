@@ -191,6 +191,10 @@ $window
     $activeImage.trigger("click");
 });
 
+$heroSlider.on('click', function() {
+  $('.btn-scroll').html(heroOffset)
+});
+
 $window.on('load', function () {
   $('#hero-slider').slick({
     dots: true,
