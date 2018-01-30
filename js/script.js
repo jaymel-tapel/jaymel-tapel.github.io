@@ -187,8 +187,7 @@ $window.on("scrollstop",{latency: 100}, function() {
 });
 
 $heroSlider.on('click', function() {
-  clearInterval(heroInterval);
-  heroMove();
+  $activeImage.trigger('click');
 });
 
 $window.on('load', function () {
