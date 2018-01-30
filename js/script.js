@@ -59,7 +59,7 @@ var gn = new GyroNorm();
 var increment = 0;
 
 
-$window.on('scroll', function() {
+$window.on('scrollstart', {latency: 100}, function() {
   $('.btn-scroll').html(increment++);  
 });
 
