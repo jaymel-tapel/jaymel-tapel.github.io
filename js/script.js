@@ -59,6 +59,11 @@ var gn = new GyroNorm();
 var increment = 0;
 
 
+testInterval = setInterval(function() {
+  $('.btn-scroll').html(increment++);
+}, 100);
+
+
 gn.init( args ).then(function(){
   gn.start(function(data){
     if(!isLandscape()) {
@@ -118,7 +123,6 @@ gn.init( args ).then(function(){
       heroSpeed /= 2;
     }
 
-    $('.btn-scroll').html(increment++);
     
   });
 });
