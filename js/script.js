@@ -56,6 +56,9 @@ function isLandscape() {
 var args = { frequency:100 }
 var gn = new GyroNorm();
 
+var increment = 0;
+
+
 gn.init( args ).then(function(){
   gn.start(function(data){
     if(!isLandscape()) {
@@ -114,16 +117,17 @@ gn.init( args ).then(function(){
     if($window.width() >= 768 ) {
       heroSpeed /= 2;
     }
+
+    $('.btn-scroll').html(increment++);
+    
   });
 });
 
-var increment = 0;
 
 // Tilt Viewing for Mobile
 function heroMove() {
   heroInterval = setInterval(function() {
 
-    $('.btn-scroll').html(increment++);
 
     heroOffset += heroSpeed;
 
