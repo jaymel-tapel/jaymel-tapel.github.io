@@ -61,7 +61,7 @@ var increment = 0;
 
 testInterval = setInterval(function() {
   $('.btn-scroll').html(increment++);
-}, 100);
+}, 1000);
 
 
 // gn.init( args ).then(function(){
