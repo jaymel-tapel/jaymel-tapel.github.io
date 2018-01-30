@@ -53,7 +53,7 @@ function isLandscape() {
   return (window.orientation === 90 || window.orientation === -90);
 }
 
-heroSpeed = -8;
+heroSpeed = -50;
 
 // var args = { frequency:100 }
 // var gn = new GyroNorm();
@@ -140,11 +140,12 @@ function heroMove() {
       $heroSlider.addClass('tilt').slick('slickNext');
     }
 
-  }, 20);
+  }, 250);
 }
 
 $heroSlider.on('init', function(event, slick){
   $activeImage = $(".hero-slide.slick-active").not('.slick-cloned').find('img');
+  $activeImage.css('transition', 'all 0.25s linear');
   if(!$('html').hasClass('touch')) {
     slickTimer = setInterval(function() {
       $heroSlider.slick('slickNext');
@@ -157,6 +158,7 @@ $heroSlider.on('init', function(event, slick){
 
 $heroSlider.on('beforeChange', function(event, slick, currentSlide, nextSlide){
   clearInterval(heroInterval);
+  $activeImage.css('transition', '');
 
   if(!$heroSlider.hasClass('tilt')) {
     $heroSlider.find('.hero-slide img').css('transform', '');
@@ -167,7 +169,7 @@ $heroSlider.on('beforeChange', function(event, slick, currentSlide, nextSlide){
 
 $heroSlider.on('afterChange', function(event, slick, currentSlide, nextSlide){
   $activeImage = $(".hero-slide.slick-active").not('.slick-cloned').find('img');
-  
+  $activeImage.css('transition', 'all 0.25s linear');  
   
   if($heroSlider.hasClass('tilt')) {
     if(heroSpeed < 0) {
@@ -180,12 +182,6 @@ $heroSlider.on('afterChange', function(event, slick, currentSlide, nextSlide){
   }
 
   heroMove();
-});
-
-$window.on("scrollstop",{latency: 100}, function() {
-  clearInterval(heroInterval);
-  heroMove();  
-  $('#hero-slider, .hero-slide.slick-active, .hero-slide.slick-active img').trigger('mousedown click mouseup');
 });
 
 $window.on('load', function () {
