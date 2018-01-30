@@ -184,7 +184,7 @@ $heroSlider.on('afterChange', function(event, slick, currentSlide, nextSlide){
   heroMove();
 });
 
-$window.on('scrollstop', {latency: 100} function() {
+$window.on('scrollstop', {latency: 100}, function() {
   clearInterval(heroInterval);
 });
 
