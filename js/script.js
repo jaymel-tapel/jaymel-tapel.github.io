@@ -1,36 +1,18 @@
-
+// Echo Initialization for Lazy Loading
 echo.init({
   offset: 1000
 });
 
+// Variable Declaration
+var $window = $(window), $navbar = $('#navbar'), $otherServices = $(".other-services-section"), $bgSand = $("#bg-sand"), $otherServicesScrollPercent = 0, $footerScrollPercent = 0, $starsFront = $('#stars-front'),$starsBack = $('#stars-back'), $preFooter = $(".pre-footer"), $bgSky = $("#footer-sky"), $heroSlider = $('#hero-slider'), slickTimer,  windowPosition, scrollReady = false, heroInterval, heroSpeed = 0,  heroOffset = 0;
 
-$window = $(window);
-$navbar = $('#navbar');
-
-$otherServices = $(".other-services-section");
-$bgSand = $("#bg-sand");
-$otherServicesScrollPercent = 0;
-
-$footerScrollPercent = 0;
-$starsFront = $('#stars-front');
-$starsBack = $('#stars-back');
-$preFooter = $(".pre-footer");
-$bgSky = $("#footer-sky");
-
-$heroSlider = $('#hero-slider');
-
-var slickTimer;
-var windowPosition;
-
+// Scroll Effect Function
 function elementTransition(effectName, selector, effectDelay) {
   $selector = $(selector);
-
   if(typeof $selector.offset() == "undefined")
   {
       return true;
   }
-
-
   var time = effectDelay;
   var transitionTimeout;
   var elementPosition = $selector.first().offset().top;      
@@ -57,6 +39,7 @@ function elementTransition(effectName, selector, effectDelay) {
   }
 }
 
+// Featured Photo Section Auto-Width
 function fitPhotos() {
   if ($window.width() < 992) {
     $(".item figure").css('height', $('.item.col-4').width());
@@ -65,18 +48,12 @@ function fitPhotos() {
   }
 }
 
+// Orientation Check
 function isLandscape() {
   return (window.orientation === 90 || window.orientation === -90);
 }
 
-var heroInterval;
-var heroSpeed = -4;
-var heroOffset = 0;
-
-var args = {
-  frequency:100
-}
-
+var args = { frequency:100 }
 var gn = new GyroNorm();
 
 gn.init( args ).then(function(){
@@ -99,7 +76,6 @@ gn.init( args ).then(function(){
       }
     } else {
       if(data.do.gamma < 180) {
-
         // landscape left
         if(data.do.beta < -25) {
           heroSpeed = -8;
@@ -116,7 +92,6 @@ gn.init( args ).then(function(){
         } else {
           heroSpeed = 0;
         }
-
       } else {
         // landscape right
         if(data.do.beta < -25) {
@@ -142,7 +117,7 @@ gn.init( args ).then(function(){
   });
 });
 
-
+// Tilt Viewing for Mobile
 function heroMove() {
   heroInterval = setInterval(function() {
 
@@ -168,7 +143,6 @@ function heroMove() {
 
 $heroSlider.on('init', function(event, slick){
   $activeImage = $(".hero-slide.slick-active").not('.slick-cloned').find('img');
-  
   if(!$('html').hasClass('touch')) {
     slickTimer = setInterval(function() {
       $heroSlider.slick('slickNext');
@@ -178,16 +152,6 @@ $heroSlider.on('init', function(event, slick){
     heroMove();
   }
 });
-
-$window
-  .on("scrollstart",{latency: 100}, function() {
-    clearInterval(heroInterval);
-  })
-  .on("scrollstop",{latency: 100}, function() {
-    heroMove();
-    $heroSlider.trigger("click");
-});
-
 
 $heroSlider.on('beforeChange', function(event, slick, currentSlide, nextSlide){
   clearInterval(heroInterval);
@@ -216,6 +180,15 @@ $heroSlider.on('afterChange', function(event, slick, currentSlide, nextSlide){
   heroMove();
   
 
+});
+
+$window
+  .on("scrollstart",{latency: 100}, function() {
+    clearInterval(heroInterval);
+  })
+  .on("scrollstop",{latency: 100}, function() {
+    heroMove();
+    $activeImage.trigger("click");
 });
 
 $window.on('load', function () {
