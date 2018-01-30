@@ -194,7 +194,8 @@ $window
 $window.on('load', function () {
   $('#hero-slider').slick({
     dots: true,
-    autoplay: false
+    autoplay: false,
+    speed: 300
   });  
   $('#review-slider').slick({
     prevArrow: '<i class="fa fa-angle-left prev" aria-hidden="true"></i>',
