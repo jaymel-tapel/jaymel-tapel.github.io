@@ -182,17 +182,13 @@ $heroSlider.on('afterChange', function(event, slick, currentSlide, nextSlide){
 
 });
 
-$window
-  .on("scrollstart",{latency: 100}, function() {
-    clearInterval(heroInterval);
-  })
-  .on("scrollstop",{latency: 100}, function() {
-    heroMove();
+$window.on("scrollstop",{latency: 100}, function() {
     $activeImage.trigger("click");
 });
 
 $heroSlider.on('click', function() {
-  $('.btn-scroll').html(heroOffset)
+  clearInterval(heroInterval);
+  heroMove();
 });
 
 $window.on('load', function () {
