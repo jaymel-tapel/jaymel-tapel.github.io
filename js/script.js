@@ -191,18 +191,18 @@ gn.init( args ).then(function(){
 
 
 $window.on('load', function () {
-  $('#hero-slider').slick({
-    dots: true,
-    autoplay: false,
-    speed: 300
-  });  
-  $('#review-slider').slick({
-    prevArrow: '<i class="fa fa-angle-left prev" aria-hidden="true"></i>',
-    nextArrow: '<i class="fa fa-angle-right next" aria-hidden="true"></i>',
-    dots: true,
-    autoplay: true
-  });
-  windowPosition = $(window).scrollTop()+$(window).height();  
+  // $('#hero-slider').slick({
+  //   dots: true,
+  //   autoplay: false,
+  //   speed: 300
+  // });  
+  // $('#review-slider').slick({
+  //   prevArrow: '<i class="fa fa-angle-left prev" aria-hidden="true"></i>',
+  //   nextArrow: '<i class="fa fa-angle-right next" aria-hidden="true"></i>',
+  //   dots: true,
+  //   autoplay: true
+  // });
+  // windowPosition = $(window).scrollTop()+$(window).height();  
   // fitPhotos();
 });
 
