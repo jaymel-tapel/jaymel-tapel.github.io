@@ -161,9 +161,12 @@ h2 {
   width: 100%;
   background-color: #fff; }
   .hero-section #hero-slider {
-    margin-bottom: 0; }
+    margin-bottom: 0;
+    white-space: nowrap;
+    overflow-x: hidden; }
   .hero-section .hero-slide {
     height: 100vh;
+    width: 100vw;
     min-height: 550px;
     position: relative;
     overflow: hidden;
@@ -191,6 +194,7 @@ h2 {
       font-family: "Kaushan Script", cursive;
       text-transform: capitalize; }
     .hero-section .slide-body p {
+      white-space: normal;
       margin-top: 30px;
       text-shadow: 0px 3px 7px rgba(0, 0, 0, 0.65);
       font-size: 1.15em; }
@@ -202,6 +206,9 @@ h2 {
     .hero-section .slick-arrow:before {
       font-size: 50px;
       text-shadow: 0px 3px 7px rgba(0, 0, 0, 0.35); }
+  .hero-section .swiper-button-next {
+    content: "\f138";
+    background: none; }
   .hero-section .slick-dots {
     display: inline;
     bottom: 5%; }
@@ -243,7 +250,8 @@ h2 {
     text-align: center;
     text-transform: uppercase;
     text-shadow: 0px 3px 7px rgba(0, 0, 0, 0.65);
-    transition: all 0.25s ease; }
+    transition: all 0.25s ease;
+    z-index: 99; }
     .hero-section .btn-scroll span {
       position: absolute;
       top: 20px;

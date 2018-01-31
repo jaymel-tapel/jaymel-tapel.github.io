@@ -189,8 +189,19 @@ gn.init( args ).then(function(){
 //   heroMove();
 // });
 
+var heroSliderSwiper = new Swiper('#hero-slider', {
+  loop: true,
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+  pagination: {
+    el: '.swiper-pagination',
+  },
+});
 
 $window.on('load', function () {
+
   // $('#hero-slider').slick({
   //   dots: true,
   //   autoplay: false,
