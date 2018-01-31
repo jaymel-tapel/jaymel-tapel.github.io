@@ -138,22 +138,22 @@ $heroSlider.on('init', function(event, slick){
 
         $('.copyright').html(data.do.gamma);
 
-        // heroOffset += heroSpeed;
+        heroOffset += heroSpeed;
 
-        // $activeImage.css('transform', 'translate(' + (parseInt($activeImage.css('transform').split(',')[4]) + heroSpeed) + 'px,-50%)');
+        $activeImage.css('transform', 'translate(' + (parseInt($activeImage.css('transform').split(',')[4]) + heroSpeed) + 'px,-50%)');
 
-        // if(( heroOffset + 20 + $window.width()/2 >  $activeImage.width() && heroSpeed > 0  )) {
-        //   $.each($(".hero-slide").not('.slick-active'), function (indexInArray, slide) { 
-        //     $(slide).find('img').css('transform', 'translate(-' + ($(slide).find('img').width() - $window.width()/2) + 'px, -50%)');
-        //   });
-        //   $heroSlider.addClass('tilt').slick('slickPrev');
-        // } 
-        // else if (( heroOffset - $window.width()/2 <= 20) && heroSpeed < 0 ) {
-        //   $.each($(".hero-slide").not('.slick-active'), function (indexInArray, slide) { 
-        //     $(slide).find('img').css('transform', 'translate(-' + $window.width()/2 + 'px, -50%)');
-        //   });
-        //   $heroSlider.addClass('tilt').slick('slickNext');
-        // }
+        if(( heroOffset + 20 + $window.width()/2 >  $activeImage.width() && heroSpeed > 0  )) {
+          $.each($(".hero-slide").not('.slick-active'), function (indexInArray, slide) { 
+            $(slide).find('img').css('transform', 'translate(-' + ($(slide).find('img').width() - $window.width()/2) + 'px, -50%)');
+          });
+          $heroSlider.addClass('tilt').slick('slickPrev');
+        } 
+        else if (( heroOffset - $window.width()/2 <= 20) && heroSpeed < 0 ) {
+          $.each($(".hero-slide").not('.slick-active'), function (indexInArray, slide) { 
+            $(slide).find('img').css('transform', 'translate(-' + $window.width()/2 + 'px, -50%)');
+          });
+          $heroSlider.addClass('tilt').slick('slickNext');
+        }
         
       });
     });
