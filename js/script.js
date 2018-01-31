@@ -178,9 +178,9 @@ gn.init( args ).then(function(){
 //   heroMove();
 // });
 
-// $window.on('scrollstop', {latency: 100}, function() {
-//   clearInterval(heroInterval);
-// });
+$window.on('scrollstop', {latency: 100}, function() {
+  clearInterval(heroInterval);
+});
 
 // $window.on('scrollstop', {latency: 250}, function() {
 //   $activeImage = $(".hero-slide.slick-active").not('.slick-cloned').find('img');
