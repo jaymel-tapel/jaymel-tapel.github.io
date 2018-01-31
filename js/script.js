@@ -136,8 +136,6 @@ $heroSlider.on('init', function(event, slick){
           heroSpeed /= 2;
         }
 
-        $('.copyright').html(data.do.gamma);
-
         heroOffset += heroSpeed;
 
         $activeImage.css('transform', 'translate(' + (parseInt($activeImage.css('transform').split(',')[4]) + heroSpeed) + 'px,-50%)');
