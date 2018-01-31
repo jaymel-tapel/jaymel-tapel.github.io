@@ -178,7 +178,7 @@ gn.init( args ).then(function(){
 //   heroMove();
 // });
 
-$window.on('scrollstop', {latency: 100}, function() {
+$window.on('scrollstop', {latency: 100} function() {
   clearInterval(heroInterval);
 });
 
