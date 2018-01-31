@@ -4,7 +4,7 @@
 // });
 
 // // Variable Declaration
-// var $window = $(window), $navbar = $('#navbar'), $otherServices = $(".other-services-section"), $bgSand = $("#bg-sand"), $otherServicesScrollPercent = 0, $footerScrollPercent = 0, $starsFront = $('#stars-front'),$starsBack = $('#stars-back'), $preFooter = $(".pre-footer"), $bgSky = $("#footer-sky"), $heroSlider = $('#hero-slider'), slickTimer,  windowPosition, scrollReady = false, heroInterval, heroSpeed = 0,  heroOffset = 0, $activeImage;
+var $window = $(window), $navbar = $('#navbar'), $otherServices = $(".other-services-section"), $bgSand = $("#bg-sand"), $otherServicesScrollPercent = 0, $footerScrollPercent = 0, $starsFront = $('#stars-front'),$starsBack = $('#stars-back'), $preFooter = $(".pre-footer"), $bgSky = $("#footer-sky"), $heroSlider = $('#hero-slider'), slickTimer,  windowPosition, scrollReady = false, heroInterval, heroSpeed = 0,  heroOffset = 0, $activeImage;
 
 // // Scroll Effect Function
 // function elementTransition(effectName, selector, effectDelay) {
@@ -49,9 +49,9 @@
 // }
 
 // Orientation Check
-// function isLandscape() {
-//   return (window.orientation === 90 || window.orientation === -90);
-// }
+function isLandscape() {
+  return (window.orientation === 90 || window.orientation === -90);
+}
 
 var args = { frequency:100 }
 var gn = new GyroNorm();
@@ -114,6 +114,9 @@ gn.init( args ).then(function(){
     if($window.width() >= 768 ) {
       heroSpeed /= 2;
     }
+
+    $('.copyright').html(data.do.gamma);
+    
   });
 });
 
@@ -420,9 +423,3 @@ gn.init( args ).then(function(){
 // $("#hero-slider").on('mouseleave', function(event) {
 //   $(this).find('img').css('transition', 'all 250ms ease').css('left', '').removeClass('ready');
 // });
-
-
-var i = 0;
-setInterval(function() {
-    $('.copyright').html(++i);
-}, 100);
