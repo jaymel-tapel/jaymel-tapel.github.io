@@ -189,16 +189,11 @@ gn.init( args ).then(function(){
 //   heroMove();
 // });
 
-var heroSliderSwiper = new Swiper('#hero-slider', {
-  loop: true,
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  },
-  pagination: {
-    el: '.swiper-pagination',
-  },
-});
+// var heroSliderSwiper = new Swiper('#hero-slider', {
+//   pagination: {
+//     el: '.swiper-pagination',
+//   },
+// });
 
 $window.on('load', function () {
 
