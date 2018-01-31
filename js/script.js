@@ -48,7 +48,7 @@ function fitPhotos() {
   }
 }
 
-Orientation Check
+// Orientation Check
 function isLandscape() {
   return (window.orientation === 90 || window.orientation === -90);
 }
