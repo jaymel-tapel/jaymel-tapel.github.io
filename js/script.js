@@ -1,12 +1,12 @@
-// // Echo Initialization for Lazy Loading
+// // // Echo Initialization for Lazy Loading
 // echo.init({
 //   offset: 1000
 // });
 
-// // Variable Declaration
+// // // Variable Declaration
 var $window = $(window), $navbar = $('#navbar'), $otherServices = $(".other-services-section"), $bgSand = $("#bg-sand"), $otherServicesScrollPercent = 0, $footerScrollPercent = 0, $starsFront = $('#stars-front'),$starsBack = $('#stars-back'), $preFooter = $(".pre-footer"), $bgSky = $("#footer-sky"), $heroSlider = $('#hero-slider'), slickTimer,  windowPosition, scrollReady = false, heroInterval, heroSpeed = 0,  heroOffset = 0, $activeImage;
 
-// // Scroll Effect Function
+// // // Scroll Effect Function
 // function elementTransition(effectName, selector, effectDelay) {
 //   $selector = $(selector);
 //   if(typeof $selector.offset() == "undefined")
@@ -39,7 +39,7 @@ var $window = $(window), $navbar = $('#navbar'), $otherServices = $(".other-serv
 //   }
 // }
 
-// Featured Photo Section Auto-Width
+// // Featured Photo Section Auto-Width
 // function fitPhotos() {
 //   if ($window.width() < 992) {
 //     $(".item figure").css('height', $('.item.col-4').width());
@@ -147,7 +147,16 @@ gn.init( args ).then(function(){
 // }
 
 // $heroSlider.on('init', function(event, slick){
- 
+//   $activeImage = $(".hero-slide.slick-active").not('.slick-cloned').find('img');
+//   $activeImage.css('transition', 'all 0.25s linear');
+//   if(!$('html').hasClass('touch')) {
+//     slickTimer = setInterval(function() {
+//       $heroSlider.slick('slickNext');
+//     }, 5000);
+//   } else {
+//     heroOffset = $activeImage.width()/2;
+//     heroMove();
+//   }
 // });
 
 // $heroSlider.on('beforeChange', function(event, slick, currentSlide, nextSlide){
@@ -178,22 +187,6 @@ gn.init( args ).then(function(){
 //   heroMove();
 // });
 
-$window.on('scrollstop', {latency: 100} function() {
-  clearInterval(heroInterval);
-});
-
-// $window.on('scrollstop', {latency: 250}, function() {
-//   $activeImage = $(".hero-slide.slick-active").not('.slick-cloned').find('img');
-//   $activeImage.css('transition', 'all 0.25s linear');
-//   if(!$('html').hasClass('touch')) {
-//     slickTimer = setInterval(function() {
-//       $heroSlider.slick('slickNext');
-//     }, 5000);
-//   } else {
-//     heroOffset = $activeImage.width()/2;
-//     heroMove();
-//   }
-// });
 
 // $window.on('load', function () {
 //   $('#hero-slider').slick({
