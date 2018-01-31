@@ -79,79 +79,82 @@ $heroSlider.on('init', function(event, slick){
     heroOffset = $activeImage.width()/2;
     gn.init( args ).then(function(){
       gn.start(function(data){
-        if(!isLandscape()) {
-          if(data.do.gamma < -25) {
-            heroSpeed = -100;
-          } else if (data.do.gamma <  -15 ) {
-            heroSpeed = -50;
-          } else if (data.do.gamma < -5 ) {
-            heroSpeed = -25;
-          } else if (data.do.gamma >  25 ) {
-            heroSpeed = 100;
-          }  else if (data.do.gamma >  15 ) {
-            heroSpeed = 50;
-          }  else if (data.do.gamma >  5 ) {
-            heroSpeed = 25;
-          } else {
-            heroSpeed = 0;
-          }
-        } else {
-          if(data.do.gamma < 180) {
-            // landscape left
-            if(data.do.beta < -25) {
-              heroSpeed = -100;
-            } else if (data.do.beta <  -15 ) {
-              heroSpeed = -50;
-            } else if (data.do.beta < -5 ) {
-              heroSpeed = -25;
-            } else if (data.do.beta >  25 ) {
-              heroSpeed = 100;
-            }  else if (data.do.beta >  15 ) {
-              heroSpeed = 50;
-            }  else if (data.do.beta >  5 ) {
-              heroSpeed = 25;
-            } else {
-              heroSpeed = 0;
-            }
-          } else {
-            // landscape right
-            if(data.do.beta < -25) {
-              heroSpeed = 100;
-            } else if (data.do.beta <  -15 ) {
-              heroSpeed = 50;
-            } else if (data.do.beta < -5 ) {
-              heroSpeed = 25;
-            } else if (data.do.beta >  25 ) {
-              heroSpeed = -100;
-            }  else if (data.do.beta >  15 ) {
-              heroSpeed = -50;
-            }  else if (data.do.beta >  5 ) {
-              heroSpeed = -25;
-            } else {
-              heroSpeed = 0;
-            }
-          }
-        }
-        if($window.width() >= 768 ) {
-          heroSpeed /= 2;
-        }
 
-        heroOffset += heroSpeed;
+        $('.btn-scroll').html(data.do.gamma);
 
-        $activeImage.css('transform', 'translate(' + (parseInt($activeImage.css('transform').split(',')[4]) + heroSpeed) + 'px,-50%)');
+        // if(!isLandscape()) {
+        //   if(data.do.gamma < -25) {
+        //     heroSpeed = -100;
+        //   } else if (data.do.gamma <  -15 ) {
+        //     heroSpeed = -50;
+        //   } else if (data.do.gamma < -5 ) {
+        //     heroSpeed = -25;
+        //   } else if (data.do.gamma >  25 ) {
+        //     heroSpeed = 100;
+        //   }  else if (data.do.gamma >  15 ) {
+        //     heroSpeed = 50;
+        //   }  else if (data.do.gamma >  5 ) {
+        //     heroSpeed = 25;
+        //   } else {
+        //     heroSpeed = 0;
+        //   }
+        // } else {
+        //   if(data.do.gamma < 180) {
+        //     // landscape left
+        //     if(data.do.beta < -25) {
+        //       heroSpeed = -100;
+        //     } else if (data.do.beta <  -15 ) {
+        //       heroSpeed = -50;
+        //     } else if (data.do.beta < -5 ) {
+        //       heroSpeed = -25;
+        //     } else if (data.do.beta >  25 ) {
+        //       heroSpeed = 100;
+        //     }  else if (data.do.beta >  15 ) {
+        //       heroSpeed = 50;
+        //     }  else if (data.do.beta >  5 ) {
+        //       heroSpeed = 25;
+        //     } else {
+        //       heroSpeed = 0;
+        //     }
+        //   } else {
+        //     // landscape right
+        //     if(data.do.beta < -25) {
+        //       heroSpeed = 100;
+        //     } else if (data.do.beta <  -15 ) {
+        //       heroSpeed = 50;
+        //     } else if (data.do.beta < -5 ) {
+        //       heroSpeed = 25;
+        //     } else if (data.do.beta >  25 ) {
+        //       heroSpeed = -100;
+        //     }  else if (data.do.beta >  15 ) {
+        //       heroSpeed = -50;
+        //     }  else if (data.do.beta >  5 ) {
+        //       heroSpeed = -25;
+        //     } else {
+        //       heroSpeed = 0;
+        //     }
+        //   }
+        // }
+        // if($window.width() >= 768 ) {
+        //   heroSpeed /= 2;
+        // }
 
-        if(( heroOffset + 20 + $window.width()/2 >  $activeImage.width() && heroSpeed > 0  )) {
-          $.each($(".hero-slide").not('.slick-active'), function (indexInArray, slide) { 
-            $(slide).find('img').css('transform', 'translate(-' + ($(slide).find('img').width() - $window.width()/2) + 'px, -50%)');
-          });
-          $heroSlider.addClass('tilt').slick('slickPrev');
-        } 
-        else if (( heroOffset - $window.width()/2 <= 20) && heroSpeed < 0 ) {
-          $.each($(".hero-slide").not('.slick-active'), function (indexInArray, slide) { 
-            $(slide).find('img').css('transform', 'translate(-' + $window.width()/2 + 'px, -50%)');
-          });
-          $heroSlider.addClass('tilt').slick('slickNext');
-        }
+        // heroOffset += heroSpeed;
+
+        // $activeImage.css('transform', 'translate(' + (parseInt($activeImage.css('transform').split(',')[4]) + heroSpeed) + 'px,-50%)');
+
+        // if(( heroOffset + 20 + $window.width()/2 >  $activeImage.width() && heroSpeed > 0  )) {
+        //   $.each($(".hero-slide").not('.slick-active'), function (indexInArray, slide) { 
+        //     $(slide).find('img').css('transform', 'translate(-' + ($(slide).find('img').width() - $window.width()/2) + 'px, -50%)');
+        //   });
+        //   $heroSlider.addClass('tilt').slick('slickPrev');
+        // } 
+        // else if (( heroOffset - $window.width()/2 <= 20) && heroSpeed < 0 ) {
+        //   $.each($(".hero-slide").not('.slick-active'), function (indexInArray, slide) { 
+        //     $(slide).find('img').css('transform', 'translate(-' + $window.width()/2 + 'px, -50%)');
+        //   });
+        //   $heroSlider.addClass('tilt').slick('slickNext');
+        // }
         
       });
     });
