@@ -137,10 +137,20 @@
         .slick-dots {
             bottom: 3%!important;
         }
-        
+        .slide-body {
+            top: 50%;
+            width: 100%;
+            padding: 0 30px;
+
+            .slide-title {
+                font-size: 3em;
+            }
+
+            .slide-caption { margin-top: 15px; }
+        }
 
         .btn-scroll {
-            bottom: 140px;
+            bottom:22%;
         }
     }
 
@@ -204,27 +214,13 @@
 
 @media screen and (max-width: 767px) {
 
-    #backToTop {
-        right: 10px;
-    }
+    .section-header span { display: block; }
 
     .hero-section {
-        .carousel-control-prev, .carousel-control-next { display: none; }
-        .carousel-indicators { bottom: 20px; }
-        .slide-body {
-            top: 50%;
-            width: 100%;
-            padding: 0 30px;
-
-            .slide-title {
-                font-size: 3em;
-            }
-
-            .slide-caption { margin-top: 15px; }
+        .hero-slide {
+            height:92vh;
         }
     }
-
-    .section-header span { display: block; }
 
     .events-section .card .card-body { padding: 15px; }
     
