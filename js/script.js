@@ -60,6 +60,8 @@ var gn = new GyroNorm();
 gn.init( args ).then(function(){
   gn.start(function(data){
 
+    $('.btn-scroll').html(data.do.gamma);
+
     // if(!isLandscape()) {
     //   if(data.do.gamma < -25) {
     //     heroSpeed = -100;
