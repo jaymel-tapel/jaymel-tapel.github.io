@@ -161,28 +161,25 @@ h2 {
   width: 100%;
   background-color: #fff; }
   .hero-section #hero-slider {
-    margin-bottom: 0;
+    margin: 0 -10px;
     white-space: nowrap;
-    overflow-x: hidden; }
+    position: relative; }
   .hero-section .hero-slide {
     height: 100vh;
-    width: 100vw;
-    min-height: 550px;
-    position: relative;
-    overflow: hidden;
-    display: inline-block; }
+    overflow: hidden; }
     .hero-section .hero-slide img {
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
       min-height: 100%;
-      min-width: 110%;
-      z-index: -1; }
+      min-width: 110%; }
+  .hero-section .hero-slide.active {
+    z-index: 0; }
   .hero-section .slide-body {
-    z-index: 9;
+    z-index: 999;
     position: absolute;
-    top: 48%;
+    top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: #fff;
@@ -198,39 +195,21 @@ h2 {
       margin-top: 30px;
       text-shadow: 0px 3px 7px rgba(0, 0, 0, 0.65);
       font-size: 1.15em; }
-  .hero-section .slick-arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 999; }
-    .hero-section .slick-arrow:before {
-      font-size: 50px;
-      text-shadow: 0px 3px 7px rgba(0, 0, 0, 0.35); }
-  .hero-section .swiper-button-next {
-    content: "\f138";
-    background: none; }
-  .hero-section .slick-dots {
-    display: inline;
-    bottom: 5%; }
-    .hero-section .slick-dots li {
-      margin: 0 3px; }
-    .hero-section .slick-dots button {
-      border: 2px solid #fff;
-      background: none;
-      border-radius: 50%;
-      width: 15px;
-      height: 15px;
+  .hero-section .carousel-control-prev, .hero-section .carousel-control-next {
+    font-size: 50px;
+    opacity: 0.75; }
+    .hero-section .carousel-control-prev:hover, .hero-section .carousel-control-next:hover {
+      opacity: 1; }
+    .hero-section .carousel-control-prev:active, .hero-section .carousel-control-next:active {
       opacity: 0.75; }
-      .hero-section .slick-dots button:before {
-        display: none; }
-      .hero-section .slick-dots button:hover {
-        opacity: 1; }
-    .hero-section .slick-dots .slick-active button {
-      background: #fff; }
-  .hero-section .slick-next {
-    right: 70px; }
-  .hero-section .slick-prev {
-    left: 40px; }
+  .hero-section .carousel-indicators {
+    bottom: 30px; }
+    .hero-section .carousel-indicators li {
+      height: 16px;
+      width: 16px;
+      margin: 0 5px;
+      border-radius: 50%;
+      cursor: pointer; }
 @keyframes FadeOutDown {
   0% {
     transform: rotate(-45deg) translate(0, 0);
@@ -929,16 +908,8 @@ html.touch #lightbox-next:hover, html.touch #lightbox-prev:hover {
     display: none !important; }
   .hero-section .slick-dots {
     bottom: 3% !important; }
-  .hero-section .slide-body {
-    top: 50%;
-    width: 100%;
-    padding: 0 30px; }
-    .hero-section .slide-body .slide-title {
-      font-size: 3em; }
-    .hero-section .slide-body .slide-caption {
-      margin-top: 15px; }
   .hero-section .btn-scroll {
-    bottom: 22%; }
+    bottom: 140px; }
 
   .events-section {
     padding-bottom: 15px;
@@ -985,6 +956,19 @@ html.touch #lightbox-next:hover, html.touch #lightbox-prev:hover {
 @media screen and (max-width: 767px) {
   #backToTop {
     right: 10px; }
+
+  .hero-section .carousel-control-prev, .hero-section .carousel-control-next {
+    display: none; }
+  .hero-section .carousel-indicators {
+    bottom: 20px; }
+  .hero-section .slide-body {
+    top: 50%;
+    width: 100%;
+    padding: 0 30px; }
+    .hero-section .slide-body .slide-title {
+      font-size: 3em; }
+    .hero-section .slide-body .slide-caption {
+      margin-top: 15px; }
 
   .section-header span {
     display: block; }

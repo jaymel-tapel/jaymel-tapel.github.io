@@ -130,74 +130,61 @@
     <h1 style="position: absolute; top: -99999px; left: -99999px;">Home</h1>
     <section class="hero-section">
 
-      <div id="hero-slider" class="carousel slide" data-ride="carousel">
-          <div class="carousel-inner">
-            
-            <div class="hero-slide carousel-item active">
-              <div class="container">
-                <img src="img/hero3.jpg" alt="">
-                <div class="slide-body">
-                  <h2 class="slide-title">Insert Text Here</h2>
-                  <p class="slide-caption">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ad ratione reiciendis iusto dolores quod ipsum
-                    aut similique facere ut. Qui rem vitae, aliquid reiciendis dolorem iure quae enim accusamus magni.</p>
-                </div>
-                <!-- /slide-body -->
-              </div>
-              <!-- /container -->
+      <div id="hero-slider" class="carousel slide">
+        <div class="carousel-inner">
+
+          <div class="hero-slide carousel-item active">
+
+            <img src="img/hero3.jpg" alt="">
+            <div class="slide-body">
+              <h2 class="slide-title">Insert Text Here</h2>
+              <p class="slide-caption">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ad ratione reiciendis iusto dolores quod ipsum aut
+                similique facere ut. Qui rem vitae, aliquid reiciendis dolorem iure quae enim accusamus magni.</p>
+              <!-- /slide-body -->
             </div>
-            <!-- /hero-slide -->
-  
-            <div class="hero-slide carousel-item">
-              <div class="container">
-                <img src="img/bg.jpg" alt="">
-                <div class="slide-body">
-                  <h2 class="slide-title">Insert Text Here</h2>
-                  <p class="slide-caption">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ad ratione reiciendis iusto dolores quod ipsum
-                    aut similique facere ut. Qui rem vitae, aliquid reiciendis dolorem iure quae enim accusamus magni.</p>
-                </div>
-                <!-- /slide-body -->
-              </div>
-              <!-- /container -->
-            </div>
-            <!-- /hero-slide -->
-  
-            <div class="hero-slide carousel-item">
-              <div class="container">
-                <img src="img/hero.jpg" alt="">
-                <div class="slide-body">
-                  <h2 class="slide-title">Insert Text Here</h2>
-                  <p class="slide-caption">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ad ratione reiciendis iusto dolores quod ipsum
-                    aut similique facere ut. Qui rem vitae, aliquid reiciendis dolorem iure quae enim accusamus magni.</p>
-                </div>
-                <!-- /slide-body -->
-              </div>
-              <!-- /container -->
-            </div>
-            <!-- /hero-slide -->
           </div>
+          <!-- /hero-slide -->
 
-          <a class="carousel-control-prev" href="#hero-slider" role="button" data-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="sr-only">Previous</span>
-          </a>
-          <a class="carousel-control-next" href="#hero-slider" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-          </a>
-          <ol class="carousel-indicators">
-              <li data-target="#hero-slider" data-slide-to="0" class="active"></li>
-              <li data-target="#hero-slider" data-slide-to="1"></li>
-              <li data-target="#hero-slider" data-slide-to="2"></li>
-            </ol>
+          <div class="hero-slide carousel-item">
+            <img src="img/bg.jpg" alt="">
+            <div class="slide-body">
+              <h2 class="slide-title">Insert Text Here</h2>
+              <p class="slide-caption">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ad ratione reiciendis iusto dolores quod ipsum aut
+                similique facere ut. Qui rem vitae, aliquid reiciendis dolorem iure quae enim accusamus magni.</p>
+              <!-- /slide-body -->
+            </div>
+          </div>
+          <!-- /hero-slide -->
+
+          <div class="hero-slide carousel-item">
+            <img src="img/hero.jpg" alt="">
+            <div class="slide-body">
+              <h2 class="slide-title">Insert Text Here</h2>
+              <p class="slide-caption">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ad ratione reiciendis iusto dolores quod ipsum aut
+                similique facere ut. Qui rem vitae, aliquid reiciendis dolorem iure quae enim accusamus magni.</p>
+            </div>
+            <!-- /slide-body -->
+          </div>
+          <!-- /hero-slide -->
+        </div>
+
+        <a class="carousel-control-prev" href="#hero-slider" role="button" data-slide="prev">
+          <span class="fa fa-chevron-circle-left" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#hero-slider" role="button" data-slide="next">
+          <span class="fa fa-chevron-circle-right" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+        <ol class="carousel-indicators">
+          <li data-target="#hero-slider" data-slide-to="0" class="active"></li>
+          <li data-target="#hero-slider" data-slide-to="1"></li>
+          <li data-target="#hero-slider" data-slide-to="3"></li>
+        </ol>
+        <a class="btn-scroll" href="#" id="btn-scroll">
+          <span></span>
+          <span></span>Learn More</a>
       </div>
-
-
-
-
-
-      <a class="btn-scroll" href="#" id="btn-scroll">
-        <span></span>
-        <span></span>Learn More</a>
 
     </section>
     <!-- /hero -->
@@ -506,70 +493,82 @@
           <span>REVIEWS</span>
         </h2>
 
-        <div class="review-slider" id="review-slider">
-          <div class="review-slide">
+        <div id="review-slider" class="review-slider carousel slide">
+          <div class="carousel-inner" role="listbox">
+            <div class="review-slide carousel-item active">
 
-            <p class="star">
-              <i class="fa fa-star" aria-hidden="true"></i>
-              <i class="fa fa-star" aria-hidden="true"></i>
-              <i class="fa fa-star" aria-hidden="true"></i>
-              <i class="fa fa-star" aria-hidden="true"></i>
-              <i class="fa fa-star" aria-hidden="true"></i>
-            </p>
+              <p class="star">
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+              </p>
 
-            <p class="review-body">
-              “Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis dicta eaque odit unde molestias. Doloremque, repellat
-              quo quaerat reiciendis dicta eaque odit und consectetur”</p>
+              <p class="review-body">
+                “Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis dicta eaque odit unde molestias. Doloremque, repellat
+                quo quaerat reiciendis dicta eaque odit und consectetur”</p>
 
-            <img src="../img/facebook-user.gif" alt="">
-            <p class="review-name">INSERT NAME</p>
-            <p class="review-position">Insert Position</p>
+              <img src="../img/facebook-user.gif" alt="">
+              <p class="review-name">INSERT NAME</p>
+              <p class="review-position">Insert Position</p>
 
+            </div>
+            <!-- /review-slide -->
+            <div class="review-slide carousel-item">
+
+              <p class="star">
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+              </p>
+
+              <p class="review-body">
+                “Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis dicta eaque odit unde molestias. Doloremque, repellat
+                quo quaerat reiciendis dicta eaque odit und consectetur”</p>
+
+              <img src="../img/facebook-user.gif" alt="">
+              <p class="review-name">INSERT NAME</p>
+              <p class="review-position">Insert Position</p>
+
+            </div>
+            <!-- /review-slide -->
+            <div class="review-slide carousel-item">
+
+              <p class="star">
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+              </p>
+
+              <p class="review-body">
+                “Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis dicta eaque odit unde molestias. Doloremque, repellat
+                quo quaerat reiciendis dicta eaque odit und consectetur”</p>
+
+              <img src="../img/facebook-user.gif" alt="">
+              <p class="review-name">INSERT NAME</p>
+              <p class="review-position">Insert Position</p>
+
+            </div>
+            <!-- /review-slide -->
           </div>
-          <!-- /review-slide -->
-
-          <div class="review-slide">
-
-            <p class="star">
-              <i class="fa fa-star" aria-hidden="true"></i>
-              <i class="fa fa-star" aria-hidden="true"></i>
-              <i class="fa fa-star" aria-hidden="true"></i>
-              <i class="fa fa-star" aria-hidden="true"></i>
-              <i class="fa fa-star" aria-hidden="true"></i>
-            </p>
-
-            <p class="review-body">
-              “Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis dicta eaque odit unde molestias. Doloremque, repellat
-              quo quaerat reiciendis dicta eaque odit und consectetur”</p>
-
-            <img src="../img/facebook-user.gif" alt="">
-            <p class="review-name">INSERT NAME</p>
-            <p class="review-position">Insert Position</p>
-
-          </div>
-          <!-- /review-slide -->
-
-          <div class="review-slide">
-
-            <p class="star">
-              <i class="fa fa-star" aria-hidden="true"></i>
-              <i class="fa fa-star" aria-hidden="true"></i>
-              <i class="fa fa-star" aria-hidden="true"></i>
-              <i class="fa fa-star" aria-hidden="true"></i>
-              <i class="fa fa-star" aria-hidden="true"></i>
-            </p>
-
-            <p class="review-body">
-              “Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis dicta eaque odit unde molestias. Doloremque, repellatr”</p>
-
-            <img src="../img/facebook-user.gif" alt="">
-            <p class="review-name">INSERT NAME</p>
-            <p class="review-position">Insert Position</p>
-
-          </div>
-          <!-- /review-slide -->
-
-
+          <a class="carousel-control-prev" href="#review-slider" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#review-slider" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+          <ol class="carousel-indicators">
+              <li data-target="#review-slider" data-slide-to="0" class="active"></li>
+              <li data-target="#review-slider" data-slide-to="1"></li>
+              <li data-target="#review-slider" data-slide-to="2"></li>
+            </ol>
         </div>
 
       </div>
