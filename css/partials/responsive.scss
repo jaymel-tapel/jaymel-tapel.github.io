@@ -134,9 +134,6 @@
         .slick-arrow {
             display: none!important;
         }
-        .slick-dots {
-            bottom: 3%!important;
-        }
         .slide-body {
             top: 50%;
             width: 100%;
@@ -150,7 +147,7 @@
         }
 
         .btn-scroll {
-            bottom:22%;
+            bottom:150px;
         }
     }
 
@@ -215,12 +212,6 @@
 @media screen and (max-width: 767px) {
 
     .section-header span { display: block; }
-
-    .hero-section {
-        .hero-slide {
-            height:92vh;
-        }
-    }
 
     .events-section .card .card-body { padding: 15px; }
     
