@@ -1,0 +1,117 @@
+.preloader {
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(to top, darken($color: #209cff, $amount: 15) 0%, darken($color: #68e0cf, $amount: 15) 100%);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1234567890;
+    padding-top: 40vh;
+
+    .preloader-wrapper {
+        width: 140px;
+        height: 140px;
+        position: relative;
+        margin: 0 auto;
+        transform: translateY(-50%);
+    }
+
+    .preloader-logo {
+        z-index: 123;
+        width: 140%;
+        position: absolute;        
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .plane {
+        color: #fff;
+        position: absolute;
+        top: -40px;
+        left: -40px;
+        right: -40px;
+        bottom: -40px;
+        font-size: 40px;
+        animation-name: planeRotation;
+        animation-direction: normal;
+        animation-iteration-count: infinite;
+        animation-duration: 10s;
+        animation-timing-function: linear;
+    }
+
+    .orbit {
+        border: 2px dashed #eee;
+        border-radius: 50%;
+        position: absolute;
+        top: -60px;
+        left: -60px;
+        right: -60px;
+        bottom: -60px;
+    }
+}
+
+.preloader-text {
+    position: absolute;
+    bottom: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    font-size: 1.25em;
+}
+
+.dot-1 { animation: dot1 5s linear infinite; }
+.dot-2 { animation: dot2 5s linear infinite; }
+.dot-3 { animation: dot3 5s linear infinite; }
+
+@keyframes planeRotation {
+    0% {
+        transform: rotate(0);
+
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes dot1 {
+    0% { opacity: 0; }
+    24% { opacity: 0 }
+    25% { opacity: 1; }
+    100% { opacity: 1; }
+}
+
+@keyframes dot2 {
+    0% { opacity: 0; }
+    49% { opacity: 0; }
+    50% { opacity: 1; }   
+    100% { opacity: 1; }
+}
+
+@keyframes dot3 {
+    0% { opacity: 0; }
+    74% { opacity: 0; }
+    75% { opacity: 1; }    
+    100% { opacity: 1; }
+}
+
+
+@media screen and (max-width: 768px) {
+    .preloader {
+        .preloader-wrapper {
+            width: 100px;
+            height: 100px;
+        }
+
+        .plane {
+            top: -46px;
+            left: -46px;
+            right: -46px;
+            bottom: -46px;
+            font-size: 40px;
+        }
+
+        .preloader-text { bottom: 60px; }
+    }
+}

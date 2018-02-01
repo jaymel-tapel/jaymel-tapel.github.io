@@ -77,6 +77,8 @@ $window.on('load', function () {
     autoplay: true
   });
 
+  $("#preloader").fadeOut();
+
   windowPosition = $(window).scrollTop()+$(window).height();  
   fitPhotos();
   
