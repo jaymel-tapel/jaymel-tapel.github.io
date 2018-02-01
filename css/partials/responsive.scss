@@ -211,6 +211,13 @@
 
 @media screen and (max-width: 767px) {
 
+    .backToTop { 
+        right: 15px;
+        padding: 0 15px 0 10px;
+        
+        span { display: none; }
+    }
+
     .section-header span { display: block; }
 
     .events-section .card .card-body { padding: 15px; }
