@@ -1,6 +1,7 @@
 
 echo.init({
-  offset: 2000
+  offset: 1000,
+  throttle: 100
 });
 
 
@@ -77,7 +78,7 @@ $window.on('load', function () {
     autoplay: true
   });
 
-  $("#preloader").fadeOut();
+  $("#preloader").fadeOut(500);
 
   windowPosition = $(window).scrollTop()+$(window).height();  
   fitPhotos();

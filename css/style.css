@@ -135,7 +135,7 @@ h2 {
 .preloader {
   height: 100%;
   width: 100%;
-  background: linear-gradient(to top, #0075d3 0%, #2bd1b9 100%);
+  background: linear-gradient(195deg, #498DBE, #2E71B2, #04408F);
   position: fixed;
   top: 0;
   left: 0;
