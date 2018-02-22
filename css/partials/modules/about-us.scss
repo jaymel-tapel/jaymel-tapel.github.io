@@ -1,0 +1,45 @@
+#about-us {
+    background: #fff;
+
+    .subpage-header {
+        background: url('../img/subpage.jpg'); 
+        background-color: #fff;
+        background-size: cover;
+        background-position: center bottom;
+        position: relative;       
+    }
+}
+
+.our-story {
+    padding-top: 20px;
+    padding-bottom: 80px;
+
+    img {
+        float: left;
+        margin-right: 40px;
+    }
+}
+
+.founders {
+    padding: 100px 0 80px;
+    border-top: 1px solid #ccc;
+
+    &>div>p {
+        margin-bottom: 50px;
+    }
+
+}
+
+.founders-item {
+    margin-bottom: 40px;
+
+    h3 {
+        font-size: 1em;
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+
+    p {
+        font-weight: 300;
+    }
+}

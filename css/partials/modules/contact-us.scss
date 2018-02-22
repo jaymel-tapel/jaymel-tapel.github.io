@@ -1,0 +1,223 @@
+.subpage-header {
+    &:after {
+        content: "";
+        z-index: 0;
+        position: absolute;
+        width: 100%;
+        height: 100px;
+        left: 0;
+        bottom: 0;
+        background: linear-gradient(rgba(0, 0, 0, 0), #fafafa);
+    }
+
+    .container {
+        position: relative;
+        height: 380px;
+    }
+}
+
+#contact-us {
+    background: #fff;
+
+    .subpage-header {
+        background: url('../img/subpage.jpg'); 
+        background-color: #fff;
+        background-size: cover;
+        background-position: center bottom;
+        position: relative;       
+    }
+}
+
+.subpage-title {
+    font-family: $scriptFont;
+    position: absolute;
+    bottom: 55px;
+    left: 5px;
+    font-size: 3.4em;
+    letter-spacing: -1px;
+    z-index: 123;
+    color: #fff;
+    text-shadow: $textShadow;
+}
+
+.breadcrumbs {
+    position: absolute;
+    bottom: 20px;
+    left: 15px;
+    z-index: 123;
+    list-style-type: none;
+    padding-left: 0;
+
+    li {
+        display: inline-block;
+        letter-spacing: -0.5px;
+
+        a:link, a:visited {
+            color: $primaryColor;
+            transition: all 0.25s ease;
+        }
+        a:hover, a:active {
+            color: $accentColor;
+            text-decoration: none;
+        }
+
+        &:before {
+            content: " / ";
+            padding: 0 10px;
+        }
+
+        &:first-child:before {
+            content: "";
+            padding: 0;            
+        } 
+    }
+}
+
+.subpage-content {
+    background: #fafafa;
+    padding-top: 40px;
+    h2 {
+        font-size: 1.5em;
+        font-weight: 300;
+        text-transform: uppercase;
+        color: $primaryColor;
+        span { font-weight: bold; }
+    }
+}
+
+.contact-details {
+    h2 {
+        font-size: 1.5em;
+        margin-top: 60px;
+    }
+}
+
+.form-contact-us {
+    margin: 0 30px;
+    margin-top: -180px;
+    padding: 40px;
+    background: #fff;
+    border-top: 4px solid $primaryColor;
+    position: relative;
+    box-shadow:  -2px 2px 6px rgba(50, 50, 50, 0.15);
+
+    p, h3 { text-align: center;}
+    p {
+        color: #888;
+        margin: 0 0 5px 0;
+        font-style: italic;
+        font-weight: 300;
+    }
+    h3 {
+        text-transform: uppercase;
+        margin-bottom: 40px;
+        font-size: 1.5em;
+        font-weight: bold;
+    }
+
+    .form-group {
+        position: relative;
+        padding-left: 100px;
+        margin-bottom: 30px;
+
+        label {
+            position: absolute;
+            left: 0;
+            top: 10px;
+            font-size: 0.9em;
+        }
+
+        .form-control {
+            border-radius: 0;
+            resize: none;
+        }
+    }
+
+    .btn {
+        margin-left: 100px;
+        padding: 10px 30px;
+        border-radius: 25px;
+        font-size: 1rem;
+        color: #fff;
+        letter-spacing: 0.5px;
+    }
+}
+
+.parallax-mirror {
+    z-index:1!important;
+}
+
+.contact-social {
+    margin-top: 130px;
+    padding: 120px 0;
+    position: relative;
+
+    &:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: #363636;
+        opacity: 0.25;
+        z-index: 12;
+    }
+
+    .container {
+        z-index: 123;
+        position: relative;
+    }
+
+    .contact-social-wrapper {
+        color: #fff;
+        max-width: 600px;
+        margin: 0 auto;
+        text-align: center;
+
+        h2, p {
+            text-shadow: 0px 3px 7px rgba(0, 0, 0, 0.15);
+        }
+
+        h2 {
+            color: #fff;        
+            margin-bottom: 15px;
+            font-style: normal;
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+            margin: 0;
+            li { display: inline-block; }
+        }
+
+        a:link, a:visited {
+            color: #fff;
+            font-size: 2.4em;
+            margin-right: 10px;
+            transition: all 0.25s ease;
+        }
+        a:hover, a:active {
+            color: $accentColor;
+        }
+    }
+}
+
+.questions {
+    border-top: 1px solid #eee;
+    padding: 100px 0;
+
+    h3 {
+        font-size: 0.875em;
+        margin-top: 30px;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: -0.5px;
+    }
+
+    p {
+        font-weight: 300;
+        margin-left: 3px;
+    }
+}

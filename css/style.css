@@ -1,7 +1,6 @@
 body, html {
   font-family: "Josefin Sans", "Helvetica-Neue", Helvetica, sans-serif;
   font-size: 16px;
-  box-shadow: 1px 3px 30px #ddd;
   -webkit-overflow-scrolling: touch; }
 
 main {
@@ -13,7 +12,6 @@ h2 {
 
 .section-header {
   font-weight: 300;
-  font-style: italic;
   letter-spacing: -1px;
   color: #278cff;
   text-align: center;
@@ -79,17 +77,17 @@ h2 {
     padding: 0; }
     .navbar .nav-right a {
       float: right; }
-  .navbar a[href="/gallery"] {
+  .navbar a[href*="/gallery"] {
     transform: translateX(15px); }
-  .navbar a[href="/contact-us"] {
+  .navbar a[href*="/contact-us"] {
     float: right;
     background: #278cff;
     padding: 8px 16px;
     border-radius: 20px;
     text-shadow: none; }
-    .navbar a[href="/contact-us"] .fa {
+    .navbar a[href*="/contact-us"] .fa {
       display: none; }
-    .navbar a[href="/contact-us"]:hover {
+    .navbar a[href*="/contact-us"]:hover {
       color: #fff;
       background: #76BD0E; }
   .navbar .nav-toggle {
@@ -271,12 +269,12 @@ h2 {
     text-align: center; }
     .hero-section .slide-body h2 {
       font-size: 4em;
-      text-shadow: 0px 3px 7px rgba(0, 0, 0, 0.65);
+      text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
       font-family: "Kaushan Script", cursive;
       text-transform: capitalize; }
     .hero-section .slide-body p {
       margin-top: 30px;
-      text-shadow: 0px 3px 7px rgba(0, 0, 0, 0.65);
+      text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
       font-size: 1.15em; }
   .hero-section .slick-arrow {
     position: absolute;
@@ -694,7 +692,6 @@ h2 {
   position: relative;
   overflow: hidden; }
   .footer .footer-sky {
-    opacity: 0;
     position: fixed;
     transform: translate3d(0, 0, 0);
     left: 0;
@@ -752,21 +749,21 @@ h2 {
   .pre-footer .form-group {
     position: relative;
     z-index: 999;
-    width: 70%;
+    width: 80%;
     margin: 30px auto 0; }
     .pre-footer .form-group input {
       border-radius: 25px;
-      padding: 10px 20px; }
-    .pre-footer .form-group button {
       padding: 10px 20px;
+      background: rgba(255, 255, 255, 0.85); }
+    .pre-footer .form-group button {
+      padding: 10px 30px;
       border-radius: 25px;
       position: absolute;
       bottom: 0px;
       right: 0px;
       font-size: 1rem;
-      background: #76BD0E;
-      border-color: #76BD0E;
-      color: #fff; }
+      color: #fff;
+      letter-spacing: 0.5px; }
       .pre-footer .form-group button:hover {
         background: #67a50c;
         border-color: #67a50c; }
@@ -936,6 +933,214 @@ html.touch #lightbox-next:hover, html.touch #lightbox-prev:hover {
   opacity: 0.75;
   background: none; }
 
+.subpage-header:after {
+  content: "";
+  z-index: 0;
+  position: absolute;
+  width: 100%;
+  height: 100px;
+  left: 0;
+  bottom: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0), #fafafa); }
+.subpage-header .container {
+  position: relative;
+  height: 380px; }
+
+#contact-us {
+  background: #fff; }
+  #contact-us .subpage-header {
+    background: url("../img/subpage.jpg");
+    background-color: #fff;
+    background-size: cover;
+    background-position: center bottom;
+    position: relative; }
+
+.subpage-title {
+  font-family: "Kaushan Script", cursive;
+  position: absolute;
+  bottom: 55px;
+  left: 5px;
+  font-size: 3.4em;
+  letter-spacing: -1px;
+  z-index: 123;
+  color: #fff;
+  text-shadow: 0px 3px 7px rgba(0, 0, 0, 0.35); }
+
+.breadcrumbs {
+  position: absolute;
+  bottom: 20px;
+  left: 15px;
+  z-index: 123;
+  list-style-type: none;
+  padding-left: 0; }
+  .breadcrumbs li {
+    display: inline-block;
+    letter-spacing: -0.5px; }
+    .breadcrumbs li a:link, .breadcrumbs li a:visited {
+      color: #278cff;
+      transition: all 0.25s ease; }
+    .breadcrumbs li a:hover, .breadcrumbs li a:active {
+      color: #76BD0E;
+      text-decoration: none; }
+    .breadcrumbs li:before {
+      content: " / ";
+      padding: 0 10px; }
+    .breadcrumbs li:first-child:before {
+      content: "";
+      padding: 0; }
+
+.subpage-content {
+  background: #fafafa;
+  padding-top: 40px; }
+  .subpage-content h2 {
+    font-size: 1.5em;
+    font-weight: 300;
+    text-transform: uppercase;
+    color: #278cff; }
+    .subpage-content h2 span {
+      font-weight: bold; }
+
+.contact-details h2 {
+  font-size: 1.5em;
+  margin-top: 60px; }
+
+.form-contact-us {
+  margin: 0 30px;
+  margin-top: -180px;
+  padding: 40px;
+  background: #fff;
+  border-top: 4px solid #278cff;
+  position: relative;
+  box-shadow: -2px 2px 6px rgba(50, 50, 50, 0.15); }
+  .form-contact-us p, .form-contact-us h3 {
+    text-align: center; }
+  .form-contact-us p {
+    color: #888;
+    margin: 0 0 5px 0;
+    font-style: italic;
+    font-weight: 300; }
+  .form-contact-us h3 {
+    text-transform: uppercase;
+    margin-bottom: 40px;
+    font-size: 1.5em;
+    font-weight: bold; }
+  .form-contact-us .form-group {
+    position: relative;
+    padding-left: 100px;
+    margin-bottom: 30px; }
+    .form-contact-us .form-group label {
+      position: absolute;
+      left: 0;
+      top: 10px;
+      font-size: 0.9em; }
+    .form-contact-us .form-group .form-control {
+      border-radius: 0;
+      resize: none; }
+  .form-contact-us .btn {
+    margin-left: 100px;
+    padding: 10px 30px;
+    border-radius: 25px;
+    font-size: 1rem;
+    color: #fff;
+    letter-spacing: 0.5px; }
+
+.parallax-mirror {
+  z-index: 1 !important; }
+
+.contact-social {
+  margin-top: 130px;
+  padding: 120px 0;
+  position: relative; }
+  .contact-social:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #363636;
+    opacity: 0.25;
+    z-index: 12; }
+  .contact-social .container {
+    z-index: 123;
+    position: relative; }
+  .contact-social .contact-social-wrapper {
+    color: #fff;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center; }
+    .contact-social .contact-social-wrapper h2, .contact-social .contact-social-wrapper p {
+      text-shadow: 0px 3px 7px rgba(0, 0, 0, 0.15); }
+    .contact-social .contact-social-wrapper h2 {
+      color: #fff;
+      margin-bottom: 15px;
+      font-style: normal; }
+    .contact-social .contact-social-wrapper ul {
+      list-style-type: none;
+      padding-left: 0;
+      margin: 0; }
+      .contact-social .contact-social-wrapper ul li {
+        display: inline-block; }
+    .contact-social .contact-social-wrapper a:link, .contact-social .contact-social-wrapper a:visited {
+      color: #fff;
+      font-size: 2.4em;
+      margin-right: 10px;
+      transition: all 0.25s ease; }
+    .contact-social .contact-social-wrapper a:hover, .contact-social .contact-social-wrapper a:active {
+      color: #76BD0E; }
+
+.questions {
+  border-top: 1px solid #eee;
+  padding: 100px 0; }
+  .questions h3 {
+    font-size: 0.875em;
+    margin-top: 30px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: -0.5px; }
+  .questions p {
+    font-weight: 300;
+    margin-left: 3px; }
+
+#about-us {
+  background: #fff; }
+  #about-us .subpage-header {
+    background: url("../img/subpage.jpg");
+    background-color: #fff;
+    background-size: cover;
+    background-position: center bottom;
+    position: relative; }
+
+.our-story {
+  padding-top: 20px;
+  padding-bottom: 80px; }
+  .our-story img {
+    float: left;
+    margin-right: 40px; }
+
+.founders {
+  padding: 100px 0 80px;
+  border-top: 1px solid #ccc; }
+  .founders > div > p {
+    margin-bottom: 50px; }
+
+.founders-item {
+  margin-bottom: 40px; }
+  .founders-item h3 {
+    font-size: 1em;
+    text-transform: uppercase;
+    font-weight: bold; }
+  .founders-item p {
+    font-weight: 300; }
+
+#gallery {
+  background: #fff; }
+  #gallery .subpage-header {
+    background: url("../img/white-table.jpg");
+    background-color: #fff;
+    background-size: cover;
+    position: relative; }
+
 @media screen and (max-width: 1200px) {
   body {
     font-size: 14PX; }
@@ -967,9 +1172,9 @@ html.touch #lightbox-next:hover, html.touch #lightbox-prev:hover {
       text-align: center;
       border-top: 1px solid rgba(0, 0, 0, 0.15);
       padding: 10px 0; }
-    .navbar a[href="/about-us"] {
+    .navbar a[href*="/about-us"] {
       transform: translateX(0); }
-    .navbar a[href="/contact-us"] {
+    .navbar a[href*="/contact-us"] {
       border-top: none;
       background: none;
       width: 50px;
@@ -977,12 +1182,12 @@ html.touch #lightbox-next:hover, html.touch #lightbox-prev:hover {
       position: absolute;
       top: 0;
       right: 0; }
-      .navbar a[href="/contact-us"] .hidden-md {
+      .navbar a[href*="/contact-us"] .hidden-md {
         display: none; }
-      .navbar a[href="/contact-us"] .fa {
+      .navbar a[href*="/contact-us"] .fa {
         display: block;
         font-size: 2.75em; }
-      .navbar a[href="/contact-us"]:hover {
+      .navbar a[href*="/contact-us"]:hover {
         background: none; }
     .navbar .nav-logo {
       padding: 0 30px; }
@@ -994,7 +1199,7 @@ html.touch #lightbox-next:hover, html.touch #lightbox-prev:hover {
       transform: translateY(30px);
       height: 0;
       overflow: hidden; }
-    .navbar a[href="/gallery"] {
+    .navbar a[href*="/gallery"] {
       transform: translateX(0px); }
     .navbar a.nav-toggle {
       display: block;
@@ -1077,7 +1282,30 @@ html.touch #lightbox-next:hover, html.touch #lightbox-prev:hover {
         display: none; }
     .featured-photos-section .item
     p {
-      margin-top: 15px; } }
+      margin-top: 15px; }
+
+  .subpage-content {
+    padding: 15px 0; }
+    .subpage-content h2 {
+      margin-top: 30px; }
+
+  .subpage-header .container {
+    height: 250px; }
+
+  .form-contact-us {
+    margin: 0;
+    padding: 20px;
+    margin-bottom: 30px; }
+    .form-contact-us .form-group {
+      padding-left: 75px; }
+    .form-contact-us .form-control {
+      font-size: 0.95em; }
+
+  .contact-social {
+    margin-top: 50px; }
+
+  .questions {
+    padding: 30px 0; } }
 @media screen and (max-width: 767px) {
   .backToTop {
     right: 15px;
@@ -1118,9 +1346,9 @@ html.touch #lightbox-next:hover, html.touch #lightbox-prev:hover {
 @media screen and (max-width: 480px) {
   .navbar .nav-logo a img {
     width: 150px; }
-  .navbar a[href="/contact-us"] {
+  .navbar a[href*="/contact-us"] {
     right: -5px; }
-    .navbar a[href="/contact-us"] .fa {
+    .navbar a[href*="/contact-us"] .fa {
       font-size: 2em; }
   .navbar a.nav-toggle {
     left: 5px;

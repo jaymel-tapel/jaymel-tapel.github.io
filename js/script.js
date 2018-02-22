@@ -111,11 +111,16 @@ $window.on('scroll', function(e) {
     $('.navbar').removeClass('is-collapsed');
   }
 
-  if( $window.scrollTop() > $otherServices.offset().top + $otherServices.height()) {
-    $bgSky.css('opacity', '1');    
+  if($('main').attr('id') == 'home') {
+    if( $window.scrollTop() > $otherServices.offset().top + $otherServices.height()) {
+      $bgSky.css('opacity', '1');    
+    } else {
+      $bgSky.css('opacity', '0');
+    }
   } else {
-    $bgSky.css('opacity', '0');    
+    $bgSky.css('opacity', '1');    
   }
+
 
   if( ($window.scrollTop() + $window .height() > $preFooter.offset().top)) {
     $footerScrollPercent = ($window.scrollTop() + $window .height() - $preFooter.offset().top) / ($preFooter.height() + $window.height());

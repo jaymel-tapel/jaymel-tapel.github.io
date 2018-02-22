@@ -34,22 +34,6 @@
 
 <body>
 
-  <div class="preloader" id="preloader">
-    <div class="preloader-wrapper">
-        <div class="orbit"></div>
-        <div class="plane">
-          <i class="fa fa-plane" aria-hidden="true"></i>
-        </div>        
-        <img src="img/logo.svg" alt="" class="preloader-logo">        
-    </div>
-
-    <p class="preloader-text">LOADING
-      <span class="dot-1">.</span>
-      <span class="dot-2">.</span>
-      <span class="dot-3">.</span>
-    </p>
-  </div>
-
   <header>
     <nav class="navbar" id="navbar">
 
@@ -71,7 +55,7 @@
           <div class="col-lg-5 nav-left order-lg-1">
             <div class="row">
               <div class="col-lg-6">
-                <a href="/events">SCHEDULE OF EVENTS</a>
+                <a href="/events.html">SCHEDULE OF EVENTS</a>
               </div>
               <!-- /col-6 -->
 
@@ -101,12 +85,12 @@
           <div class="col-lg-3 nav-right order-lg-3">
             <div class="row">
               <div class="col-lg-6">
-                <a href="/gallery">GALLERY</a>
+                <a href="/gallery.html">GALLERY</a>
               </div>
               <!-- /col-lg-4 -->
 
               <div class="col-lg-6">
-                <a href="/about-us">ABOUT US</a>
+                <a href="/about-us.html">ABOUT US</a>
               </div>
               <!-- /col-lg-4 -->
             </div>
@@ -116,7 +100,7 @@
 
           
           <div class="col-lg-2 order-lg-4">
-            <a href="/contact-us"><span class="hidden-md">CONTACT US</span><i class="fa fa-phone-square" aria-hidden="true"></i></a>
+            <a href="/contact-us.html"><span class="hidden-md">CONTACT US</span><i class="fa fa-phone-square" aria-hidden="true"></i></a>
           </div>
           <!-- /col-4 -->
 
@@ -130,7 +114,24 @@
     <!-- /navbar -->
   </header>
 
-  <main class="home">
+
+  <div class="preloader" id="preloader">
+    <div class="preloader-wrapper">
+        <div class="orbit"></div>
+        <div class="plane">
+          <i class="fa fa-plane" aria-hidden="true"></i>
+        </div>        
+        <img src="img/logo.svg" alt="" class="preloader-logo">        
+    </div>
+
+    <p class="preloader-text">LOADING
+      <span class="dot-1">.</span>
+      <span class="dot-2">.</span>
+      <span class="dot-3">.</span>
+    </p>
+  </div>
+
+  <main id="home">
     <h1 style="position: absolute; top: -99999px; left: -99999px;">Home</h1>
     <section class="hero-section">
 
@@ -732,6 +733,9 @@
 
   <!-- Echo  -->
   <script src="js/echo.js"></script>
+
+  <!-- ParallaxJS -->
+  <script src="js/parallax.min.js"></script>
   
   <!-- Custom Script -->
   <script src="js/script.js"></script>

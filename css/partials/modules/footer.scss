@@ -3,7 +3,6 @@
     overflow: hidden;
             
     .footer-sky {
-        opacity: 0;
         position: fixed;
         transform: translate3d(0,0,0);  
         left: 0;
@@ -12,6 +11,7 @@
         height: 100%;
         z-index: -9;
         background: url('../img/sky.jpg');
+        // background: linear-gradient(150deg, #004584 , #3587DE 50%, #8ca7ae 80%);
         background-size: cover;
         background-position: bottom;
     }
@@ -75,23 +75,23 @@
     .form-group {
         position: relative;
         z-index: 999;
-        width: 70%;
+        width: 80%;
         margin: 30px auto 0;     
 
         input {
             border-radius: 25px;
             padding: 10px 20px;
+            background: rgba(255, 255, 255, 0.85);
         }
         button {
-            padding: 10px 20px;
+            padding: 10px 30px;
             border-radius: 25px;
             position: absolute;
             bottom: 0px;
             right: 0px;
             font-size: 1rem;
-            background: $accentColor;
-            border-color: $accentColor;
             color: #fff;
+            letter-spacing: 0.5px;
             
             &:hover {
                 background: darken($color: $accentColor, $amount: 5);

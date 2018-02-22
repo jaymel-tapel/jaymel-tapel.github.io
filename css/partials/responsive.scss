@@ -54,11 +54,11 @@
             padding: 10px 0;
         }
         
-        & a[href="/about-us"] {
+        & a[href*="/about-us"] {
             transform: translateX(0);
         }
 
-        a[href="/contact-us"] {
+        a[href*="/contact-us"] {
             border-top: none;
             background: none;
             width: 50px;
@@ -90,7 +90,7 @@
             overflow: hidden;
         }
 
-        & a[href="/gallery"] {
+        & a[href*="/gallery"] {
             transform: translateX(0px);
         }
     
@@ -207,6 +207,40 @@
 
         p { margin-top: 15px; }
     }
+
+    .subpage-content {
+        padding: 15px 0;
+
+        h2 {
+            margin-top: 30px;
+        }
+    }
+
+    .subpage-header .container {
+        height: 250px;
+    }
+
+    .form-contact-us {
+        margin: 0;
+        padding: 20px;
+        margin-bottom: 30px;
+
+        .form-group {
+            padding-left: 75px;
+        }
+
+        .form-control {
+            font-size: 0.95em;
+        }
+    }
+
+    .contact-social {
+        margin-top: 50px;
+    }
+
+    .questions {
+        padding: 30px 0; 
+    }
 }
 
 @media screen and (max-width: 767px) {
@@ -267,7 +301,7 @@
             width: 150px;
         }
 
-        a[href="/contact-us"] {
+        a[href*="/contact-us"] {
             right: -5px;
 
             .fa {

@@ -63,11 +63,11 @@
         }
     }
 
-    & a[href="/gallery"] {
+    & a[href*="/gallery"] {
         transform: translateX(15px);
     }
 
-    & a[href="/contact-us"] {
+    & a[href*="/contact-us"] {
         float: right;
         background: $primaryColor;
         padding: 8px 16px;
