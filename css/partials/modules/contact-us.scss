@@ -6,7 +6,7 @@
         width: 100%;
         height: 100px;
         left: 0;
-        bottom: 0;
+        bottom: -1px;
         background: linear-gradient(rgba(0, 0, 0, 0), #fafafa);
     }
 
@@ -16,17 +16,15 @@
     }
 }
 
-#contact-us {
-    background: #fff;
 
-    .subpage-header {
-        background: url('../img/subpage.jpg'); 
-        background-color: #fff;
-        background-size: cover;
-        background-position: center bottom;
-        position: relative;       
-    }
+.subpage-header {
+    background: url('../img/subpage.jpg'); 
+    background-color: #fff;
+    background-size: cover;
+    background-position: center bottom;
+    position: relative;       
 }
+
 
 .subpage-title {
     font-family: $scriptFont;

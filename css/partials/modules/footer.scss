@@ -70,13 +70,16 @@
         letter-spacing: 1px;
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2)
     }
-    p { text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); }
+    p { 
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); 
+        font-weight: 300;    
+    }
 
     .form-group {
         position: relative;
         z-index: 999;
         width: 80%;
-        margin: 30px auto 0;     
+        margin: 30px auto 0; 
 
         input {
             border-radius: 25px;
@@ -84,7 +87,7 @@
             background: rgba(255, 255, 255, 0.85);
         }
         button {
-            padding: 10px 30px;
+            padding: 10px 20px;
             border-radius: 25px;
             position: absolute;
             bottom: 0px;

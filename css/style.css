@@ -745,7 +745,8 @@ h2 {
     letter-spacing: 1px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); }
   .pre-footer p {
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); }
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    font-weight: 300; }
   .pre-footer .form-group {
     position: relative;
     z-index: 999;
@@ -756,7 +757,7 @@ h2 {
       padding: 10px 20px;
       background: rgba(255, 255, 255, 0.85); }
     .pre-footer .form-group button {
-      padding: 10px 30px;
+      padding: 10px 20px;
       border-radius: 25px;
       position: absolute;
       bottom: 0px;
@@ -940,20 +941,18 @@ html.touch #lightbox-next:hover, html.touch #lightbox-prev:hover {
   width: 100%;
   height: 100px;
   left: 0;
-  bottom: 0;
+  bottom: -1px;
   background: linear-gradient(rgba(0, 0, 0, 0), #fafafa); }
 .subpage-header .container {
   position: relative;
   height: 380px; }
 
-#contact-us {
-  background: #fff; }
-  #contact-us .subpage-header {
-    background: url("../img/subpage.jpg");
-    background-color: #fff;
-    background-size: cover;
-    background-position: center bottom;
-    position: relative; }
+.subpage-header {
+  background: url("../img/subpage.jpg");
+  background-color: #fff;
+  background-size: cover;
+  background-position: center bottom;
+  position: relative; }
 
 .subpage-title {
   font-family: "Kaushan Script", cursive;
@@ -1102,15 +1101,6 @@ html.touch #lightbox-next:hover, html.touch #lightbox-prev:hover {
     font-weight: 300;
     margin-left: 3px; }
 
-#about-us {
-  background: #fff; }
-  #about-us .subpage-header {
-    background: url("../img/subpage.jpg");
-    background-color: #fff;
-    background-size: cover;
-    background-position: center bottom;
-    position: relative; }
-
 .our-story {
   padding-top: 20px;
   padding-bottom: 80px; }
@@ -1133,14 +1123,6 @@ html.touch #lightbox-next:hover, html.touch #lightbox-prev:hover {
   .founders-item p {
     font-weight: 300; }
 
-#gallery {
-  background: #fff; }
-  #gallery .subpage-header {
-    background: url("../img/white-table.jpg");
-    background-color: #fff;
-    background-size: cover;
-    position: relative; }
-
 @media screen and (max-width: 1200px) {
   body {
     font-size: 14PX; }
@@ -1160,7 +1142,52 @@ html.touch #lightbox-next:hover, html.touch #lightbox-prev:hover {
 @media screen and (max-width: 1024px) {
   .hero-section .slick-arrow:hover, .hero-section .slick-arrow:active {
     color: #fff;
-    opacity: 1; } }
+    opacity: 1; }
+
+  .card:hover, .card:active {
+    box-shadow: none; }
+    .card:hover:before, .card:active:before {
+      top: -1px;
+      bottom: -1px;
+      right: -1px;
+      left: -1px; }
+
+  .other-services-section a:hover, .other-services-section a:active {
+    text-decoration: none;
+    transform: translateY(0); }
+    .other-services-section a:hover .icon-wrapper:after, .other-services-section a:active .icon-wrapper:after {
+      background: none;
+      transform: translateY(0); }
+    .other-services-section a:hover .icon-wrapper .fa, .other-services-section a:hover .icon-label, .other-services-section a:active .icon-wrapper .fa, .other-services-section a:active .icon-label {
+      text-shadow: none; }
+
+  .featured-photos-section {
+    padding: 75px 0 50px;
+    background-color: #fff; }
+    .featured-photos-section .item:hover:after, .featured-photos-section .item:active:after {
+      top: -1px;
+      bottom: -1px;
+      right: -1px;
+      left: -1px; }
+    .featured-photos-section .item:hover figcaption, .featured-photos-section .item:active figcaption {
+      transform: translateY(100%);
+      opacity: 1; }
+    .featured-photos-section .item:hover img, .featured-photos-section .item:active img {
+      transform: scale(1); }
+
+  .subpage-content .founders {
+    padding-top: 30px;
+    padding-bottom: 30px; }
+    .subpage-content .founders h2 {
+      margin-top: 50px; }
+
+  .subpage-content .our-story {
+    padding-bottom: 30px; }
+    .subpage-content .our-story img {
+      width: 175px;
+      margin-bottom: 20px; }
+    .subpage-content .our-story h2 {
+      margin-top: 0; } }
 @media screen and (max-width: 991px) {
   .navbar {
     padding-top: 15px;
@@ -1284,11 +1311,6 @@ html.touch #lightbox-next:hover, html.touch #lightbox-prev:hover {
     p {
       margin-top: 15px; }
 
-  .subpage-content {
-    padding: 15px 0; }
-    .subpage-content h2 {
-      margin-top: 30px; }
-
   .subpage-header .container {
     height: 250px; }
 
@@ -1305,7 +1327,12 @@ html.touch #lightbox-next:hover, html.touch #lightbox-prev:hover {
     margin-top: 50px; }
 
   .questions {
-    padding: 30px 0; } }
+    padding: 30px 0; }
+
+  .subpage-content {
+    padding: 15px 0; }
+    .subpage-content h2 {
+      margin-top: 30px; } }
 @media screen and (max-width: 767px) {
   .backToTop {
     right: 15px;
@@ -1381,36 +1408,25 @@ html.touch #lightbox-next:hover, html.touch #lightbox-prev:hover {
 
   .copyright {
     padding: 15px;
-    font-size: 0.875em; } }
-html.touch .card:hover, html.touch .card:active {
-  box-shadow: none; }
-  html.touch .card:hover:before, html.touch .card:active:before {
-    top: -1px;
-    bottom: -1px;
-    right: -1px;
-    left: -1px; }
-html.touch .other-services-section a:hover, html.touch .other-services-section a:active {
-  text-decoration: none;
-  transform: translateY(0); }
-  html.touch .other-services-section a:hover .icon-wrapper:after, html.touch .other-services-section a:active .icon-wrapper:after {
-    background: none;
-    transform: translateY(0); }
-  html.touch .other-services-section a:hover .icon-wrapper .fa, html.touch .other-services-section a:hover .icon-label, html.touch .other-services-section a:active .icon-wrapper .fa, html.touch .other-services-section a:active .icon-label {
-    text-shadow: none; }
-html.touch .featured-photos-section {
-  padding: 75px 0 50px;
-  background-color: #fff; }
-  html.touch .featured-photos-section .item:hover:after, html.touch .featured-photos-section .item:active:after {
-    top: -1px;
-    bottom: -1px;
-    right: -1px;
-    left: -1px; }
-  html.touch .featured-photos-section .item:hover figcaption, html.touch .featured-photos-section .item:active figcaption {
-    transform: translateY(100%);
-    opacity: 1; }
-  html.touch .featured-photos-section .item:hover img, html.touch .featured-photos-section .item:active img {
-    transform: scale(1); }
+    font-size: 0.875em; }
 
+  .subpage-header {
+    background-position: 69% bottom; }
+
+  .subpage-content .subpage-title {
+    font-size: 3em; }
+
+  .subpage-content .our-story {
+    padding-bottom: 30px; }
+    .subpage-content .our-story img {
+      width: 100px;
+      margin-right: 10px;
+      margin-bottom: 10px; }
+    .subpage-content .our-story h2 {
+      margin-top: 0; }
+
+  .founders-item .col-3 {
+    padding-right: 0; } }
 .is-navbar-hidden {
   transform: translateY(-100%); }
 
