@@ -1347,6 +1347,8 @@ html.touch #lightbox-next:hover, html.touch #lightbox-prev:hover {
     margin-bottom: 30px; }
     .form-contact-us .form-group {
       padding-left: 75px; }
+    .form-contact-us .btn {
+      margin-left: 75px; }
     .form-contact-us .form-control {
       font-size: 0.95em; }
 
