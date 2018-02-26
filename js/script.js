@@ -161,7 +161,7 @@ $('#navToggle').on('click', function(e) {
 
 $("#lightbox-close").on('click', function(e) {
   e.preventDefault();
-  $('#lightbox-modal').css('display', "none");
+  $('#lightbox-modal').fadeOut();
 });
 
 $('.lightbox').on('click', function(e) {
@@ -192,7 +192,7 @@ $('.lightbox').on('click', function(e) {
   
     });
   
-    $("#lightbox-modal").css('display', 'block');
+    $("#lightbox-modal").fadeIn();
   }
 });
 
@@ -295,6 +295,3 @@ $("#hero-slider").on('mouseenter', function(event) {
 $("#hero-slider").on('mouseleave', function(event) {
   $(this).find('img').css('transition', 'all 250ms ease').css('left', '').removeClass('ready');
 });
-
-
-

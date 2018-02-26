@@ -1,4 +1,4 @@
-.featured-photos-section {
+.featured-photos-section, .gallery-wrapper {
     padding: 75px 0 50px;
     background-color: #fff;
 
@@ -52,6 +52,7 @@
                 border: 1px solid rgba(150, 150, 150, 0.4);
                 z-index: 9999;
                 transition: all 0.5s ease;
+                opacity: 0;
             }
             
             figcaption {
@@ -64,20 +65,11 @@
                 overflow: hidden;
                 text-overflow: ellipsis;
                 color: #FFF;
-                padding: 40px 30px 20px;
-                padding-right: 130px;                
+                padding: 40px 30px 20px;             
                 transition: all 0.5s ease;                             
                 transform: translateY(100%);
                 background: linear-gradient(rgba(0, 0, 0, 0),rgba(0,0,0, 0.5), rgba(50,50,50, 1));
                 opacity: 0;
-
-                &:after {
-                    content: "View Image";
-                    position: absolute;
-                    bottom: 20px;
-                    right: 30px;
-                    color: $accentColor;
-                }
             }
     
             &:hover {
@@ -87,6 +79,7 @@
                     bottom: 10px;
                     right: 10px;
                     left: 10px;
+                    opacity: 1;
                 }
 
                 figcaption {

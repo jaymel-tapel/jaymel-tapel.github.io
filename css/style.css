@@ -532,14 +532,14 @@ h2 {
     .other-services-section a:hover .icon-label, .other-services-section a:active .icon-label {
       text-shadow: 0 15px 5px rgba(0, 0, 0, 0.5); }
 
-.featured-photos-section {
+.featured-photos-section, .gallery-wrapper {
   padding: 75px 0 50px;
   background-color: #fff; }
-  .featured-photos-section .item {
+  .featured-photos-section .item, .gallery-wrapper .item {
     overflow: hidden;
     padding: 10px;
     transition: all 0.5s ease; }
-    .featured-photos-section .item img {
+    .featured-photos-section .item img, .gallery-wrapper .item img {
       position: absolute;
       left: -1000%;
       right: -1000%;
@@ -549,22 +549,22 @@ h2 {
       min-width: 100%;
       margin: auto;
       transition: all 0.5s ease; }
-    .featured-photos-section .item.col-4 img {
+    .featured-photos-section .item.col-4 img, .gallery-wrapper .item.col-4 img {
       width: auto;
       height: 100%; }
-    .featured-photos-section .item.col-8 img {
+    .featured-photos-section .item.col-8 img, .gallery-wrapper .item.col-8 img {
       width: 100%;
       height: auto; }
-    .featured-photos-section .item figure {
+    .featured-photos-section .item figure, .gallery-wrapper .item figure {
       height: 300px;
       width: 100%;
       margin-bottom: 0; }
-    .featured-photos-section .item a {
+    .featured-photos-section .item a, .gallery-wrapper .item a {
       display: block;
       position: relative;
       overflow: hidden;
       background: #000; }
-      .featured-photos-section .item a:after {
+      .featured-photos-section .item a:after, .gallery-wrapper .item a:after {
         content: "";
         position: absolute;
         top: -1px;
@@ -573,8 +573,9 @@ h2 {
         left: -1px;
         border: 1px solid rgba(150, 150, 150, 0.4);
         z-index: 9999;
-        transition: all 0.5s ease; }
-      .featured-photos-section .item a figcaption {
+        transition: all 0.5s ease;
+        opacity: 0; }
+      .featured-photos-section .item a figcaption, .gallery-wrapper .item a figcaption {
         position: absolute;
         bottom: 0;
         left: 0;
@@ -585,35 +586,29 @@ h2 {
         text-overflow: ellipsis;
         color: #FFF;
         padding: 40px 30px 20px;
-        padding-right: 130px;
         transition: all 0.5s ease;
         transform: translateY(100%);
         background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5), #323232);
         opacity: 0; }
-        .featured-photos-section .item a figcaption:after {
-          content: "View Image";
-          position: absolute;
-          bottom: 20px;
-          right: 30px;
-          color: #76BD0E; }
-      .featured-photos-section .item a:hover:after {
+      .featured-photos-section .item a:hover:after, .gallery-wrapper .item a:hover:after {
         top: 10px;
         bottom: 10px;
         right: 10px;
-        left: 10px; }
-      .featured-photos-section .item a:hover figcaption {
+        left: 10px;
+        opacity: 1; }
+      .featured-photos-section .item a:hover figcaption, .gallery-wrapper .item a:hover figcaption {
         transform: translateY(0);
         opacity: 1; }
-      .featured-photos-section .item a:hover img {
+      .featured-photos-section .item a:hover img, .gallery-wrapper .item a:hover img {
         transform: scale(1.1); }
-  .featured-photos-section > p {
+  .featured-photos-section > p, .gallery-wrapper > p {
     margin-top: 40px;
     text-align: center;
     font-size: 1.25em;
     font-weight: bold; }
-    .featured-photos-section > p a:link, .featured-photos-section > p a:visited {
+    .featured-photos-section > p a:link, .featured-photos-section > p a:visited, .gallery-wrapper > p a:link, .gallery-wrapper > p a:visited {
       transition: all 0.25s ease; }
-    .featured-photos-section > p a:hover, .featured-photos-section > p a:active {
+    .featured-photos-section > p a:hover, .featured-photos-section > p a:active, .gallery-wrapper > p a:hover, .gallery-wrapper > p a:active {
       color: #76BD0E;
       text-decoration: none; }
 
@@ -1123,6 +1118,25 @@ html.touch #lightbox-next:hover, html.touch #lightbox-prev:hover {
   .founders-item p {
     font-weight: 300; }
 
+.gallery-sort {
+  width: 300px;
+  position: relative;
+  float: right;
+  padding-left: 75px;
+  margin-top: -120px; }
+  .gallery-sort label {
+    position: absolute;
+    top: 8px;
+    left: 0; }
+
+.gallery-wrapper {
+  padding-bottom: 100px;
+  padding-top: 0;
+  background: none; }
+  .gallery-wrapper .pagination {
+    margin-top: 50px;
+    justify-content: center; }
+
 @media screen and (max-width: 1200px) {
   body {
     font-size: 14PX; }
@@ -1295,21 +1309,32 @@ html.touch #lightbox-next:hover, html.touch #lightbox-prev:hover {
     .other-services-section .icon-wrapper .fa {
       font-size: 3em; }
 
-  .featured-photos-section {
+  .gallery-sort {
+    width: 100%;
+    position: relative;
+    padding-left: 0;
+    margin-top: 0; }
+    .gallery-sort label {
+      position: static; }
+
+  .featured-photos-section, .gallery-wrapper {
     padding-top: 40px;
     padding-bottom: 30px; }
-    .featured-photos-section .row {
+    .featured-photos-section .row, .gallery-wrapper .row {
       padding: 15px; }
-    .featured-photos-section .item {
-      padding: 0; }
-      .featured-photos-section .item figure {
+    .featured-photos-section .item, .gallery-wrapper .item {
+      padding: 2px; }
+      .featured-photos-section .item figure, .gallery-wrapper .item figure {
         position: relative;
         box-sizing: border-box; }
-      .featured-photos-section .item a:after {
+      .featured-photos-section .item a:after, .gallery-wrapper .item a:after {
         display: none; }
     .featured-photos-section .item
+    p, .gallery-wrapper .item
     p {
       margin-top: 15px; }
+    .featured-photos-section .pagination, .gallery-wrapper .pagination {
+      margin-top: 20px; }
 
   .subpage-header .container {
     height: 250px; }

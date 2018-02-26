@@ -256,7 +256,18 @@
         }
     }
 
-    .featured-photos-section {
+    .gallery-sort {
+        width: 100%;
+        position: relative;
+        padding-left: 0;
+        margin-top: 0;
+    
+        label {
+            position: static;
+        }
+    }
+
+    .featured-photos-section, .gallery-wrapper {
         padding-top: 40px;
         padding-bottom: 30px;
 
@@ -265,7 +276,7 @@
         }
 
         .item {
-            padding: 0;
+            padding: 2px;
 
             figure {
                 position: relative;
@@ -278,6 +289,10 @@
         .item 
 
         p { margin-top: 15px; }
+
+        .pagination {
+            margin-top: 20px;
+        }
     }
 
     .subpage-header .container {
