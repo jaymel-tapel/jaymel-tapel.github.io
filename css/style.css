@@ -346,17 +346,20 @@ h2 {
       text-decoration: none;
       letter-spacing: 1.5px; }
 
-.events-section {
+.events-section, .events-wrapper {
   z-index: 99999;
-  padding: 75px 0 50px;
   background-color: #fff; }
-  .events-section .card {
+  .events-section h2, .events-wrapper h2 {
+    padding-top: 75px; }
+  .events-section .col-lg-4, .events-wrapper .col-lg-4 {
+    margin-bottom: 40px; }
+  .events-section .card, .events-wrapper .card {
     height: 100%;
     transition: all 0.25s ease;
     box-shadow: 0px 0px 0px 0px #888; }
-    .events-section .card .btn {
+    .events-section .card .btn, .events-wrapper .card .btn {
       margin-bottom: auto; }
-    .events-section .card:before {
+    .events-section .card:before, .events-wrapper .card:before {
       content: "";
       position: absolute;
       left: -1px;
@@ -366,21 +369,21 @@ h2 {
       border: 1px solid rgba(150, 150, 150, 0.4);
       transition: all 0.25s ease;
       z-index: 9; }
-    .events-section .card:hover, .events-section .card:active {
+    .events-section .card:hover, .events-section .card:active, .events-wrapper .card:hover, .events-wrapper .card:active {
       box-shadow: 0px 25px 25px 0px #aaa; }
-      .events-section .card:hover:before, .events-section .card:active:before {
+      .events-section .card:hover:before, .events-section .card:active:before, .events-wrapper .card:hover:before, .events-wrapper .card:active:before {
         left: 10px;
         top: 10px;
         right: 10px;
         bottom: 10px; }
-    .events-section .card .card-body {
+    .events-section .card .card-body, .events-wrapper .card .card-body {
       padding: 5px 25px 25px 25px;
       z-index: 999; }
-  .events-section .event-head {
+  .events-section .event-head, .events-wrapper .event-head {
     color: #fff;
     text-shadow: 0px 3px 7px rgba(0, 0, 0, 0.35);
     position: relative; }
-  .events-section .event-title {
+  .events-section .event-title, .events-wrapper .event-title {
     font-size: 2rem;
     font-family: "Kaushan Script", cursive;
     margin-bottom: 20px;
@@ -388,19 +391,19 @@ h2 {
     left: 20px;
     bottom: 40px;
     margin-bottom: 0px; }
-  .events-section .event-duration {
+  .events-section .event-duration, .events-wrapper .event-duration {
     position: absolute;
     bottom: 15px;
     left: 25px;
     margin-bottom: 0px; }
-  .events-section .event-date {
+  .events-section .event-date, .events-wrapper .event-date {
     position: absolute;
     margin-bottom: 0px;
     bottom: 15px;
     right: 25px;
     letter-spacing: 1px;
     font-size: 1.125em; }
-  .events-section .event-text {
+  .events-section .event-text, .events-wrapper .event-text {
     margin-top: 10px;
     text-align: justify;
     margin-bottom: 10px;
@@ -409,7 +412,7 @@ h2 {
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical; }
-  .events-section .event-price {
+  .events-section .event-price, .events-wrapper .event-price {
     display: inline-block;
     float: right;
     color: #278cff;
@@ -418,25 +421,25 @@ h2 {
     line-height: 1;
     margin-top: 10px;
     letter-spacing: 1px; }
-    .events-section .event-price span {
+    .events-section .event-price span, .events-wrapper .event-price span {
       font-size: 2em; }
-  .events-section .event-note {
+  .events-section .event-note, .events-wrapper .event-note {
     margin: 0;
     line-height: 1;
     font-size: 0.813em;
     color: #aaaaaa; }
-  .events-section .event-actions {
+  .events-section .event-actions, .events-wrapper .event-actions {
     padding-top: 15px;
     margin-top: auto;
     z-index: 99px; }
-  .events-section .container > p {
-    margin-top: 40px;
+  .events-section .container > p, .events-wrapper .container > p {
     text-align: center;
     font-size: 1.25em;
-    font-weight: bold; }
-    .events-section .container > p a:link, .events-section .container > p a:visited {
+    font-weight: bold;
+    padding-bottom: 75px; }
+    .events-section .container > p a:link, .events-section .container > p a:visited, .events-wrapper .container > p a:link, .events-wrapper .container > p a:visited {
       transition: all 0.25s ease; }
-    .events-section .container > p a:hover, .events-section .container > p a:active {
+    .events-section .container > p a:hover, .events-section .container > p a:active, .events-wrapper .container > p a:hover, .events-wrapper .container > p a:active {
       color: #76BD0E;
       text-decoration: none; }
 
@@ -1125,7 +1128,7 @@ html.touch #lightbox-next:hover, html.touch #lightbox-prev:hover {
   position: relative;
   float: right;
   padding-left: 75px;
-  margin-top: -120px; }
+  margin-top: -115px; }
   .gallery-sort label {
     position: absolute;
     top: 8px;
@@ -1138,6 +1141,32 @@ html.touch #lightbox-next:hover, html.touch #lightbox-prev:hover {
   .gallery-wrapper .pagination {
     margin-top: 50px;
     justify-content: center; }
+
+.events-toolbar {
+  width: 100%;
+  margin-top: -40px;
+  margin-bottom: 40px; }
+
+.events-sort {
+  width: 30%;
+  position: relative;
+  float: right;
+  padding-left: 75px; }
+  .events-sort label {
+    position: absolute;
+    top: 8px;
+    left: 0; }
+
+.events-search {
+  width: 60%;
+  float: left; }
+  .events-search .btn.btn-primary {
+    border-bottom-right-radius: 4px;
+    border-top-right-radius: 4px; }
+
+.events-wrapper .pagination {
+  justify-content: center;
+  padding-bottom: 50px; }
 
 @media screen and (max-width: 1200px) {
   body {
@@ -1329,8 +1358,12 @@ html.touch #lightbox-next:hover, html.touch #lightbox-prev:hover {
       .featured-photos-section .item figure, .gallery-wrapper .item figure {
         position: relative;
         box-sizing: border-box; }
-      .featured-photos-section .item a:after, .gallery-wrapper .item a:after {
+      .featured-photos-section .item a:hover:after, .gallery-wrapper .item a:hover:after {
         display: none; }
+      .featured-photos-section .item a:hover figcaption, .gallery-wrapper .item a:hover figcaption {
+        display: none; }
+      .featured-photos-section .item a:hover img, .gallery-wrapper .item a:hover img {
+        transform: scale(1); }
     .featured-photos-section .item
     p, .gallery-wrapper .item
     p {

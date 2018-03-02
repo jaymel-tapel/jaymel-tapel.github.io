@@ -1,0 +1,140 @@
+.events-section, .events-wrapper {
+    z-index: 99999;
+    background-color: #fff;
+
+    h2 { padding-top: 75px;}
+
+    .col-lg-4 { margin-bottom: 40px;  }
+
+
+    .card {
+        height: 100%;
+        transition: all 0.25s ease;
+        box-shadow: 0px 0px 0px 0px #888;
+
+        .btn { margin-bottom: auto; }
+
+        &:before {
+            content: "";
+            position: absolute;
+
+            left: -1px;
+            top: -1px;
+            right: -1px;
+            bottom: -1px;
+
+            border: 1px solid rgba(150, 150, 150, 0.4);
+            transition: all 0.25s ease;
+            z-index: 9;      
+        }
+
+        &:hover, &:active {
+            box-shadow: 0px 25px 25px 0px #aaa; 
+            
+            &:before {
+                left: 10px;
+                top: 10px;
+                right: 10px;
+                bottom: 10px;
+            }
+        }
+
+        .card-body {
+            padding: 5px 25px 25px 25px;
+            z-index: 999;
+        }
+
+    }    
+
+    .event-head {
+        color: #fff;
+        text-shadow: $textShadow;
+        position: relative;
+        
+
+    }
+
+    .event-title {
+        font-size: 2rem;
+        font-family: $scriptFont;
+        margin-bottom: 20px;
+        position: absolute;
+        left: 20px;
+        bottom: 40px;
+        margin-bottom: 0px;
+    }
+
+    .event-duration {
+        position: absolute;
+        bottom: 15px;
+        left: 25px;        
+        margin-bottom: 0px;        
+    }
+
+    .event-date {
+        // display: none;
+        position: absolute;
+        margin-bottom: 0px;                
+        bottom: 15px;
+        right: 25px;
+        letter-spacing: 1px;
+        font-size: 1.125em;
+    }
+
+    .event-text {
+        margin-top: 10px;
+        text-align: justify;
+        margin-bottom: 10px;
+        color: #333;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+    }
+
+    
+    .event-price {
+
+        display: inline-block;
+        float: right;
+        color: $primaryColor;
+        font-weight: bold;
+        margin-bottom: 0;
+        line-height: 1;
+        margin-top: 10px;
+        letter-spacing: 1px;
+        
+        span {
+            font-size: 2em;  
+        }
+    }
+
+    .event-note {
+        margin: 0;
+        line-height: 1;
+        font-size: 0.813em;
+        color: #aaaaaa;
+    }
+
+    .event-actions {
+        padding-top: 15px;
+        margin-top: auto;
+        z-index: 99px;
+    }
+
+    .container > p {
+        text-align: center;
+        font-size: 1.25em;
+        font-weight: bold;
+        padding-bottom: 75px;
+
+        a:link, a:visited {
+            transition: all 0.25s ease;
+        }
+
+        a:hover, a:active {
+            color: $accentColor;
+            text-decoration: none;
+        }
+    }
+}
