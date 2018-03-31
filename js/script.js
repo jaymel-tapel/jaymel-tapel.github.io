@@ -96,6 +96,7 @@ $window.on('scroll', function(e) {
 
   windowPosition = $(window).scrollTop()+$(window).height();
   
+  elementTransition('fadeIn', '.event-cards .card', 250);
   elementTransition('fadeIn', '.events-section .card', 250);
   elementTransition('zoomIn', '.other-services-section .col-lg-2', 100);           
   elementTransition('fadeIn', '.featured-photos-section .item', 500);          
@@ -294,4 +295,97 @@ $("#hero-slider").on('mouseenter', function(event) {
 
 $("#hero-slider").on('mouseleave', function(event) {
   $(this).find('img').css('transition', 'all 250ms ease').css('left', '').removeClass('ready');
+});
+
+$('.event-images-strip a').on('click', function(event) {
+  event.preventDefault();
+  var newSrc = $(this).find('img').attr('src');
+  $('.event-images-active').find('img').attr('src', newSrc);
+  $(this).siblings('a').removeClass('active');
+  $(this).addClass('active');
+});
+
+function horizontalScroll(parentSelector, elementSelector) {
+  $(parentSelector).scrollLeft($(elementSelector).position().left);
+}
+
+$('.event-images-next').on('click', function (event) {
+  event.preventDefault();
+  var activeImageIndex = $('.event-images-strip a.active').removeClass('active').index();
+  if(activeImageIndex == $('.event-images-strip a').length - 1) {
+    $('.event-images-strip a').eq(0).addClass('active');    
+  } else {
+    $('.event-images-strip a').eq(activeImageIndex + 1).addClass('active');    
+  }
+  var newSrc = $('.event-images-strip a.active').find('img').attr('src');
+  $('.event-images-active').find('img').attr('src', newSrc);  
+
+  horizontalScroll('.event-images-strip', '.event-images-strip a.active');
+});
+
+$('.event-images-prev').on('click', function (event) {
+  event.preventDefault();
+  var activeImageIndex = $('.event-images-strip a.active').removeClass('active').index();
+  $('.event-images-strip a').eq(activeImageIndex - 1).addClass('active');
+  var newSrc = $('.event-images-strip a.active').find('img').attr('src');
+  $('.event-images-active').find('img').attr('src', newSrc);  
+
+  horizontalScroll('.event-images-strip', '.event-images-strip a.active');
+  
+});
+
+$('#eventModal').on('show.bs.modal', function (event) {
+  // $navbar.addClass('is-navbar-hidden');
+  // $('#backToTop').addClass('is-back-visible');
+  var button = $(event.relatedTarget);
+  var recipient = button.data('whatever');
+  var modal = $(this);
+  if(button.data('tour-type') == 'scheduled') {
+    $(".nav-link[href='#private-tour-tab']").removeClass('show').removeClass('active');
+    $(".nav-link[href='#scheduled-tour-tab']").addClass('show').addClass('active');
+    $('#private-tour-tab').removeClass('show').removeClass('active').find('.form-control').attr('disabled', true);
+    $('#scheduled-tour-tab').addClass('show').addClass('active').find('.form-control').attr('disabled', false);
+  } else {
+    $(".nav-link[href='#private-tour-tab']").addClass('show').addClass('active');
+    $(".nav-link[href='#scheduled-tour-tab']").removeClass('show').removeClass('active');
+    $('#private-tour-tab').addClass('show').addClass('active').find('.form-control').attr('disabled', false);
+    $('#scheduled-tour-tab').removeClass('show').removeClass('active').find('.form-control').attr('disabled', true);
+  }
+  // modal.find('.modal-title').text('New message to ' + recipient);
+  // modal.find('.modal-body input').val(recipient);
+});
+
+$(".nav-link[href='#scheduled-tour-tab']").on('click', function (e) {
+  e.preventDefault();
+  $('#private-tour-tab').removeClass('show').removeClass('active').find('.form-control').attr('disabled', true);
+    $('#scheduled-tour-tab').addClass('show').addClass('active').find('.form-control').attr('disabled', false);
+});
+
+$(".nav-link[href='#private-tour-tab']").on('click', function (e) {
+  e.preventDefault();
+  $('#private-tour-tab').addClass('show').addClass('active').find('.form-control').attr('disabled', false);
+  $('#scheduled-tour-tab').removeClass('show').removeClass('active').find('.form-control').attr('disabled', true);
+});
+
+$("#form-group-tour").on('submit', function (e) {
+  e.preventDefault();
+  var fgtData = $(this).serializeArray();
+  console.log(fgtData);
+  $("#payment-name").text(fgtData[4].value);
+  $("#payment-email").text(fgtData[5].value);
+  $("#payment-contact-no").text(fgtData[6].value);
+  if(fgtData[2].name == "fgt-date-scheduled") {
+    $("#payment-item-type").text('Scheduled Group Tour');
+  } else {
+    $("#payment-item-type").text('Private Group Tour');
+  }
+
+  $("#payment-destination").text(fgtData[1].value);
+  $("#payment-date").text(fgtData[2].value);
+  $("#payment-quantity").text(fgtData[3].value);
+
+  $("#payment-total").text((parseFloat(fgtData[0].value) * fgtData[3].value).toFixed(2));
+
+  $('#eventModal').modal('hide');
+  $("#paymentModal").modal();
 });

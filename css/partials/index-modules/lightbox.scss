@@ -39,8 +39,10 @@
         transform: translateY(-50%);
         padding: 0 20px;
         transition: all 0.5s ease; 
-        opacity: 0.75;
+        opacity: 0.85;
         text-shadow: $textShadow;
+        background: rgba(0,0,0,0.25);
+        
 
         &:hover {
             opacity: 1;
