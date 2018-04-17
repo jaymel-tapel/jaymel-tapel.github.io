@@ -1,3 +1,5 @@
+$ = jQuery.noConflict();
+
 
 echo.init({
   offset: 1000,
@@ -305,10 +307,6 @@ $('.event-images-strip a').on('click', function(event) {
   $(this).addClass('active');
 });
 
-function horizontalScroll(parentSelector, elementSelector) {
-  $(parentSelector).scrollLeft($(elementSelector).position().left);
-}
-
 $('.event-images-next').on('click', function (event) {
   event.preventDefault();
   var activeImageIndex = $('.event-images-strip a.active').removeClass('active').index();
@@ -319,8 +317,14 @@ $('.event-images-next').on('click', function (event) {
   }
   var newSrc = $('.event-images-strip a.active').find('img').attr('src');
   $('.event-images-active').find('img').attr('src', newSrc);  
-
-  horizontalScroll('.event-images-strip', '.event-images-strip a.active');
+  if ($('.event-images-strip a.active').index() == 0) {
+    $('.event-images-strip').scrollLeft(0);
+  } else if( $('.event-images-strip').scrollLeft() + $('.event-images-strip').width() < $('.event-images-strip a.active').position().left + $('.event-images-strip a.active').width() ) {
+    $('.event-images-strip').scrollLeft( $('.event-images-strip').scrollLeft() + $('.event-images-strip a.active').width());
+  }
+  $('html, body').animate({
+    scrollLeft: 500
+}, 500);
 });
 
 $('.event-images-prev').on('click', function (event) {
@@ -329,14 +333,10 @@ $('.event-images-prev').on('click', function (event) {
   $('.event-images-strip a').eq(activeImageIndex - 1).addClass('active');
   var newSrc = $('.event-images-strip a.active').find('img').attr('src');
   $('.event-images-active').find('img').attr('src', newSrc);  
-
-  horizontalScroll('.event-images-strip', '.event-images-strip a.active');
-  
+  $('.event-images-strip').scrollLeft($('.event-images-strip a.active').position().left);
 });
 
 $('#eventModal').on('show.bs.modal', function (event) {
-  // $navbar.addClass('is-navbar-hidden');
-  // $('#backToTop').addClass('is-back-visible');
   var button = $(event.relatedTarget);
   var recipient = button.data('whatever');
   var modal = $(this);
@@ -351,8 +351,6 @@ $('#eventModal').on('show.bs.modal', function (event) {
     $('#private-tour-tab').addClass('show').addClass('active').find('.form-control').attr('disabled', false);
     $('#scheduled-tour-tab').removeClass('show').removeClass('active').find('.form-control').attr('disabled', true);
   }
-  // modal.find('.modal-title').text('New message to ' + recipient);
-  // modal.find('.modal-body input').val(recipient);
 });
 
 $(".nav-link[href='#scheduled-tour-tab']").on('click', function (e) {
@@ -388,4 +386,8 @@ $("#form-group-tour").on('submit', function (e) {
 
   $('#eventModal').modal('hide');
   $("#paymentModal").modal();
+});
+
+$("#btn-event-filter-toggle").on('click', function() {
+  $(".event-filter-item").slideToggle();
 });

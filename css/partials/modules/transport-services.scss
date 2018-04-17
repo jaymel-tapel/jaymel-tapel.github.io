@@ -1,0 +1,33 @@
+.transport-service-content {
+    h2 {
+        margin-top: 60px;
+    }
+
+    table td:first-child {
+        padding-left: 40px;
+        width: 100px;
+    }
+}
+
+#form-transport-services {
+    margin-left: 30px;
+    margin-bottom: 60px;
+    padding-left: 60px;
+    border-left: 1px solid #eee;
+
+    .form-control {
+        border-radius: 0;
+
+
+    }
+
+    .btn {
+        padding: 10px 30px;
+        border-radius: 25px;
+        font-size: 1rem;
+        color: #fff;
+        letter-spacing: 0.5px;
+        margin-top: 15px;
+        margin-bottom: 60px;
+    }
+}

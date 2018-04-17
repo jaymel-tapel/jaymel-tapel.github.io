@@ -382,7 +382,18 @@ h2 {
   .events-section .event-head, .events-wrapper .event-head {
     color: #fff;
     text-shadow: 0px 3px 7px rgba(0, 0, 0, 0.35);
-    position: relative; }
+    position: relative;
+    height: 200px;
+    overflow: hidden; }
+    .events-section .event-head .card-img-top, .events-wrapper .event-head .card-img-top {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      min-width: 100%;
+      min-height: 100%;
+      height: 100%;
+      width: auto; }
   .events-section .event-title, .events-wrapper .event-title {
     font-size: 2rem;
     font-family: "Kaushan Script", cursive;
@@ -390,12 +401,14 @@ h2 {
     position: absolute;
     left: 20px;
     bottom: 40px;
-    margin-bottom: 0px; }
+    margin-bottom: 0px;
+    z-index: 123; }
   .events-section .event-duration, .events-wrapper .event-duration {
     position: absolute;
     bottom: 15px;
     left: 25px;
-    margin-bottom: 0px; }
+    margin-bottom: 0px;
+    z-index: 123; }
   .events-section .event-date, .events-wrapper .event-date {
     display: none;
     position: absolute;
@@ -959,9 +972,9 @@ html.touch #lightbox-next:hover, html.touch #lightbox-prev:hover {
 .subpage-title {
   font-family: "Kaushan Script", cursive;
   position: absolute;
-  bottom: 55px;
+  bottom: 45px;
   left: 5px;
-  font-size: 3.4em;
+  font-size: 3em;
   letter-spacing: -1px;
   z-index: 123;
   color: #fff;
@@ -969,7 +982,7 @@ html.touch #lightbox-next:hover, html.touch #lightbox-prev:hover {
 
 .breadcrumbs {
   position: absolute;
-  bottom: 20px;
+  bottom: 0px;
   left: 15px;
   z-index: 123;
   list-style-type: none;
@@ -1152,47 +1165,25 @@ html.touch #lightbox-next:hover, html.touch #lightbox-prev:hover {
   width: 100%;
   margin-top: -40px;
   margin-bottom: 40px; }
-
-.events-sort {
-  width: 33.3333333%;
-  position: relative;
-  float: right;
-  padding-left: 110px; }
-  .events-sort label {
+  .events-toolbar .btn-primary {
+    border-radius: 0;
+    border-bottom-right-radius: 3px;
+    border-top-right-radius: 3px; }
+  .events-toolbar .form-group {
+    position: relative;
+    padding-left: 100px; }
+  .events-toolbar .event-filter-container {
+    display: none;
+    padding: 0;
+    padding-right: 15px; }
+    .events-toolbar .event-filter-container .btn {
+      height: 100%;
+      width: 100%;
+      border-radius: 3px; }
+  .events-toolbar label {
     position: absolute;
-    top: 8px;
-    left: 25px; }
-
-.events-search {
-  width: 33.3333333%;
-  padding-right: 20px;
-  float: left; }
-  .events-search .btn.btn-primary {
-    border-bottom-right-radius: 4px;
-    border-top-right-radius: 4px; }
-
-.event-filters {
-  float: left;
-  width: 33.333333%;
-  padding: 7px 20px 0 12px; }
-  .event-filters ul {
-    padding-left: 0;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around; }
-    .event-filters ul li {
-      display: inline-block; }
-    .event-filters ul a:link, .event-filters ul a:visited {
-      color: #333;
-      position: relative;
-      padding-right: 20px; }
-      .event-filters ul a:link:after, .event-filters ul a:visited:after {
-        content: "\f0d7";
-        font-family: FontAwesome;
-        position: absolute;
-        right: 0; }
-    .event-filters ul a:hover, .event-filters ul a:active {
-      text-decoration: none; }
+    left: 15px;
+    top: 5px; }
 
 .events-wrapper .pagination {
   justify-content: center;
@@ -1265,6 +1256,13 @@ html.touch #lightbox-next:hover, html.touch #lightbox-prev:hover {
   font-size: 1em;
   margin-bottom: 30px; }
 
+.gt-btn {
+  padding: 8px 16px;
+  width: 45%;
+  margin-top: 15px;
+  margin-right: 5%;
+  float: left; }
+
 .event-cards {
   margin-top: 60px;
   padding-top: 60px;
@@ -1299,15 +1297,18 @@ html.touch #lightbox-next:hover, html.touch #lightbox-prev:hover {
         border-top: 1px solid #dee2e6;
         padding: 5px 0; }
       .event-cards .card ul li:before {
-        content: "\2713";
         padding-right: 30px;
         color: #278cff; }
     .event-cards .card .card-body {
       padding-bottom: 0;
       font-weight: 300; }
-  .event-cards .card.danger li:before {
+  .event-cards .card.inclusions li:before {
+    content: "\2713";
+    padding-right: 30px;
+    color: #278cff; }
+  .event-cards .card.exlusions li:before {
     content: "\2715"; }
-  .event-cards .card.success li:before {
+  .event-cards .card.things-to-bring li:before {
     content: "\2611"; }
 
 .itinerary {
@@ -1332,7 +1333,8 @@ html.touch #lightbox-next:hover, html.touch #lightbox-prev:hover {
 
 .reminders {
   font-weight: 300;
-  font-size: 0.9em; }
+  font-size: 0.9em;
+  padding-bottom: 60px; }
   .reminders ol {
     padding-left: 15px; }
     .reminders ol > li {
@@ -1437,6 +1439,28 @@ html.touch #lightbox-next:hover, html.touch #lightbox-prev:hover {
       float: left;
       margin: 0; }
 
+.transport-service-content h2 {
+  margin-top: 60px; }
+.transport-service-content table td:first-child {
+  padding-left: 40px;
+  width: 100px; }
+
+#form-transport-services {
+  margin-left: 30px;
+  margin-bottom: 60px;
+  padding-left: 60px;
+  border-left: 1px solid #eee; }
+  #form-transport-services .form-control {
+    border-radius: 0; }
+  #form-transport-services .btn {
+    padding: 10px 30px;
+    border-radius: 25px;
+    font-size: 1rem;
+    color: #fff;
+    letter-spacing: 0.5px;
+    margin-top: 15px;
+    margin-bottom: 60px; }
+
 @media screen and (max-width: 1200px) {
   body {
     font-size: 14PX; }
@@ -1444,9 +1468,9 @@ html.touch #lightbox-next:hover, html.touch #lightbox-prev:hover {
   .navbar a:link, .navbar a:visited {
     letter-spacing: 0px; }
 
-  .events-section .card {
+  .events-section .card, .events-wrapper .card {
     margin: 0 auto; }
-  .events-section .card .event-actions .btn {
+  .events-section .card .event-actions .btn, .events-wrapper .card .event-actions .btn {
     padding: 7px 14px;
     margin-left: 0;
     margin-bottom: 5px; }
@@ -1663,7 +1687,45 @@ html.touch #lightbox-next:hover, html.touch #lightbox-prev:hover {
   .subpage-content {
     padding: 15px 0; }
     .subpage-content h2 {
-      margin-top: 30px; } }
+      margin-top: 30px; }
+
+  .event-images {
+    padding-left: 15px; }
+
+  .event-details {
+    padding-right: 15px; }
+
+  .event-images-strip {
+    margin-bottom: 15px; }
+
+  .event-cards {
+    padding-top: 30px;
+    padding-bottom: 15px; }
+    .event-cards .card ul {
+      max-height: none; }
+
+  .event-cards .col-lg-4 {
+    margin-bottom: 30px; }
+
+  .itinerary {
+    padding-bottom: 0; }
+
+  .events-toolbar {
+    margin-top: 0;
+    margin-bottom: 30px; }
+    .events-toolbar input, .events-toolbar select {
+      font-size: 1em; }
+    .events-toolbar label {
+      left: 5px; }
+    .events-toolbar .event-filter-container {
+      display: block; }
+      .events-toolbar .event-filter-container .btn {
+        font-size: 0.875rem; }
+    .events-toolbar .event-filter-item {
+      margin-top: 15px;
+      display: none; }
+      .events-toolbar .event-filter-item .form-group {
+        margin: 0; } }
 @media screen and (max-width: 767px) {
   .backToTop {
     right: 15px;
@@ -1675,6 +1737,9 @@ html.touch #lightbox-next:hover, html.touch #lightbox-prev:hover {
     display: block; }
 
   .events-section .card .card-body {
+    padding: 15px; }
+
+  .events-wrapper .card .card-body {
     padding: 15px; }
 
   .other-services-section .bg-sand:before {
@@ -1744,8 +1809,13 @@ html.touch #lightbox-next:hover, html.touch #lightbox-prev:hover {
   .subpage-header {
     background-position: 69% bottom; }
 
-  .subpage-content .subpage-title {
-    font-size: 3em; }
+  .subpage-title {
+    font-size: 2.5em;
+    left: 15px;
+    bottom: 25px; }
+
+  .breadcrumbs {
+    bottom: -10px; }
 
   .subpage-content .our-story {
     padding-bottom: 30px; }
@@ -1757,7 +1827,24 @@ html.touch #lightbox-next:hover, html.touch #lightbox-prev:hover {
       margin-top: 0; }
 
   .founders-item .col-3 {
-    padding-right: 0; } }
+    padding-right: 0; }
+
+  .event-images-prev, .event-images-next {
+    font-size: 2.5em;
+    padding: 0 15px; }
+
+  .event-images-strip img {
+    height: 65px; }
+
+  .gt-btn {
+    width: 100%;
+    margin-top: 10px; }
+
+  .itinerary table {
+    min-width: 600px; }
+
+  .reminders {
+    padding-bottom: 30px; } }
 .is-navbar-hidden {
   transform: translateY(-100%); }
 

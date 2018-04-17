@@ -10,7 +10,7 @@
         }
     }
 
-    .events-section {
+    .events-section, .events-wrapper {
         .card {
             margin: 0 auto;
         }
@@ -338,6 +338,65 @@
             margin-top: 30px;
         }
     }
+
+    .event-images {
+        padding-left: 15px;
+    }
+
+    .event-details {
+        padding-right: 15px;
+    }
+
+    .event-images-strip {
+        margin-bottom: 15px;
+    }
+
+    .event-cards {
+        padding-top: 30px;
+        padding-bottom: 15px;
+
+        .card ul {
+            max-height: none;
+        }
+    }
+
+    .event-cards .col-lg-4 {
+        margin-bottom: 30px;
+    }
+
+    .itinerary {
+        padding-bottom: 0;
+    }
+
+    .events-toolbar {
+        margin-top: 0;
+        margin-bottom: 30px;
+    
+        input, select {
+            font-size: 1em;
+        }
+
+        label {
+            left: 5px;
+        }
+
+        .event-filter-container {
+            display: block;
+
+            .btn {
+                font-size: 0.875rem;
+            }
+        }
+
+        .event-filter-item {
+            margin-top: 15px;
+            display: none;
+            .form-group {
+                margin: 0;
+            }
+        }
+    }
+    
 }
 
 @media screen and (max-width: 767px) {
@@ -352,6 +411,7 @@
     .section-header span { display: block; }
 
     .events-section .card .card-body { padding: 15px; }
+    .events-wrapper .card .card-body { padding: 15px; }
     
     .other-services-section {
 
@@ -387,6 +447,8 @@
 
         .footer-contact { margin-top: 30px; }
     }
+
+
 }
 
 @media screen and (max-width: 480px) {
@@ -469,10 +531,14 @@
         background-position: 69% bottom;
     }
 
-    .subpage-content {
-        .subpage-title {
-            font-size: 3em;
-        }
+    .subpage-title {
+        font-size: 2.5em;
+        left: 15px;
+        bottom: 25px;
+    }
+
+    .breadcrumbs {
+        bottom: -10px;
     }
 
 
@@ -495,6 +561,27 @@
         padding-right: 0;
     }
 
+    .event-images-prev, .event-images-next {
+        font-size: 2.5em;
+        padding: 0 15px;
+    }
+
+    .event-images-strip img {
+        height: 65px;
+    }
+
+    .gt-btn {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .itinerary table {
+        min-width: 600px;
+    }
+
+    .reminders {
+        padding-bottom: 30px;
+    }
 }
 
 

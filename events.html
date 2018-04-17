@@ -148,31 +148,40 @@
     <div class="subpage-content">
       <div class="container">
         <div class="events-toolbar clearfix">
-            <div class="events-search">
-                <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search" aria-label="Recipient's username" aria-describedby="basic-addon2">
-                    <div class="input-group-append">
-                      <button class="btn btn-primary" type="button">
-                        <i class="fa fa-search"></i>
-                      </button>
-                    </div>
-                  </div>
+          <div class="row">
+            <div class="col-md-4 col-7">
+              <div class="input-group">
+                <input id="events-search-input" type="text" class="form-control" placeholder="Search">
+                <button id="events-search-submit" type="button" class="btn btn-primary">
+                  <i class="fa fa-search" aria-hidden="true"></i>
+                </button>
               </div>
-              <div class="event-filters">
-                <ul>
-                  <li><a href="#">Type</a></li>
-                  <li><a href="#">Price</a></li>
-                  <li><a href="#">Date</a></li>
-                </ul>
+            </div>
+            <div class="col-5 event-filter-container">
+              <button class="btn btn-outline-primary" id="btn-event-filter-toggle">Filter / Sort <i class="fa fa-caret-down ml-1" aria-hidden="true"></i></button>
+            </div>
+            <div class="col-md-4 event-filter-item">
+              <div class="form-group">
+                <label for="">Category:</label>
+                <select id="event-category-select" class="form-control">
+                  <option value="all">Show All</option>
+                  <option value="hike">Hike</option>
+                  <option value="beach">Beach</option>
+                </select>
               </div>
-              <div class="events-sort">
-                <div class="form-group">
-                  <label for="gallery-sort-select">Sort By: </label>
-                  <select class="form-control" name="gallert-sort-select" id="gallert-sort-select">
-                    <option>Newest to Oldest</option>
-                  </select>
-                </div>
+            </div>
+            <div class="col-md-4 event-filter-item">
+              <div class="form-group">
+                <label for="">Sort by:</label>
+                <select id="event-sort-select" class="form-control">
+                  <option value="all">Alphabetical: A-Z</option>
+                  <option value="hike">Alphabetical: Z-A</option>
+                  <option value="beach">Cheapest to Expensive</option>
+                  <option value="beach">Expensive to Cheapest</option>
+                </select>
               </div>
+            </div>
+          </div>
         </div>
 
         <div class="events-wrapper">

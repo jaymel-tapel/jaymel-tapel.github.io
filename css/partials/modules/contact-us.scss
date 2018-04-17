@@ -29,9 +29,9 @@
 .subpage-title {
     font-family: $scriptFont;
     position: absolute;
-    bottom: 55px;
+    bottom: 45px;
     left: 5px;
-    font-size: 3.4em;
+    font-size: 3em;
     letter-spacing: -1px;
     z-index: 123;
     color: #fff;
@@ -40,7 +40,7 @@
 
 .breadcrumbs {
     position: absolute;
-    bottom: 20px;
+    bottom: 0px;
     left: 15px;
     z-index: 123;
     list-style-type: none;
